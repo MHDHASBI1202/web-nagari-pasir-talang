@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Website Resmi Nagari Pasir Talang, Kecamatan Sungai Pagu, Kabupaten Solok Selatan – Portal informasi, berita, dan layanan masyarakat nagari." />
+  <meta name="keywords" content="Nagari Pasir Talang, Sungai Pagu, Solok Selatan, Sumatera Barat, Desa, Minangkabau" />
+  <meta property="og:title" content="Nagari Pasir Talang – Kecamatan Sungai Pagu, Solok Selatan" />
+  <meta property="og:description" content="Website Resmi Nagari Pasir Talang – Portal informasi dan layanan masyarakat." />
+  <meta property="og:type" content="website" />
+  <title>Nagari Pasir Talang | Kecamatan Sungai Pagu – Solok Selatan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== LOADER ========== -->
+  <div id="loader" class="loader">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <div class="loader-logo">
+        <span>N</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== NAVBAR ========== -->
+  <header id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4L36 14V26L20 36L4 26V14L20 4Z" fill="url(#grad1)" opacity="0.9"/>
+            <path d="M20 10L30 16V22L20 28L10 22V16L20 10Z" fill="white" opacity="0.3"/>
+            <text x="20" y="24" text-anchor="middle" fill="white" font-size="11" font-weight="700" font-family="serif">N</text>
+            <defs>
+              <linearGradient id="grad1" x1="4" y1="4" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#16a34a"/>
+                <stop offset="100%" stop-color="#065f46"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Nagari Pasir Talang</span>
+          <span class="brand-sub">Sungai Pagu &middot; Solok Selatan</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active" id="nav-home">Beranda</a>
+        <a href="#profil" class="nav-link" id="nav-profil">Profil</a>
+        <a href="#layanan" class="nav-link" id="nav-layanan">Layanan</a>
+        <a href="#statistik" class="nav-link" id="nav-statistik">Data</a>
+        <a href="#galeri" class="nav-link" id="nav-galeri">Galeri</a>
+        <a href="#berita" class="nav-link" id="nav-berita">Berita</a>
+        <a href="#kontak" class="nav-cta" id="nav-kontak">Kontak</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <img src="hero.jpg" alt="Pemandangan Nagari Pasir Talang" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-content">
+      <div class="hero-badge animate-fade-up delay-1">
+        <span class="badge-dot"></span>
+        Nagari Resmi &middot; Sumatera Barat
+      </div>
+      <h1 class="hero-title animate-fade-up delay-2">
+        Nagari<br /><span class="hero-highlight">Pasir Talang</span>
+      </h1>
+      <p class="hero-subtitle animate-fade-up delay-3">
+        Kecamatan Sungai Pagu, Kabupaten Solok Selatan<br />
+        <em>Alam Basandi Syarak, Syarak Basandi Kitabullah</em>
+      </p>
+      <div class="hero-buttons animate-fade-up delay-4">
+        <a href="#profil" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          Jelajahi Nagari
+        </a>
+        <a href="#layanan" class="btn-secondary">
+          Layanan Masyarakat
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-indicator">
+        <span></span>
+      </div>
+    </div>
+    <!-- Floating Stats -->
+    <div class="hero-stats animate-fade-up delay-5">
+      <div class="hero-stat">
+        <span class="stat-num" data-target="4250">0</span>
+        <span class="stat-label">Penduduk</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="stat-num" data-target="1250">0</span>
+        <span class="stat-label">KK</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="stat-num" data-target="7">0</span>
+        <span class="stat-label">Jorong</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="stat-num" data-target="1948">0</span>
+        <span class="stat-label">Tahun Berdiri</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PENGUMUMAN TICKER ========== -->
+  <div class="ticker-wrap">
+    <div class="ticker-label">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      Pengumuman
+    </div>
+    <div class="ticker-content">
+      <div class="ticker-items" id="ticker">
+        <span>Pengambilan BLT Dana Desa Tahun 2025 dimulai tanggal 15 Juli 2025</span>
+        <span>Proyek Pembangunan Jalan Usaha Tani Jorong Pasir Talang Barat sedang berlangsung</span>
+        <span>Pendaftaran Program PKH gelombang III dibuka - Hubungi Kantor Nagari</span>
+        <span>Beasiswa Pendidikan untuk anak nagari - Syarat dan informasi tersedia di kantor nagari</span>
+        <span>Gotong royong pembersihan saluran irigasi dilaksanakan setiap Jumat pagi</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== PROFIL NAGARI ========== -->
+  <section id="profil" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Tentang Kami</span>
+        <h2 class="section-title">Profil Nagari Pasir Talang</h2>
+        <p class="section-desc">Mengenal lebih dalam tentang nagari kami yang kaya budaya dan sumber daya alam</p>
+      </div>
+
+      <div class="profil-grid">
+        <!-- Left: Wali Nagari -->
+        <div class="profil-wali">
+          <div class="wali-card">
+            <div class="wali-img-wrap">
+              <img src="wali_nagari.jpg" alt="Wali Nagari Pasir Talang" class="wali-img" />
+              <div class="wali-badge-ring"></div>
+            </div>
+            <div class="wali-info">
+              <span class="wali-label">Wali Nagari</span>
+              <h3 class="wali-name">H. Rasyiddin, S.H.</h3>
+              <p class="wali-period">Periode 2021 - 2027</p>
+              <blockquote class="wali-quote">
+                "Bersama membangun nagari yang maju, sejahtera, dan bermartabat berdasarkan adat dan syariat."
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Info Cards -->
+        <div class="profil-info">
+          <div class="info-text">
+            <h3>Selamat Datang di Nagari Pasir Talang</h3>
+            <p>Nagari Pasir Talang adalah nagari yang terletak di Kecamatan Sungai Pagu, Kabupaten Solok Selatan, Provinsi Sumatera Barat. Dikelilingi oleh perbukitan hijau dan aliran sungai yang jernih, nagari ini menyimpan kekayaan alam dan budaya Minangkabau yang luar biasa.</p>
+            <p>Dengan masyarakat yang ramah dan semangat gotong royong yang tinggi, Nagari Pasir Talang terus berbenah menuju nagari yang modern namun tetap menjaga adat dan kearifan lokal.</p>
+          </div>
+
+          <div class="info-cards">
+            <div class="info-card">
+              <div class="ic-icon">&#127956;</div>
+              <div class="ic-content">
+                <span class="ic-label">Luas Wilayah</span>
+                <strong class="ic-value">+/- 4.200 Ha</strong>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="ic-icon">&#128205;</div>
+              <div class="ic-content">
+                <span class="ic-label">Ketinggian</span>
+                <strong class="ic-value">+/- 650 mdpl</strong>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="ic-icon">&#127807;</div>
+              <div class="ic-content">
+                <span class="ic-label">Komoditas Utama</span>
+                <strong class="ic-value">Padi, Kakao, Kopi</strong>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="ic-icon">&#128331;</div>
+              <div class="ic-content">
+                <span class="ic-label">Masjid &amp; Surau</span>
+                <strong class="ic-value">12 Unit</strong>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="ic-icon">&#127979;</div>
+              <div class="ic-content">
+                <span class="ic-label">Sekolah</span>
+                <strong class="ic-value">5 Unit</strong>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="ic-icon">&#127973;</div>
+              <div class="ic-content">
+                <span class="ic-label">Fasilitas Kesehatan</span>
+                <strong class="ic-value">2 Pustu, 1 Posyandu</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jorong List -->
+      <div class="jorong-section">
+        <h3 class="jorong-title">7 Jorong di Nagari Pasir Talang</h3>
+        <div class="jorong-grid">
+          <div class="jorong-card">
+            <div class="jorong-num">01</div>
+            <div class="jorong-name">Pasir Talang</div>
+          </div>
+          <div class="jorong-card">
+            <div class="jorong-num">02</div>
+            <div class="jorong-name">Melayu Palak Laweh</div>
+          </div>
+          <div class="jorong-card">
+            <div class="jorong-num">03</div>
+            <div class="jorong-name">Melayu Palak Laweh Timur</div>
+          </div>
+          <div class="jorong-card">
+            <div class="jorong-num">04</div>
+            <div class="jorong-name">Tigo Lareh Bakapanjangan</div>
+          </div>
+          <div class="jorong-card">
+            <div class="jorong-num">05</div>
+            <div class="jorong-name">Tigo Lareh Bakapanjangan Selatan</div>
+          </div>
+          <div class="jorong-card">
+            <div class="jorong-num">06</div>
+            <div class="jorong-name">Panai</div>
+          </div>
+          <div class="jorong-card">
+            <div class="jorong-num">07</div>
+            <div class="jorong-name">Batang Pagu</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LAYANAN ========== -->
+  <section id="layanan" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Pelayanan</span>
+        <h2 class="section-title">Layanan Masyarakat</h2>
+        <p class="section-desc">Kami hadir untuk melayani masyarakat Nagari Pasir Talang dengan sepenuh hati</p>
+      </div>
+
+      <div class="layanan-grid">
+        <div class="layanan-card" id="layanan-ktp">
+          <div class="layanan-icon-wrap green">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h2M10 15h6"/></svg>
+          </div>
+          <h3>Surat Keterangan</h3>
+          <p>Pengurusan surat keterangan domisili, keterangan tidak mampu, keterangan usaha, dan berbagai surat keterangan lainnya.</p>
+          <ul class="layanan-list">
+            <li>Surat Keterangan Domisili</li>
+            <li>Keterangan Tidak Mampu</li>
+            <li>Keterangan Usaha</li>
+            <li>Keterangan Kelahiran / Kematian</li>
+          </ul>
+          <span class="layanan-time">Proses 1-2 Hari Kerja</span>
+        </div>
+
+        <div class="layanan-card featured" id="layanan-admin">
+          <div class="layanan-icon-wrap gold">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+          </div>
+          <div class="layanan-badge">Populer</div>
+          <h3>Administrasi Kependudukan</h3>
+          <p>Pengurusan dokumen kependudukan dan pengantar pembuatan KTP, KK, dan Akta Catatan Sipil.</p>
+          <ul class="layanan-list">
+            <li>Pengantar KTP / e-KTP</li>
+            <li>Pengantar Kartu Keluarga</li>
+            <li>Pengantar Akta Kelahiran</li>
+            <li>Pengantar Akta Kematian</li>
+          </ul>
+          <span class="layanan-time">Proses 1-3 Hari Kerja</span>
+        </div>
+
+        <div class="layanan-card" id="layanan-tanah">
+          <div class="layanan-icon-wrap blue">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+          </div>
+          <h3>Pertanahan &amp; Aset</h3>
+          <p>Pelayanan terkait pengurusan tanah ulayat, surat keterangan tanah, dan administrasi aset nagari.</p>
+          <ul class="layanan-list">
+            <li>Surat Keterangan Tanah</li>
+            <li>Pengantar Sertifikat</li>
+            <li>Izin Mendirikan Bangunan</li>
+            <li>Data Aset Nagari</li>
+          </ul>
+          <span class="layanan-time">Proses 3-5 Hari Kerja</span>
+        </div>
+
+        <div class="layanan-card" id="layanan-sosial">
+          <div class="layanan-icon-wrap purple">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Bantuan Sosial</h3>
+          <p>Informasi dan pendaftaran program bantuan sosial dari pemerintah untuk masyarakat yang membutuhkan.</p>
+          <ul class="layanan-list">
+            <li>BLT Dana Desa</li>
+            <li>Program Keluarga Harapan (PKH)</li>
+            <li>Bantuan Pangan Non-Tunai</li>
+            <li>Beasiswa Pendidikan</li>
+          </ul>
+          <span class="layanan-time">Sesuai Jadwal Program</span>
+        </div>
+
+        <div class="layanan-card" id="layanan-usaha">
+          <div class="layanan-icon-wrap orange">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Pengembangan Usaha</h3>
+          <p>Dukungan untuk BUMNag dan pelaku usaha lokal dalam mengembangkan potensi ekonomi nagari.</p>
+          <ul class="layanan-list">
+            <li>Izin Usaha Mikro</li>
+            <li>Pembinaan BUMNag</li>
+            <li>Akses Permodalan UMKM</li>
+            <li>Pelatihan Kewirausahaan</li>
+          </ul>
+          <span class="layanan-time">Konsultasi Gratis</span>
+        </div>
+
+        <div class="layanan-card" id="layanan-info">
+          <div class="layanan-icon-wrap teal">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3>Informasi Publik</h3>
+          <p>Akses informasi tentang anggaran nagari, rencana pembangunan, dan laporan kegiatan secara transparan.</p>
+          <ul class="layanan-list">
+            <li>APBNag Tahunan</li>
+            <li>RPJMNag &amp; RKPNag</li>
+            <li>Laporan Realisasi</li>
+            <li>Data Demografi</li>
+          </ul>
+          <span class="layanan-time">Tersedia Online</span>
+        </div>
+      </div>
+
+      <div class="layanan-cta">
+        <div class="cta-box">
+          <div class="cta-icon">&#128222;</div>
+          <div>
+            <h4>Butuh Bantuan?</h4>
+            <p>Kantor Nagari Pasir Talang buka Senin-Jumat, pukul 08.00-16.00 WIB</p>
+          </div>
+          <a href="#kontak" class="btn-primary-sm">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STATISTIK / DATA ========== -->
+  <section id="statistik" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Data &amp; Statistik</span>
+        <h2 class="section-title">Data Nagari Pasir Talang</h2>
+        <p class="section-desc">Informasi kependudukan dan pembangunan nagari secara transparan</p>
+      </div>
+
+      <div class="stat-main-grid">
+        <!-- Big Stats -->
+        <div class="big-stats">
+          <div class="big-stat-card green">
+            <div class="bs-icon">&#128106;</div>
+            <div class="bs-num counter" data-target="4250">0</div>
+            <div class="bs-label">Total Penduduk</div>
+            <div class="bs-bar"><div class="bs-fill" style="width:85%"></div></div>
+          </div>
+          <div class="big-stat-card blue">
+            <div class="bs-icon">&#127968;</div>
+            <div class="bs-num counter" data-target="1250">0</div>
+            <div class="bs-label">Kepala Keluarga</div>
+            <div class="bs-bar"><div class="bs-fill" style="width:65%"></div></div>
+          </div>
+          <div class="big-stat-card gold">
+            <div class="bs-icon">&#128104;</div>
+            <div class="bs-num counter" data-target="2134">0</div>
+            <div class="bs-label">Laki-laki</div>
+            <div class="bs-bar"><div class="bs-fill" style="width:50%"></div></div>
+          </div>
+          <div class="big-stat-card purple">
+            <div class="bs-icon">&#128105;</div>
+            <div class="bs-num counter" data-target="2116">0</div>
+            <div class="bs-label">Perempuan</div>
+            <div class="bs-bar"><div class="bs-fill" style="width:50%"></div></div>
+          </div>
+        </div>
+
+        <!-- Charts & Progress Bars -->
+        <div class="stat-charts">
+          <div class="stat-chart-card">
+            <h4>Tingkat Pendidikan</h4>
+            <div class="progress-list">
+              <div class="prog-item">
+                <span class="prog-label">SD/Sederajat</span>
+                <div class="prog-bar-wrap"><div class="prog-bar" style="--w:40%;--c:#16a34a">40%</div></div>
+              </div>
+              <div class="prog-item">
+                <span class="prog-label">SMP/Sederajat</span>
+                <div class="prog-bar-wrap"><div class="prog-bar" style="--w:25%;--c:#2563eb">25%</div></div>
+              </div>
+              <div class="prog-item">
+                <span class="prog-label">SMA/Sederajat</span>
+                <div class="prog-bar-wrap"><div class="prog-bar" style="--w:25%;--c:#d97706">25%</div></div>
+              </div>
+              <div class="prog-item">
+                <span class="prog-label">Sarjana (S1+)</span>
+                <div class="prog-bar-wrap"><div class="prog-bar" style="--w:10%;--c:#7c3aed">10%</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stat-chart-card">
+            <h4>Mata Pencaharian</h4>
+            <div class="progress-list">
+              <div class="prog-item">
+                <span class="prog-label">Petani</span>
+                <div class="prog-bar-wrap"><div class="prog-bar" style="--w:55%;--c:#16a34a">55%</div></div>
+              </div>
+              <div class="prog-item">
+                <span class="prog-label">Pedagang</span>
+                <div class="prog-bar-wrap"><div class="prog-bar" style="--w:20%;--c:#d97706">20%</div></div>
+              </div>
+              <div class="prog-item">
+                <span class="prog-label">PNS / TNI / Polri</span>
+                <div class="prog-bar-wrap"><div class="prog-bar" style="--w:8%;--c:#2563eb">8%</div></div>
+              </div>
+              <div class="prog-item">
+                <span class="prog-label">Wiraswasta</span>
+                <div class="prog-bar-wrap"><div class="prog-bar" style="--w:17%;--c:#7c3aed">17%</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stat-chart-card">
+            <h4>Pembangunan 2025</h4>
+            <div class="build-stats">
+              <div class="build-item">
+                <div class="build-circle">
+                  <svg viewBox="0 0 36 36" class="circular-chart">
+                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    <path class="circle" stroke-dasharray="78, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" style="stroke:#16a34a"/>
+                    <text x="18" y="20.35" class="percentage">78%</text>
+                  </svg>
+                </div>
+                <span>Infrastruktur</span>
+              </div>
+              <div class="build-item">
+                <div class="build-circle">
+                  <svg viewBox="0 0 36 36" class="circular-chart">
+                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    <path class="circle" stroke-dasharray="65, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" style="stroke:#d97706"/>
+                    <text x="18" y="20.35" class="percentage">65%</text>
+                  </svg>
+                </div>
+                <span>Ekonomi</span>
+              </div>
+              <div class="build-item">
+                <div class="build-circle">
+                  <svg viewBox="0 0 36 36" class="circular-chart">
+                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    <path class="circle" stroke-dasharray="90, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" style="stroke:#2563eb"/>
+                    <text x="18" y="20.35" class="percentage">90%</text>
+                  </svg>
+                </div>
+                <span>Pendidikan</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- APBNag Highlight -->
+      <div class="apbnag-section">
+        <div class="apbnag-header">
+          <h3>APBNag 2025 - Ringkasan</h3>
+          <span class="apbnag-year">Tahun Anggaran 2025</span>
+        </div>
+        <div class="apbnag-grid">
+          <div class="apbnag-card pendapatan">
+            <div class="apbnag-icon">&#128229;</div>
+            <div class="apbnag-label">Total Pendapatan</div>
+            <div class="apbnag-value">Rp 1.847.500.000</div>
+            <div class="apbnag-source">Dana Desa + ADD + PAD</div>
+          </div>
+          <div class="apbnag-card belanja">
+            <div class="apbnag-icon">&#128228;</div>
+            <div class="apbnag-label">Total Belanja</div>
+            <div class="apbnag-value">Rp 1.800.000.000</div>
+            <div class="apbnag-source">Pembangunan + Operasional</div>
+          </div>
+          <div class="apbnag-card surplus">
+            <div class="apbnag-icon">&#128176;</div>
+            <div class="apbnag-label">Surplus / Saldo</div>
+            <div class="apbnag-value">Rp 47.500.000</div>
+            <div class="apbnag-source">Cadangan Nagari</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALERI ========== -->
+  <section id="galeri" class="section section-dark">
+    <div class="container">
+      <div class="section-header light">
+        <span class="section-badge">Galeri</span>
+        <h2 class="section-title">Keindahan Nagari Pasir Talang</h2>
+        <p class="section-desc">Pesona alam, budaya, dan kehidupan masyarakat nagari kami</p>
+      </div>
+
+      <div class="galeri-grid">
+        <div class="galeri-item large" id="galeri-1">
+          <img src="hero.jpg" alt="Pemandangan Nagari" loading="lazy" />
+          <div class="galeri-overlay">
+            <span class="galeri-title">Pemandangan Nagari</span>
+            <span class="galeri-cat">Alam</span>
+          </div>
+        </div>
+        <div class="galeri-item" id="galeri-2">
+          <img src="rumah_gadang.jpg" alt="Rumah Gadang" loading="lazy" />
+          <div class="galeri-overlay">
+            <span class="galeri-title">Rumah Gadang</span>
+            <span class="galeri-cat">Budaya</span>
+          </div>
+        </div>
+        <div class="galeri-item" id="galeri-3">
+          <img src="sawah.jpg" alt="Sawah Nagari" loading="lazy" />
+          <div class="galeri-overlay">
+            <span class="galeri-title">Sawah Nagari</span>
+            <span class="galeri-cat">Pertanian</span>
+          </div>
+        </div>
+        <div class="galeri-item wide" id="galeri-4">
+          <img src="kerajinan.jpg" alt="Kerajinan Lokal" loading="lazy" />
+          <div class="galeri-overlay">
+            <span class="galeri-title">Kerajinan Lokal</span>
+            <span class="galeri-cat">UMKM</span>
+          </div>
+        </div>
+        <div class="galeri-item" id="galeri-5">
+          <img src="rumah_gadang.jpg" alt="Adat Minangkabau" loading="lazy" />
+          <div class="galeri-overlay">
+            <span class="galeri-title">Adat Minangkabau</span>
+            <span class="galeri-cat">Budaya</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BERITA ========== -->
+  <section id="berita" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Informasi</span>
+        <h2 class="section-title">Berita &amp; Pengumuman</h2>
+        <p class="section-desc">Informasi terkini tentang kegiatan dan pembangunan Nagari Pasir Talang</p>
+      </div>
+
+      <div class="berita-grid">
+        <div class="berita-featured" id="berita-1">
+          <div class="berita-img-wrap">
+            <img src="hero.jpg" alt="Berita Utama" loading="lazy" />
+            <span class="berita-cat-badge">Pembangunan</span>
+          </div>
+          <div class="berita-content">
+            <div class="berita-meta">
+              <span class="meta-date">12 Juli 2025</span>
+              <span class="meta-author">Admin Nagari</span>
+            </div>
+            <h3 class="berita-title">Pembangunan Jalan Usaha Tani Jorong Pasir Talang Barat Capai 70%</h3>
+            <p class="berita-excerpt">Proyek pembangunan jalan usaha tani sepanjang 1,2 km di Jorong Pasir Talang Barat telah mencapai progress 70%. Diharapkan selesai pada akhir Agustus 2025 dan akan memperlancar akses petani ke lahan pertanian.</p>
+            <a href="#" class="berita-read">Selengkapnya</a>
+          </div>
+        </div>
+
+        <div class="berita-list">
+          <div class="berita-item" id="berita-2">
+            <div class="berita-item-img">
+              <img src="sawah.jpg" alt="BLT Dana Desa" loading="lazy" />
+            </div>
+            <div class="berita-item-content">
+              <span class="berita-cat green">Sosial</span>
+              <h4>Penyaluran BLT Dana Desa Tahap III Dimulai</h4>
+              <p>Sebanyak 125 KPM menerima bantuan langsung tunai dari Dana Desa...</p>
+              <span class="meta-date">8 Juli 2025</span>
+            </div>
+          </div>
+
+          <div class="berita-item" id="berita-3">
+            <div class="berita-item-img">
+              <img src="rumah_gadang.jpg" alt="Musyawarah Nagari" loading="lazy" />
+            </div>
+            <div class="berita-item-content">
+              <span class="berita-cat blue">Pemerintahan</span>
+              <h4>Musyawarah Nagari Tetapkan RPJMNag 2025-2031</h4>
+              <p>Dengan melibatkan seluruh elemen masyarakat, Musyawarah Nagari berhasil menetapkan...</p>
+              <span class="meta-date">3 Juli 2025</span>
+            </div>
+          </div>
+
+          <div class="berita-item" id="berita-4">
+            <div class="berita-item-img">
+              <img src="kerajinan.jpg" alt="BUMNag" loading="lazy" />
+            </div>
+            <div class="berita-item-content">
+              <span class="berita-cat gold">Ekonomi</span>
+              <h4>BUMNag Pasir Talang Mandiri Raih Omzet Rp 150 Juta</h4>
+              <p>Berkat pengelolaan yang profesional, BUMNag berhasil mencatat omzet positif...</p>
+              <span class="meta-date">28 Juni 2025</span>
+            </div>
+          </div>
+
+          <div class="berita-item" id="berita-5">
+            <div class="berita-item-img">
+              <img src="sawah.jpg" alt="Posyandu" loading="lazy" />
+            </div>
+            <div class="berita-item-content">
+              <span class="berita-cat purple">Kesehatan</span>
+              <h4>Posyandu Aktif Layani Ratusan Balita &amp; Lansia</h4>
+              <p>Program Posyandu terintegrasi di Nagari Pasir Talang kini melayani lebih dari 300 balita...</p>
+              <span class="meta-date">20 Juni 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== POTENSI NAGARI ========== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Potensi</span>
+        <h2 class="section-title">Potensi Unggulan Nagari</h2>
+        <p class="section-desc">Kekayaan alam dan budaya yang menjadi daya tarik Nagari Pasir Talang</p>
+      </div>
+      <div class="potensi-grid">
+        <div class="potensi-card" id="potensi-1">
+          <div class="potensi-img">
+            <img src="sawah.jpg" alt="Pertanian" loading="lazy" />
+            <div class="potensi-overlay"></div>
+          </div>
+          <div class="potensi-content">
+            <div class="potensi-icon">&#127806;</div>
+            <h3>Pertanian &amp; Perkebunan</h3>
+            <p>Lahan pertanian yang subur menghasilkan padi, kakao, kopi, dan berbagai tanaman hortikultura. Sektor pertanian menjadi tulang punggung perekonomian nagari.</p>
+            <div class="potensi-tags">
+              <span>Padi Sawah</span><span>Kakao</span><span>Kopi Robusta</span>
+            </div>
+          </div>
+        </div>
+        <div class="potensi-card" id="potensi-2">
+          <div class="potensi-img">
+            <img src="rumah_gadang.jpg" alt="Wisata Budaya" loading="lazy" />
+            <div class="potensi-overlay"></div>
+          </div>
+          <div class="potensi-content">
+            <div class="potensi-icon">&#127963;</div>
+            <h3>Wisata Budaya</h3>
+            <p>Rumah Gadang, tradisi adat Minangkabau, dan berbagai upacara tradisional menjadi daya tarik wisata yang dapat dikembangkan sebagai destinasi wisata budaya.</p>
+            <div class="potensi-tags">
+              <span>Rumah Gadang</span><span>Adat Minang</span><span>Kesenian</span>
+            </div>
+          </div>
+        </div>
+        <div class="potensi-card" id="potensi-3">
+          <div class="potensi-img">
+            <img src="kerajinan.jpg" alt="Kerajinan" loading="lazy" />
+            <div class="potensi-overlay"></div>
+          </div>
+          <div class="potensi-content">
+            <div class="potensi-icon">&#127912;</div>
+            <h3>Kerajinan Tangan</h3>
+            <p>Kerajinan songket, anyaman bambu, dan produk olahan lokal menjadi komoditas UMKM yang potensial untuk dikembangkan dan dipasarkan secara luas.</p>
+            <div class="potensi-tags">
+              <span>Songket</span><span>Anyaman</span><span>Olahan Lokal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== KONTAK ========== -->
+  <section id="kontak" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Hubungi Kami</span>
+        <h2 class="section-title">Kontak &amp; Lokasi</h2>
+        <p class="section-desc">Kami siap melayani Anda di kantor nagari maupun melalui saluran komunikasi kami</p>
+      </div>
+
+      <div class="kontak-grid">
+        <div class="kontak-info">
+          <div class="kontak-card" id="kontak-address">
+            <div class="kontak-icon green">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <strong>Alamat Kantor</strong>
+              <p>Jl. Nagari Pasir Talang No. 1<br/>Jorong Pasir Talang Barat<br/>Kec. Sungai Pagu, Kab. Solok Selatan<br/>Sumatera Barat 27477</p>
+            </div>
+          </div>
+
+          <div class="kontak-card" id="kontak-phone">
+            <div class="kontak-icon blue">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <strong>Telepon &amp; WhatsApp</strong>
+              <p><a href="tel:+6281234567890">+62 812-3456-7890</a></p>
+              <p>Senin - Jumat: 08.00 - 16.00 WIB</p>
+            </div>
+          </div>
+
+          <div class="kontak-card" id="kontak-email">
+            <div class="kontak-icon gold">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <strong>Email</strong>
+              <p><a href="mailto:nagari.pasirtalang@gmail.com">nagari.pasirtalang@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div class="kontak-card" id="kontak-sosmed">
+            <div class="kontak-icon purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            </div>
+            <div>
+              <strong>Media Sosial</strong>
+              <div class="sosmed-links">
+                <a href="#" class="sosmed-btn fb">Facebook</a>
+                <a href="#" class="sosmed-btn ig">Instagram</a>
+                <a href="#" class="sosmed-btn yt">YouTube</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="jam-operasional">
+            <h4>Jam Operasional Kantor</h4>
+            <div class="jam-table">
+              <div class="jam-row">
+                <span>Senin - Kamis</span>
+                <span>08.00 - 16.00 WIB</span>
+              </div>
+              <div class="jam-row">
+                <span>Jumat</span>
+                <span>08.00 - 11.30 WIB</span>
+              </div>
+              <div class="jam-row closed">
+                <span>Sabtu - Minggu</span>
+                <span>Tutup</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kontak-form-wrap">
+          <form class="kontak-form" id="kontakForm">
+            <h3>Kirim Pesan</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" placeholder="Nama Anda" required />
+              </div>
+              <div class="form-group">
+                <label for="telp">No. Telepon / WA</label>
+                <input type="tel" id="telp" name="telp" placeholder="+62..." />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email-form">Email</label>
+              <input type="email" id="email-form" name="email" placeholder="email@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="subjek">Subjek / Keperluan</label>
+              <select id="subjek" name="subjek">
+                <option value="">-- Pilih Keperluan --</option>
+                <option value="surat">Permohonan Surat</option>
+                <option value="bantuan">Informasi Bantuan Sosial</option>
+                <option value="pengaduan">Pengaduan / Aspirasi</option>
+                <option value="info">Informasi Umum</option>
+                <option value="lainnya">Lainnya</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="pesan">Pesan</label>
+              <textarea id="pesan" name="pesan" rows="5" placeholder="Tuliskan pesan atau pertanyaan Anda..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit" id="btn-kirim">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Kirim Pesan
+            </button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">&#9989;</div>
+            <h4>Pesan Terkirim!</h4>
+            <p>Terima kasih telah menghubungi kami. Tim kami akan merespons pesan Anda dalam 1x24 jam kerja.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map placeholder -->
+      <div class="map-section">
+        <h3>&#128205; Lokasi Kantor Nagari Pasir Talang</h3>
+        <div class="map-placeholder">
+          <div class="map-pin-anim">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <p>Nagari Pasir Talang<br/>Kecamatan Sungai Pagu, Kabupaten Solok Selatan<br/>Sumatera Barat</p>
+          <a href="https://maps.google.com?q=Pasir+Talang+Sungai+Pagu+Solok+Selatan" target="_blank" class="btn-primary-sm">
+            Buka di Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="footer" class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col brand-col">
+            <div class="footer-brand">
+              <div class="footer-brand-icon">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 4L36 14V26L20 36L4 26V14L20 4Z" fill="url(#fgrad)" opacity="0.9"/>
+                  <path d="M20 10L30 16V22L20 28L10 22V16L20 10Z" fill="white" opacity="0.3"/>
+                  <text x="20" y="24" text-anchor="middle" fill="white" font-size="11" font-weight="700" font-family="serif">N</text>
+                  <defs>
+                    <linearGradient id="fgrad" x1="4" y1="4" x2="36" y2="36">
+                      <stop offset="0%" stop-color="#16a34a"/>
+                      <stop offset="100%" stop-color="#065f46"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div>
+                <span class="footer-name">Nagari Pasir Talang</span>
+                <span class="footer-sub">Kec. Sungai Pagu &middot; Kab. Solok Selatan</span>
+              </div>
+            </div>
+            <p class="footer-desc">Portal resmi Nagari Pasir Talang. Melayani masyarakat dengan tulus, transparan, dan bertanggung jawab demi terwujudnya nagari yang maju dan sejahtera.</p>
+            <p class="footer-motto">
+              <em>"Alam Basandi Syarak, Syarak Basandi Kitabullah"</em>
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Tautan Cepat</h4>
+            <ul class="footer-links">
+              <li><a href="#home">Beranda</a></li>
+              <li><a href="#profil">Profil Nagari</a></li>
+              <li><a href="#layanan">Layanan Masyarakat</a></li>
+              <li><a href="#statistik">Data &amp; Statistik</a></li>
+              <li><a href="#galeri">Galeri</a></li>
+              <li><a href="#berita">Berita &amp; Pengumuman</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Layanan Nagari</h4>
+            <ul class="footer-links">
+              <li><a href="#layanan">Surat Keterangan</a></li>
+              <li><a href="#layanan">Administrasi Kependudukan</a></li>
+              <li><a href="#layanan">Pertanahan &amp; Aset</a></li>
+              <li><a href="#layanan">Bantuan Sosial</a></li>
+              <li><a href="#layanan">Pengembangan Usaha</a></li>
+              <li><a href="#layanan">Informasi Publik</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Kontak Kami</h4>
+            <div class="footer-contact">
+              <p>Jl. Nagari Pasir Talang No. 1<br/>Sungai Pagu, Solok Selatan 27477</p>
+              <p><a href="tel:+6281234567890">+62 812-3456-7890</a></p>
+              <p><a href="mailto:nagari.pasirtalang@gmail.com">nagari.pasirtalang@gmail.com</a></p>
+            </div>
+            <div class="footer-sosmed">
+              <a href="#" class="footer-sosmed-btn" aria-label="Facebook">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+              <a href="#" class="footer-sosmed-btn" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="#" class="footer-sosmed-btn" aria-label="YouTube">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 Nagari Pasir Talang, Kecamatan Sungai Pagu, Kabupaten Solok Selatan. Hak Cipta Dilindungi.</p>
+        <p>Dikelola oleh Tim IT Nagari Pasir Talang</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTop" class="scroll-top" aria-label="Scroll ke atas">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
