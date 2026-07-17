@@ -1518,3 +1518,104 @@ input, textarea, select { font-family: inherit; }
   .build-stats   { flex-direction: column; align-items: center; }
   .section-title { font-size: 1.7rem; }
 }
+
+/* ============================================
+   INTERACTIVE ELEMENTS (NEW)
+   ============================================ */
+
+/* Toast */
+.toast { position:fixed; bottom:90px; left:50%; transform:translateX(-50%) translateY(20px); background:#111827; color:#fff; padding:12px 24px; border-radius:9999px; font-size:.875rem; font-weight:500; z-index:9997; opacity:0; pointer-events:none; transition:opacity .3s ease,transform .3s ease; white-space:nowrap; box-shadow:0 8px 32px rgba(0,0,0,.3); display:flex; align-items:center; gap:8px; }
+.toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+.toast.toast-info { background:#2563eb; }
+.toast.toast-success { background:#16a34a; }
+.toast.toast-warn { background:#d97706; color:#111; }
+
+/* Modal */
+.modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,.75); backdrop-filter:blur(6px); z-index:9990; display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; pointer-events:none; transition:opacity .3s ease; }
+.modal-overlay.open { opacity:1; pointer-events:auto; }
+.modal-box { background:#fff; border-radius:20px; max-width:680px; width:100%; max-height:90vh; overflow-y:auto; position:relative; transform:translateY(30px) scale(.97); transition:transform .35s cubic-bezier(.34,1.56,.64,1); box-shadow:0 20px 60px rgba(0,0,0,.2); }
+.modal-overlay.open .modal-box { transform:translateY(0) scale(1); }
+.modal-close { position:absolute; top:14px; right:16px; width:36px; height:36px; background:#f3f4f6; border-radius:50%; font-size:1.4rem; color:#4b5563; display:flex; align-items:center; justify-content:center; transition:all .3s; z-index:2; }
+.modal-close:hover { background:#e5e7eb; color:#111; }
+.modal-img-wrap { position:relative; aspect-ratio:16/7; overflow:hidden; border-radius:20px 20px 0 0; }
+.modal-img-wrap img { width:100%; height:100%; object-fit:cover; }
+.modal-content { padding:28px 32px 32px; }
+.modal-title { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; color:#111827; line-height:1.35; margin:12px 0; }
+.modal-body { font-size:.9rem; color:#4b5563; line-height:1.8; }
+.modal-footer-actions { display:flex; gap:12px; margin-top:24px; flex-wrap:wrap; }
+.btn-modal-wa { display:inline-flex; align-items:center; gap:8px; padding:11px 22px; background:#25d366; color:#fff; font-size:.875rem; font-weight:700; border-radius:9999px; transition:all .3s; }
+.btn-modal-wa:hover { background:#1da851; transform:translateY(-1px); }
+.btn-modal-close-text { padding:11px 22px; border:1.5px solid #e5e7eb; color:#4b5563; font-size:.875rem; font-weight:600; border-radius:9999px; transition:all .3s; }
+.btn-modal-close-text:hover { background:#f9fafb; }
+
+/* Berita clickable */
+.berita-featured[data-modal],.berita-item[data-modal] { cursor:pointer; }
+.berita-read { display:inline-flex; align-items:center; gap:6px; color:#16a34a; font-weight:600; font-size:.875rem; transition:all .3s; margin-top:8px; }
+.berita-read:hover { gap:10px; }
+.galeri-zoom-icon { display:block; font-size:1.2rem; margin-top:6px; }
+
+/* Hero stat links */
+a.hero-stat { text-decoration:none; transition:all .3s; }
+a.hero-stat:hover .stat-num { color:#4ade80; }
+a.hero-stat:hover { transform:translateY(-2px); }
+
+/* Ticker links */
+.ticker-link { font-size:.82rem; font-weight:500; color:rgba(255,255,255,.9); flex-shrink:0; text-decoration:none; transition:color .2s; }
+.ticker-link:hover { color:#4ade80; }
+.ticker-link::before { content:'•'; margin-right:12px; color:#4ade80; }
+
+/* Layanan footer */
+.layanan-footer { display:flex; align-items:center; justify-content:space-between; margin-top:16px; padding-top:14px; border-top:1px solid #e5e7eb; flex-wrap:wrap; gap:8px; }
+.layanan-card.featured .layanan-footer { border-top-color:rgba(255,255,255,.15); }
+.layanan-btn-wa { display:inline-flex; align-items:center; padding:7px 14px; background:#25d366; color:#fff; font-size:.78rem; font-weight:700; border-radius:9999px; transition:all .3s; white-space:nowrap; text-decoration:none; }
+.layanan-btn-wa:hover { background:#1da851; transform:translateY(-1px); }
+.layanan-btn-wa.featured-wa { background:rgba(255,255,255,.2); border:1.5px solid rgba(255,255,255,.4); }
+.layanan-btn-wa.featured-wa:hover { background:rgba(255,255,255,.35); }
+.layanan-btn-wa.teal-btn { background:#16a34a; }
+.layanan-btn-wa.teal-btn:hover { background:#15803d; }
+
+/* Wali WA */
+.btn-wali-wa { display:inline-flex; align-items:center; gap:8px; padding:9px 18px; margin-top:16px; background:#25d366; color:#fff; font-size:.82rem; font-weight:700; border-radius:9999px; transition:all .3s; text-decoration:none; width:100%; justify-content:center; }
+.btn-wali-wa:hover { background:#1da851; transform:translateY(-1px); }
+
+/* Potensi CTA */
+.potensi-cta-btn { display:inline-flex; align-items:center; gap:6px; padding:9px 18px; margin-top:16px; background:#16a34a; color:#fff; font-size:.82rem; font-weight:700; border-radius:9999px; transition:all .3s; text-decoration:none; width:100%; justify-content:center; }
+.potensi-cta-btn:hover { background:#15803d; transform:translateY(-1px); box-shadow:0 8px 32px rgba(22,163,74,.25); }
+
+/* Kontak card links */
+.kontak-card-link { display:flex; text-decoration:none; transition:all .3s; }
+.kontak-card-link:hover { border-color:#86efac !important; box-shadow:0 4px 20px rgba(22,163,74,.15); transform:translateX(4px); }
+.link-hint { font-size:.75rem; color:#16a34a; margin-left:4px; }
+.kontak-action-hint { display:block; font-size:.72rem; color:#16a34a; margin-top:6px; font-weight:500; }
+
+/* Coming soon */
+.coming-soon-btn { position:relative; }
+.coming-soon-btn::after { content:'Segera'; position:absolute; top:-8px; right:-6px; background:#f59e0b; color:#111; font-size:.55rem; font-weight:800; padding:1px 5px; border-radius:4px; line-height:1.4; letter-spacing:.3px; pointer-events:none; }
+
+/* Form actions */
+.form-actions { display:flex; gap:12px; flex-wrap:wrap; }
+.btn-submit { flex:1; min-width:160px; }
+.btn-wa-alt { display:inline-flex; align-items:center; gap:8px; padding:14px 20px; background:#25d366; color:#fff; font-size:.875rem; font-weight:700; border-radius:14px; transition:all .3s; text-decoration:none; white-space:nowrap; }
+.btn-wa-alt:hover { background:#1da851; transform:translateY(-1px); }
+.required { color:#e53e3e; }
+
+/* Map clickable */
+.map-clickable { text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:16px; transition:all .3s; }
+.map-clickable:hover { background:linear-gradient(135deg,#dcfce7,#f0fdf4); border-color:#86efac; transform:translateY(-2px); box-shadow:0 8px 32px rgba(22,163,74,.25); }
+.map-clickable p { color:#4b5563; }
+
+/* WhatsApp Float */
+.wa-float { position:fixed; bottom:90px; right:28px; display:flex; align-items:center; gap:10px; background:#25d366; color:#fff; padding:12px 20px 12px 16px; border-radius:9999px; box-shadow:0 6px 24px rgba(37,211,102,.4); z-index:800; text-decoration:none; font-weight:700; font-size:.875rem; transition:all .3s; animation:wa-pulse 3s ease-in-out infinite; }
+.wa-float:hover { background:#1da851; transform:translateY(-3px) scale(1.04); }
+@keyframes wa-pulse { 0%,100% { box-shadow:0 6px 24px rgba(37,211,102,.4); } 50% { box-shadow:0 6px 36px rgba(37,211,102,.65); } }
+
+/* Static info card */
+.info-card.static { cursor:default; }
+.footer-contact a:hover { color:#4ade80 !important; }
+
+@media (max-width:480px) {
+  .wa-float-label { display:none; }
+  .wa-float { padding:14px; border-radius:50%; bottom:90px; right:20px; }
+  .form-actions { flex-direction:column; }
+  .modal-content { padding:20px; }
+}
