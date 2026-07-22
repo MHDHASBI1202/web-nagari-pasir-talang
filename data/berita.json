@@ -1,0 +1,59 @@
+{
+  "berita": [
+    {
+      "id": "b001",
+      "judul": "Pembangunan Jalan Usaha Tani Jorong Pasir Talang Capai 70%",
+      "ringkasan": "Proyek pembangunan jalan usaha tani sepanjang 1,2 km di Jorong Pasir Talang telah mencapai progress 70%. Diharapkan selesai pada akhir Agustus 2025.",
+      "isi": "Proyek pembangunan jalan usaha tani sepanjang 1,2 km di Jorong Pasir Talang telah mencapai progress 70%. Diharapkan selesai pada akhir Agustus 2025 dan akan memperlancar akses petani ke lahan pertanian. Proyek ini didanai dari Dana Desa tahun anggaran 2025 dengan total anggaran Rp 480 juta. Pengerjaan dilakukan secara swakelola oleh masyarakat setempat dengan pengawasan dari Pendamping Desa.",
+      "kategori": "Pembangunan",
+      "tanggal": "2025-07-12",
+      "penulis": "Admin Nagari",
+      "gambar": "assets/images/hero.jpg",
+      "featured": true
+    },
+    {
+      "id": "b002",
+      "judul": "Penyaluran BLT Dana Desa Tahap III Dimulai",
+      "ringkasan": "Sebanyak 125 KPM menerima bantuan langsung tunai dari Dana Desa. Penyaluran dilakukan langsung di Kantor Nagari dengan dihadiri Wali Nagari.",
+      "isi": "Sebanyak 125 Keluarga Penerima Manfaat (KPM) di Nagari Pasir Talang menerima Bantuan Langsung Tunai (BLT) dari Dana Desa tahap ketiga tahun 2025. Penyaluran dilakukan langsung di Kantor Nagari dengan dihadiri oleh Wali Nagari, BPD, dan pendamping desa. Setiap KPM menerima Rp 300.000 per bulan.",
+      "kategori": "Sosial",
+      "tanggal": "2025-07-08",
+      "penulis": "Admin Nagari",
+      "gambar": "assets/images/sawah.jpg",
+      "featured": false
+    },
+    {
+      "id": "b003",
+      "judul": "Musyawarah Nagari Tetapkan RPJMNag 2025-2031",
+      "ringkasan": "Dengan melibatkan seluruh elemen masyarakat dari 7 jorong, Musyawarah Nagari berhasil menetapkan Rencana Pembangunan Jangka Menengah Nagari.",
+      "isi": "Dengan melibatkan seluruh elemen masyarakat dari 7 jorong, Musyawarah Nagari berhasil menetapkan Rencana Pembangunan Jangka Menengah Nagari (RPJMNag) periode 2025–2031. Dokumen ini menjadi panduan pembangunan selama 6 tahun ke depan, mencakup bidang infrastruktur, ekonomi, sosial, dan lingkungan.",
+      "kategori": "Pemerintahan",
+      "tanggal": "2025-07-03",
+      "penulis": "Admin Nagari",
+      "gambar": "assets/images/rumah_gadang.jpg",
+      "featured": false
+    },
+    {
+      "id": "b004",
+      "judul": "BUMNag Pasir Talang Mandiri Raih Omzet Rp 150 Juta",
+      "ringkasan": "Berkat pengelolaan yang profesional, Badan Usaha Milik Nagari berhasil mencatat omzet positif sebesar Rp 150 juta pada semester pertama 2025.",
+      "isi": "Berkat pengelolaan yang profesional dan inovatif, Badan Usaha Milik Nagari (BUMNag) Pasir Talang Mandiri berhasil mencatat omzet positif sebesar Rp 150 juta pada semester pertama 2025. Unit usaha yang dikelola meliputi simpan pinjam, pengelolaan air bersih, dan usaha perdagangan hasil pertanian lokal.",
+      "kategori": "Ekonomi",
+      "tanggal": "2025-06-28",
+      "penulis": "Admin Nagari",
+      "gambar": "assets/images/kerajinan.jpg",
+      "featured": false
+    },
+    {
+      "id": "b005",
+      "judul": "Posyandu Aktif Layani Ratusan Balita dan Lansia",
+      "ringkasan": "Program Posyandu terintegrasi di Nagari Pasir Talang kini melayani lebih dari 300 balita dan 150 lansia setiap bulannya.",
+      "isi": "Program Posyandu terintegrasi di Nagari Pasir Talang kini melayani lebih dari 300 balita dan 150 lansia setiap bulannya. Kegiatan mencakup penimbangan, imunisasi, pemberian vitamin, dan konsultasi kesehatan gratis. Program ini berjalan atas dukungan Dana Desa dan tenaga kesehatan dari Puskesmas Sungai Pagu.",
+      "kategori": "Kesehatan",
+      "tanggal": "2025-06-20",
+      "penulis": "Admin Nagari",
+      "gambar": "assets/images/sawah.jpg",
+      "featured": false
+    }
+  ]
+}

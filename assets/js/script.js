@@ -291,3 +291,188 @@ function resetForm() {
     if (btn) { btn.disabled = false; btn.style.opacity = ''; }
   }
 }
+
+// --- BERITA DINAMIS ---------------------------
+const BERITA_STORAGE_KEY = 'npt_berita';
+const BERITA_PER_PAGE = 5; // 1 featured + 4 side
+
+let allBerita = [];
+let filteredBerita = [];
+let currentPage = 1;
+let activeKat = '';
+
+async function loadBerita() {
+  // 1. Coba dari localStorage dulu (data dari admin)
+  const raw = localStorage.getItem(BERITA_STORAGE_KEY);
+  if (raw) {
+    try { allBerita = JSON.parse(raw); }
+    catch { allBerita = []; }
+  }
+
+  // 2. Kalau localStorage kosong, fetch dari JSON file
+  if (!allBerita || allBerita.length === 0) {
+    try {
+      const res  = await fetch('data/berita.json?t=' + Date.now());
+      const json = await res.json();
+      allBerita  = json.berita || [];
+      // Simpan ke localStorage supaya sinkron dengan admin
+      localStorage.setItem(BERITA_STORAGE_KEY, JSON.stringify(allBerita));
+    } catch (e) {
+      allBerita = [];
+    }
+  }
+
+  // Sort by date newest first
+  allBerita.sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
+
+  renderBerita();
+  setupBeritaFilter();
+}
+
+function setupBeritaFilter() {
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeKat  = btn.dataset.kat;
+      currentPage = 1;
+      renderBerita();
+    });
+  });
+}
+
+function renderBerita() {
+  filteredBerita = activeKat
+    ? allBerita.filter(b => b.kategori === activeKat)
+    : [...allBerita];
+
+  const loading = document.getElementById('beritaLoading');
+  const content = document.getElementById('beritaContent');
+  const empty   = document.getElementById('beritaEmpty');
+  const grid    = document.getElementById('beritaGrid');
+  const moreWrap= document.getElementById('beritaMoreWrap');
+
+  loading.style.display = 'none';
+
+  if (!filteredBerita.length) {
+    content.style.display = 'none';
+    empty.style.display   = 'block';
+    return;
+  }
+
+  empty.style.display   = 'none';
+  content.style.display = 'block';
+
+  // Slice for current page
+  const total   = filteredBerita.length;
+  const showing = filteredBerita.slice(0, currentPage * BERITA_PER_PAGE);
+
+  // Featured = first with featured flag, else just first
+  const featured = showing.find(b => b.featured) || showing[0];
+  const sideList = showing.filter(b => b.id !== featured.id).slice(0, 4);
+
+  grid.innerHTML = `
+    <div class="berita-featured"
+         data-modal="true"
+         data-img="${featured.gambar}"
+         data-cat="${featured.kategori}"
+         data-date="${formatBeritaDate(featured.tanggal)}"
+         data-author="${featured.penulis || 'Admin Nagari'}"
+         data-title="${escapeHtml(featured.judul)}"
+         data-body="${escapeHtml(featured.isi)}"
+         role="button" tabindex="0">
+      <div class="berita-img-wrap">
+        <img src="${featured.gambar}" alt="${escapeHtml(featured.judul)}" loading="lazy"
+             onerror="this.src='assets/images/hero.jpg'" />
+        <span class="berita-cat-badge">${featured.kategori}</span>
+      </div>
+      <div class="berita-content">
+        <div class="berita-meta">
+          <span class="meta-date">&#128197; ${formatBeritaDate(featured.tanggal)}</span>
+          <span class="meta-author">&#128100; ${featured.penulis || 'Admin Nagari'}</span>
+        </div>
+        <h3 class="berita-title">${escapeHtml(featured.judul)}</h3>
+        <p class="berita-excerpt">${escapeHtml(featured.ringkasan)}</p>
+        <span class="berita-read">Baca Selengkapnya
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </div>
+    <div class="berita-list">
+      ${sideList.map(b => `
+        <div class="berita-item"
+             data-modal="true"
+             data-img="${b.gambar}"
+             data-cat="${b.kategori}"
+             data-date="${formatBeritaDate(b.tanggal)}"
+             data-author="${b.penulis || 'Admin Nagari'}"
+             data-title="${escapeHtml(b.judul)}"
+             data-body="${escapeHtml(b.isi)}"
+             role="button" tabindex="0">
+          <div class="berita-item-img">
+            <img src="${b.gambar}" alt="${escapeHtml(b.judul)}" loading="lazy"
+                 onerror="this.src='assets/images/hero.jpg'" />
+          </div>
+          <div class="berita-item-content">
+            <span class="berita-cat ${b.kategori}">${b.kategori}</span>
+            <h4>${escapeHtml(b.judul)}</h4>
+            <p>${escapeHtml(b.ringkasan.slice(0, 90))}${b.ringkasan.length > 90 ? '...' : ''}</p>
+            <span class="meta-date">&#128197; ${formatBeritaDate(b.tanggal)}</span>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+
+  // Re-attach modal events to newly rendered berita
+  grid.querySelectorAll('[data-modal="true"]').forEach(el => {
+    el.addEventListener('click', () => openModal({
+      img:    el.dataset.img,
+      cat:    el.dataset.cat,
+      date:   el.dataset.date,
+      author: el.dataset.author,
+      title:  el.dataset.title,
+      body:   el.dataset.body,
+    }));
+    el.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
+    });
+  });
+
+  // Re-attach reveal animation
+  grid.querySelectorAll('.berita-item, .berita-featured').forEach(el => {
+    el.classList.add('reveal');
+    revealObserver.observe(el);
+  });
+
+  // Show/hide load more
+  const hasMore = total > showing.length;
+  moreWrap.style.display = hasMore ? 'block' : 'none';
+}
+
+function loadMoreBerita() {
+  currentPage++;
+  renderBerita();
+}
+
+function formatBeritaDate(str) {
+  if (!str) return '-';
+  try {
+    return new Date(str).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+  } catch { return str; }
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+// Load berita when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  loadBerita();
+});

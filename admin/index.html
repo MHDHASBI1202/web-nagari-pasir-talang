@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel – Nagari Pasir Talang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #16a34a; --green-dark: #15803d; --green-light: #dcfce7;
+      --gold: #d97706; --red: #dc2626; --red-light: #fee2e2;
+      --bg: #f8fafc; --card: #ffffff;
+      --gray-50: #f9fafb; --gray-100: #f3f4f6; --gray-200: #e5e7eb;
+      --gray-400: #9ca3af; --gray-600: #4b5563; --gray-900: #111827;
+      --radius: 12px; --radius-sm: 8px;
+      --shadow: 0 1px 3px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.06);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,.1);
+    }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--gray-900); min-height: 100vh; }
+
+    /* ─── Login Screen ─── */
+    #loginScreen {
+      position: fixed; inset: 0; background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+      display: flex; align-items: center; justify-content: center; z-index: 1000; padding: 20px;
+    }
+    .login-box {
+      background: #fff; border-radius: 20px; padding: 48px 40px; width: 100%; max-width: 420px;
+      box-shadow: 0 25px 50px rgba(0,0,0,.3); text-align: center;
+    }
+    .login-logo { width: 64px; height: 64px; background: linear-gradient(135deg, var(--green), var(--green-dark)); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+    .login-logo svg { width: 32px; height: 32px; fill: #fff; }
+    .login-box h2 { font-size: 1.5rem; font-weight: 800; color: var(--gray-900); margin-bottom: 4px; }
+    .login-box p { font-size: .875rem; color: var(--gray-600); margin-bottom: 32px; }
+    .login-input { width: 100%; padding: 12px 16px; border: 1.5px solid var(--gray-200); border-radius: var(--radius-sm); font-size: 1rem; font-family: inherit; margin-bottom: 12px; transition: border-color .2s; outline: none; }
+    .login-input:focus { border-color: var(--green); }
+    .login-btn { width: 100%; padding: 13px; background: var(--green); color: #fff; font-size: 1rem; font-weight: 700; border-radius: var(--radius-sm); cursor: pointer; transition: background .2s; }
+    .login-btn:hover { background: var(--green-dark); }
+    .login-error { color: var(--red); font-size: .8rem; margin-top: 8px; display: none; }
+
+    /* ─── Header ─── */
+    .admin-header {
+      background: #fff; border-bottom: 1px solid var(--gray-200);
+      padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow);
+    }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .header-logo { width: 36px; height: 36px; background: linear-gradient(135deg, var(--green), var(--green-dark)); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .header-logo span { color: #fff; font-weight: 800; font-size: 1rem; }
+    .header-title { font-weight: 800; font-size: 1rem; color: var(--gray-900); }
+    .header-title small { display: block; font-size: .7rem; font-weight: 500; color: var(--gray-400); }
+    .header-actions { display: flex; align-items: center; gap: 12px; }
+    .btn-home { padding: 8px 16px; background: var(--gray-100); color: var(--gray-600); border-radius: 8px; font-size: .8rem; font-weight: 600; text-decoration: none; transition: all .2s; }
+    .btn-home:hover { background: var(--gray-200); }
+    .btn-logout { padding: 8px 16px; background: var(--red-light); color: var(--red); border-radius: 8px; font-size: .8rem; font-weight: 600; cursor: pointer; transition: all .2s; }
+    .btn-logout:hover { background: #fecaca; }
+
+    /* ─── Layout ─── */
+    .admin-body { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+
+    /* ─── Stats Bar ─── */
+    .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+    .stat-card { background: var(--card); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); display: flex; align-items: center; gap: 16px; }
+    .stat-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+    .stat-icon.green { background: var(--green-light); }
+    .stat-icon.blue  { background: #dbeafe; }
+    .stat-icon.gold  { background: #fef3c7; }
+    .stat-icon.purple{ background: #ede9fe; }
+    .stat-val { font-size: 1.8rem; font-weight: 800; color: var(--gray-900); line-height: 1; }
+    .stat-lbl { font-size: .75rem; color: var(--gray-400); font-weight: 500; margin-top: 2px; }
+
+    /* ─── Main Grid ─── */
+    .main-grid { display: grid; grid-template-columns: 1fr 380px; gap: 24px; }
+
+    /* ─── Section titles ─── */
+    .section-title { font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .section-title::before { content: ''; display: inline-block; width: 4px; height: 18px; background: var(--green); border-radius: 2px; }
+    .section-count { background: var(--green-light); color: var(--green-dark); font-size: .7rem; font-weight: 700; padding: 2px 8px; border-radius: 9999px; margin-left: 4px; }
+
+    /* ─── News List ─── */
+    .news-panel { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .news-toolbar { padding: 16px 20px; border-bottom: 1px solid var(--gray-100); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .search-input { flex: 1; min-width: 180px; padding: 8px 14px; border: 1.5px solid var(--gray-200); border-radius: 8px; font-size: .875rem; font-family: inherit; outline: none; transition: border-color .2s; }
+    .search-input:focus { border-color: var(--green); }
+    .filter-select { padding: 8px 12px; border: 1.5px solid var(--gray-200); border-radius: 8px; font-size: .875rem; font-family: inherit; outline: none; background: #fff; cursor: pointer; }
+    .btn-add { padding: 8px 18px; background: var(--green); color: #fff; border-radius: 8px; font-size: .875rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background .2s; white-space: nowrap; }
+    .btn-add:hover { background: var(--green-dark); }
+
+    .news-list { max-height: 560px; overflow-y: auto; }
+    .news-list::-webkit-scrollbar { width: 4px; }
+    .news-list::-webkit-scrollbar-thumb { background: var(--gray-200); border-radius: 4px; }
+
+    .news-item { padding: 16px 20px; border-bottom: 1px solid var(--gray-100); display: flex; gap: 14px; align-items: flex-start; transition: background .15s; cursor: pointer; }
+    .news-item:hover { background: var(--gray-50); }
+    .news-item:last-child { border-bottom: none; }
+    .news-item-img { width: 72px; height: 54px; border-radius: 8px; object-fit: cover; flex-shrink: 0; background: var(--gray-100); }
+    .news-item-body { flex: 1; min-width: 0; }
+    .news-item-meta { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; flex-wrap: wrap; }
+    .cat-badge { font-size: .65rem; font-weight: 700; padding: 2px 8px; border-radius: 9999px; }
+    .cat-badge.Pembangunan { background: #dbeafe; color: #1e40af; }
+    .cat-badge.Sosial      { background: var(--green-light); color: #166534; }
+    .cat-badge.Pemerintahan{ background: #ede9fe; color: #5b21b6; }
+    .cat-badge.Ekonomi     { background: #fef3c7; color: #92400e; }
+    .cat-badge.Kesehatan   { background: #fce7f3; color: #9d174d; }
+    .cat-badge.Budaya      { background: #fef9c3; color: #713f12; }
+    .cat-badge.Lainnya     { background: var(--gray-100); color: var(--gray-600); }
+    .badge-featured { background: var(--green); color: #fff; font-size: .6rem; padding: 2px 6px; border-radius: 4px; font-weight: 700; }
+    .news-item-title { font-size: .875rem; font-weight: 700; color: var(--gray-900); line-height: 1.35; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .news-item-date { font-size: .7rem; color: var(--gray-400); margin-top: 4px; }
+    .news-item-actions { display: flex; gap: 6px; flex-shrink: 0; }
+    .btn-edit, .btn-del, .btn-feat { width: 30px; height: 30px; border-radius: 6px; font-size: .8rem; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all .2s; }
+    .btn-edit { background: #dbeafe; color: #1e40af; }
+    .btn-edit:hover { background: #bfdbfe; }
+    .btn-del  { background: var(--red-light); color: var(--red); }
+    .btn-del:hover  { background: #fecaca; }
+    .btn-feat { background: #fef3c7; color: #92400e; }
+    .btn-feat.active { background: var(--green); color: #fff; }
+    .btn-feat:hover { opacity: .85; }
+
+    .empty-state { text-align: center; padding: 60px 20px; color: var(--gray-400); }
+    .empty-state .empty-icon { font-size: 3rem; margin-bottom: 12px; }
+
+    /* ─── Form Panel ─── */
+    .form-panel { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .form-panel-header { padding: 16px 20px; border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; justify-content: space-between; }
+    .form-panel-title { font-weight: 700; font-size: .9rem; color: var(--gray-900); }
+    .btn-reset { font-size: .75rem; color: var(--gray-400); cursor: pointer; background: var(--gray-100); padding: 5px 10px; border-radius: 6px; transition: all .2s; }
+    .btn-reset:hover { color: var(--gray-600); background: var(--gray-200); }
+
+    .form-body { padding: 20px; }
+    .form-group { margin-bottom: 16px; }
+    .form-label { display: block; font-size: .78rem; font-weight: 600; color: var(--gray-600); margin-bottom: 6px; }
+    .form-label .req { color: var(--red); }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; padding: 10px 12px; border: 1.5px solid var(--gray-200); border-radius: 8px;
+      font-size: .875rem; font-family: inherit; outline: none; transition: border-color .2s; background: #fff; color: var(--gray-900);
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--green); }
+    .form-textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
+    .form-hint { font-size: .7rem; color: var(--gray-400); margin-top: 4px; }
+    .img-preview { width: 100%; aspect-ratio: 16/7; object-fit: cover; border-radius: 8px; border: 1.5px solid var(--gray-200); display: none; margin-top: 8px; }
+    .img-preview.show { display: block; }
+
+    .form-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .switch-row { display: flex; align-items: center; justify-content: space-between; background: var(--gray-50); padding: 12px; border-radius: 8px; }
+    .switch-label { font-size: .82rem; font-weight: 600; color: var(--gray-700); }
+    .switch { position: relative; width: 44px; height: 24px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider { position: absolute; inset: 0; background: var(--gray-200); border-radius: 9999px; cursor: pointer; transition: .3s; }
+    .slider::before { content: ''; position: absolute; width: 18px; height: 18px; left: 3px; top: 3px; background: #fff; border-radius: 50%; transition: .3s; }
+    .switch input:checked + .slider { background: var(--green); }
+    .switch input:checked + .slider::before { transform: translateX(20px); }
+
+    .btn-save { width: 100%; padding: 13px; background: var(--green); color: #fff; font-size: .9rem; font-weight: 700; border-radius: 8px; cursor: pointer; transition: background .2s; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 4px; }
+    .btn-save:hover { background: var(--green-dark); }
+    .btn-save.editing { background: #2563eb; }
+    .btn-save.editing:hover { background: #1d4ed8; }
+
+    /* ─── Export ─── */
+    .export-panel { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; margin-top: 24px; }
+    .export-title { font-size: .875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 12px; }
+    .export-desc { font-size: .78rem; color: var(--gray-600); margin-bottom: 14px; line-height: 1.6; }
+    .export-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-export { padding: 9px 18px; font-size: .8rem; font-weight: 700; border-radius: 8px; cursor: pointer; transition: all .2s; display: flex; align-items: center; gap: 6px; }
+    .btn-export.json  { background: #dbeafe; color: #1e40af; }
+    .btn-export.json:hover  { background: #bfdbfe; }
+    .btn-export.clear { background: var(--red-light); color: var(--red); }
+    .btn-export.clear:hover { background: #fecaca; }
+
+    /* ─── Toast ─── */
+    #adminToast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--gray-900); color: #fff; padding: 12px 24px; border-radius: 9999px; font-size: .875rem; font-weight: 500; z-index: 9999; opacity: 0; transition: opacity .3s, transform .3s; white-space: nowrap; box-shadow: 0 8px 32px rgba(0,0,0,.25); }
+    #adminToast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    #adminToast.green { background: var(--green); }
+    #adminToast.red   { background: var(--red); }
+    #adminToast.gold  { background: var(--gold); color: #111; }
+
+    /* ─── Delete Confirm ─── */
+    .confirm-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.5); backdrop-filter: blur(4px); z-index: 9990; display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; pointer-events: none; transition: opacity .3s; }
+    .confirm-overlay.show { opacity: 1; pointer-events: auto; }
+    .confirm-box { background: #fff; border-radius: 16px; padding: 32px; max-width: 380px; width: 100%; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,.2); }
+    .confirm-icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .confirm-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
+    .confirm-desc { font-size: .875rem; color: var(--gray-600); margin-bottom: 24px; line-height: 1.6; }
+    .confirm-actions { display: flex; gap: 12px; }
+    .btn-cancel-conf { flex: 1; padding: 11px; background: var(--gray-100); color: var(--gray-600); border-radius: 8px; font-weight: 700; cursor: pointer; transition: all .2s; }
+    .btn-cancel-conf:hover { background: var(--gray-200); }
+    .btn-del-conf { flex: 1; padding: 11px; background: var(--red); color: #fff; border-radius: 8px; font-weight: 700; cursor: pointer; transition: all .2s; }
+    .btn-del-conf:hover { background: #b91c1c; }
+
+    @media (max-width: 1024px) { .main-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) { .stats-bar { grid-template-columns: repeat(2, 1fr); } .admin-body { padding: 20px 16px; } }
+    @media (max-width: 480px) { .stats-bar { grid-template-columns: 1fr 1fr; } .form-row2 { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- ========== LOGIN ========== -->
+<div id="loginScreen">
+  <div class="login-box">
+    <div class="login-logo">
+      <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+    </div>
+    <h2>Admin Panel</h2>
+    <p>Nagari Pasir Talang &mdash; Sistem Manajemen Berita</p>
+    <input type="text" id="loginUser" class="login-input" placeholder="Username" autocomplete="username" />
+    <input type="password" id="loginPass" class="login-input" placeholder="Password" autocomplete="current-password" />
+    <button class="login-btn" onclick="doLogin()">Masuk</button>
+    <p class="login-error" id="loginError">Username atau password salah.</p>
+  </div>
+</div>
+
+<!-- ========== HEADER ========== -->
+<header class="admin-header">
+  <div class="header-brand">
+    <div class="header-logo"><span>N</span></div>
+    <div class="header-title">
+      Admin Panel
+      <small>Nagari Pasir Talang &mdash; Manajemen Berita</small>
+    </div>
+  </div>
+  <div class="header-actions">
+    <a href="../index.html" class="btn-home" target="_blank">&#127968; Lihat Website</a>
+    <button class="btn-logout" onclick="doLogout()">Keluar</button>
+  </div>
+</header>
+
+<!-- ========== BODY ========== -->
+<main class="admin-body">
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-icon green">📰</div>
+      <div><div class="stat-val" id="statTotal">0</div><div class="stat-lbl">Total Berita</div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon gold">⭐</div>
+      <div><div class="stat-val" id="statFeatured">0</div><div class="stat-lbl">Berita Utama</div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon blue">📂</div>
+      <div><div class="stat-val" id="statKat">0</div><div class="stat-lbl">Kategori</div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon purple">🗓️</div>
+      <div><div class="stat-val" id="statBulan">0</div><div class="stat-lbl">Berita Bulan Ini</div></div>
+    </div>
+  </div>
+
+  <div class="main-grid">
+    <!-- Left: Daftar Berita -->
+    <div>
+      <div class="section-title">
+        Daftar Berita <span class="section-count" id="listCount">0</span>
+      </div>
+      <div class="news-panel">
+        <div class="news-toolbar">
+          <input type="text" class="search-input" id="searchInput" placeholder="&#128269; Cari judul berita..." oninput="renderList()" />
+          <select class="filter-select" id="filterKat" onchange="renderList()">
+            <option value="">Semua Kategori</option>
+            <option>Pembangunan</option>
+            <option>Sosial</option>
+            <option>Pemerintahan</option>
+            <option>Ekonomi</option>
+            <option>Kesehatan</option>
+            <option>Budaya</option>
+            <option>Lainnya</option>
+          </select>
+          <button class="btn-add" onclick="resetForm()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Tambah Berita
+          </button>
+        </div>
+        <div class="news-list" id="newsList"></div>
+      </div>
+
+      <!-- Export -->
+      <div class="export-panel">
+        <div class="export-title">📤 Ekspor Data</div>
+        <div class="export-desc">
+          Unduh data berita sebagai file <code>berita.json</code>, lalu letakkan di folder <code>data/</code> pada website untuk memperbarui berita di halaman utama.
+        </div>
+        <div class="export-actions">
+          <button class="btn-export json" onclick="exportJSON()">
+            ⬇️ Unduh berita.json
+          </button>
+          <button class="btn-export clear" onclick="showDeleteAll()">
+            🗑️ Hapus Semua Data
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Form -->
+    <div>
+      <div class="section-title" id="formSectionTitle">Tambah Berita Baru</div>
+      <div class="form-panel">
+        <div class="form-panel-header">
+          <span class="form-panel-title" id="formTitle">Form Berita Baru</span>
+          <button class="btn-reset" onclick="resetForm()">Reset</button>
+        </div>
+        <div class="form-body">
+          <input type="hidden" id="editId" value="" />
+
+          <div class="form-group">
+            <label class="form-label">Judul Berita <span class="req">*</span></label>
+            <input type="text" class="form-input" id="fJudul" placeholder="Judul berita yang menarik..." />
+          </div>
+
+          <div class="form-row2">
+            <div class="form-group">
+              <label class="form-label">Kategori <span class="req">*</span></label>
+              <select class="form-select" id="fKat">
+                <option value="">-- Pilih --</option>
+                <option>Pembangunan</option>
+                <option>Sosial</option>
+                <option>Pemerintahan</option>
+                <option>Ekonomi</option>
+                <option>Kesehatan</option>
+                <option>Budaya</option>
+                <option>Lainnya</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Tanggal <span class="req">*</span></label>
+              <input type="date" class="form-input" id="fTanggal" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Nama Penulis</label>
+            <input type="text" class="form-input" id="fPenulis" placeholder="Admin Nagari" value="Admin Nagari" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">URL Gambar</label>
+            <input type="text" class="form-input" id="fGambar" placeholder="assets/images/hero.jpg" oninput="previewImg()" />
+            <p class="form-hint">Gunakan path relatif seperti <code>assets/images/nama-file.jpg</code></p>
+            <img id="imgPreview" class="img-preview" alt="Preview" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Ringkasan <span class="req">*</span></label>
+            <textarea class="form-textarea" id="fRingkasan" placeholder="Ringkasan singkat berita (tampil di kartu berita)..." style="min-height:80px"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Isi Lengkap Berita <span class="req">*</span></label>
+            <textarea class="form-textarea" id="fIsi" placeholder="Tulis isi berita selengkapnya di sini..." style="min-height:140px"></textarea>
+          </div>
+
+          <div class="form-group">
+            <div class="switch-row">
+              <span class="switch-label">⭐ Jadikan Berita Utama (Featured)</span>
+              <label class="switch">
+                <input type="checkbox" id="fFeatured" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <button class="btn-save" id="btnSave" onclick="saveBerita()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17,21 17,13 7,13 7,21"/><polyline points="7,3 7,8 15,8"/></svg>
+            Simpan Berita
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ========== DELETE CONFIRM ========== -->
+<div class="confirm-overlay" id="confirmOverlay">
+  <div class="confirm-box">
+    <div class="confirm-icon">🗑️</div>
+    <div class="confirm-title" id="confirmTitle">Hapus Berita?</div>
+    <div class="confirm-desc" id="confirmDesc">Tindakan ini tidak dapat dibatalkan.</div>
+    <div class="confirm-actions">
+      <button class="btn-cancel-conf" onclick="hideConfirm()">Batal</button>
+      <button class="btn-del-conf" id="confirmOkBtn">Ya, Hapus</button>
+    </div>
+  </div>
+</div>
+
+<div id="adminToast"></div>
+
+<script>
+  // ─── Auth ─────────────────────────────────────
+  const USERS = { 'admin': 'nagari2025', 'petugas': 'pasirtalang' };
+  // ⚠️  Ganti password di atas sebelum deploy!
+
+  function doLogin() {
+    const u = document.getElementById('loginUser').value.trim();
+    const p = document.getElementById('loginPass').value;
+    if (USERS[u] && USERS[u] === p) {
+      sessionStorage.setItem('npt_admin', '1');
+      document.getElementById('loginScreen').style.display = 'none';
+      init();
+    } else {
+      const err = document.getElementById('loginError');
+      err.style.display = 'block';
+      document.getElementById('loginPass').value = '';
+      setTimeout(() => err.style.display = 'none', 3000);
+    }
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && document.getElementById('loginScreen').style.display !== 'none') doLogin();
+  });
+
+  function doLogout() {
+    sessionStorage.removeItem('npt_admin');
+    location.reload();
+  }
+
+  // ─── Storage ───────────────────────────────────
+  const STORAGE_KEY = 'npt_berita';
+
+  function loadData() {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : null;
+  }
+
+  function saveData(arr) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
+  }
+
+  async function seedFromJSON() {
+    try {
+      const res = await fetch('../data/berita.json?t=' + Date.now());
+      if (!res.ok) throw new Error('fail');
+      const json = await res.json();
+      saveData(json.berita || []);
+      return json.berita || [];
+    } catch {
+      return [];
+    }
+  }
+
+  // ─── State ─────────────────────────────────────
+  let beritaList = [];
+  let deleteTarget = null;
+
+  async function init() {
+    let data = loadData();
+    if (!data) { data = await seedFromJSON(); }
+    beritaList = data;
+    setTodayDate();
+    renderList();
+    renderStats();
+  }
+
+  // ─── Stats ─────────────────────────────────────
+  function renderStats() {
+    const now = new Date();
+    document.getElementById('statTotal').textContent    = beritaList.length;
+    document.getElementById('statFeatured').textContent = beritaList.filter(b => b.featured).length;
+    document.getElementById('statKat').textContent      = [...new Set(beritaList.map(b => b.kategori))].length;
+    document.getElementById('statBulan').textContent    = beritaList.filter(b => {
+      const d = new Date(b.tanggal);
+      return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
+    }).length;
+  }
+
+  // ─── Render List ───────────────────────────────
+  function renderList() {
+    const q   = document.getElementById('searchInput').value.toLowerCase();
+    const kat = document.getElementById('filterKat').value;
+    const filtered = beritaList.filter(b =>
+      (!q   || b.judul.toLowerCase().includes(q)) &&
+      (!kat || b.kategori === kat)
+    );
+    document.getElementById('listCount').textContent = filtered.length;
+    const el = document.getElementById('newsList');
+    if (!filtered.length) {
+      el.innerHTML = `<div class="empty-state"><div class="empty-icon">📭</div><p>Tidak ada berita ditemukan.</p></div>`;
+      return;
+    }
+    el.innerHTML = filtered.map(b => `
+      <div class="news-item" onclick="editBerita('${b.id}')">
+        <img class="news-item-img" src="../${b.gambar}" onerror="this.src='https://placehold.co/72x54/dcfce7/16a34a?text=NPT'" alt="${b.judul}" />
+        <div class="news-item-body">
+          <div class="news-item-meta">
+            <span class="cat-badge ${b.kategori || 'Lainnya'}">${b.kategori || 'Lainnya'}</span>
+            ${b.featured ? '<span class="badge-featured">⭐ Utama</span>' : ''}
+          </div>
+          <div class="news-item-title">${b.judul}</div>
+          <div class="news-item-date">📅 ${formatDate(b.tanggal)} &bull; ✍️ ${b.penulis || 'Admin'}</div>
+        </div>
+        <div class="news-item-actions" onclick="event.stopPropagation()">
+          <button class="btn-feat ${b.featured ? 'active' : ''}" title="Toggle Featured" onclick="toggleFeatured('${b.id}')">⭐</button>
+          <button class="btn-edit" title="Edit" onclick="editBerita('${b.id}')">✏️</button>
+          <button class="btn-del"  title="Hapus" onclick="confirmDelete('${b.id}')">🗑️</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // ─── Form ──────────────────────────────────────
+  function setTodayDate() {
+    const el = document.getElementById('fTanggal');
+    if (!el.value) el.value = new Date().toISOString().slice(0, 10);
+  }
+
+  function resetForm() {
+    document.getElementById('editId').value   = '';
+    document.getElementById('fJudul').value   = '';
+    document.getElementById('fKat').value     = '';
+    setTodayDate();
+    document.getElementById('fPenulis').value = 'Admin Nagari';
+    document.getElementById('fGambar').value  = '';
+    document.getElementById('fRingkasan').value = '';
+    document.getElementById('fIsi').value     = '';
+    document.getElementById('fFeatured').checked = false;
+    document.getElementById('imgPreview').className = 'img-preview';
+    document.getElementById('btnSave').className = 'btn-save';
+    document.getElementById('formTitle').textContent = 'Form Berita Baru';
+    document.getElementById('formSectionTitle').childNodes[0].nodeValue = 'Tambah Berita Baru ';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function editBerita(id) {
+    const b = beritaList.find(x => x.id === id);
+    if (!b) return;
+    document.getElementById('editId').value   = id;
+    document.getElementById('fJudul').value   = b.judul;
+    document.getElementById('fKat').value     = b.kategori;
+    document.getElementById('fTanggal').value = b.tanggal;
+    document.getElementById('fPenulis').value = b.penulis || 'Admin Nagari';
+    document.getElementById('fGambar').value  = b.gambar || '';
+    document.getElementById('fRingkasan').value = b.ringkasan;
+    document.getElementById('fIsi').value     = b.isi;
+    document.getElementById('fFeatured').checked = b.featured || false;
+    previewImg();
+    document.getElementById('btnSave').className = 'btn-save editing';
+    document.getElementById('formTitle').textContent = 'Edit Berita';
+    document.getElementById('formSectionTitle').childNodes[0].nodeValue = 'Edit Berita ';
+    document.querySelector('.form-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function previewImg() {
+    const val = document.getElementById('fGambar').value.trim();
+    const img = document.getElementById('imgPreview');
+    if (val) { img.src = '../' + val; img.className = 'img-preview show'; }
+    else { img.className = 'img-preview'; }
+  }
+
+  function saveBerita() {
+    const judul    = document.getElementById('fJudul').value.trim();
+    const kat      = document.getElementById('fKat').value;
+    const tanggal  = document.getElementById('fTanggal').value;
+    const penulis  = document.getElementById('fPenulis').value.trim() || 'Admin Nagari';
+    const gambar   = document.getElementById('fGambar').value.trim() || 'assets/images/hero.jpg';
+    const ringkasan= document.getElementById('fRingkasan').value.trim();
+    const isi      = document.getElementById('fIsi').value.trim();
+    const featured = document.getElementById('fFeatured').checked;
+
+    if (!judul || !kat || !tanggal || !ringkasan || !isi) {
+      toast('Lengkapi semua field yang wajib diisi!', 'red'); return;
+    }
+
+    const editId = document.getElementById('editId').value;
+    if (editId) {
+      const idx = beritaList.findIndex(x => x.id === editId);
+      if (idx > -1) beritaList[idx] = { ...beritaList[idx], judul, kategori: kat, tanggal, penulis, gambar, ringkasan, isi, featured };
+      toast('Berita berhasil diperbarui! ✅', 'green');
+    } else {
+      const newItem = { id: 'b' + Date.now(), judul, kategori: kat, tanggal, penulis, gambar, ringkasan, isi, featured };
+      beritaList.unshift(newItem);
+      toast('Berita baru berhasil disimpan! ✅', 'green');
+    }
+
+    saveData(beritaList);
+    renderList();
+    renderStats();
+    resetForm();
+  }
+
+  function toggleFeatured(id) {
+    const b = beritaList.find(x => x.id === id);
+    if (!b) return;
+    b.featured = !b.featured;
+    saveData(beritaList);
+    renderList();
+    renderStats();
+    toast(b.featured ? '⭐ Dijadikan berita utama!' : 'Dihapus dari berita utama.', b.featured ? 'green' : 'gold');
+  }
+
+  // ─── Delete ────────────────────────────────────
+  function confirmDelete(id) {
+    const b = beritaList.find(x => x.id === id);
+    deleteTarget = id;
+    document.getElementById('confirmDesc').textContent = `"${b?.judul || 'Berita ini'}" akan dihapus permanen.`;
+    document.getElementById('confirmOkBtn').onclick = () => deleteBerita(id);
+    document.getElementById('confirmOverlay').classList.add('show');
+  }
+
+  function hideConfirm() { document.getElementById('confirmOverlay').classList.remove('show'); deleteTarget = null; }
+
+  function deleteBerita(id) {
+    beritaList = beritaList.filter(x => x.id !== id);
+    saveData(beritaList);
+    renderList();
+    renderStats();
+    hideConfirm();
+    toast('Berita berhasil dihapus.', 'red');
+  }
+
+  function showDeleteAll() {
+    document.getElementById('confirmTitle').textContent = 'Hapus Semua Berita?';
+    document.getElementById('confirmDesc').textContent  = 'Semua data berita akan dihapus dari localStorage. Data JSON tidak akan terpengaruh.';
+    document.getElementById('confirmOkBtn').onclick = () => {
+      localStorage.removeItem(STORAGE_KEY);
+      beritaList = [];
+      saveData([]);
+      renderList(); renderStats(); hideConfirm();
+      toast('Semua data berita dihapus.', 'red');
+    };
+    document.getElementById('confirmOverlay').classList.add('show');
+  }
+
+  // ─── Export JSON ───────────────────────────────
+  function exportJSON() {
+    const json = JSON.stringify({ berita: beritaList }, null, 2);
+    const blob = new Blob([json], { type: 'application/json' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href = url; a.download = 'berita.json'; a.click();
+    URL.revokeObjectURL(url);
+    toast('File berita.json berhasil diunduh! Letakkan di folder data/.', 'green', 4000);
+  }
+
+  // ─── Helpers ───────────────────────────────────
+  function formatDate(str) {
+    if (!str) return '-';
+    const d = new Date(str);
+    return d.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+
+  let toastTimer;
+  function toast(msg, type = '', dur = 3000) {
+    const el = document.getElementById('adminToast');
+    el.textContent = msg;
+    el.className   = `show ${type}`;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => el.className = '', dur);
+  }
+
+  // ─── Boot ──────────────────────────────────────
+  if (sessionStorage.getItem('npt_admin') === '1') {
+    document.getElementById('loginScreen').style.display = 'none';
+    init();
+  }
+</script>
+</body>
+</html>

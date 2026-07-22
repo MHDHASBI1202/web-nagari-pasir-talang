@@ -1619,3 +1619,65 @@ a.hero-stat:hover { transform:translateY(-2px); }
   .form-actions { flex-direction:column; }
   .modal-content { padding:20px; }
 }
+
+/* ============================================
+   BERITA DINAMIS
+   ============================================ */
+
+/* Filter tabs */
+.berita-filter {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.filter-btn {
+  padding: 7px 18px;
+  border-radius: 9999px;
+  font-size: .8rem; font-weight: 600;
+  background: var(--gray-100); color: var(--gray-600);
+  cursor: pointer; transition: all .25s;
+  border: 1.5px solid transparent;
+}
+.filter-btn:hover { background: var(--green-light); color: var(--green-dark); }
+.filter-btn.active { background: var(--green); color: #fff; border-color: var(--green); }
+
+/* Skeleton loading */
+.berita-skeleton {
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 16px;
+}
+.featured-skel { height: 480px; }
+.item-skel { height: 100px; border-radius: 12px; margin-bottom: 12px; }
+@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+/* Load more */
+.berita-more-wrap { text-align: center; margin-top: 32px; }
+.btn-load-more {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 28px;
+  border: 2px solid var(--green);
+  color: var(--green); font-weight: 700; font-size: .875rem;
+  border-radius: 9999px;
+  cursor: pointer; transition: all .25s;
+  background: transparent;
+}
+.btn-load-more:hover { background: var(--green); color: #fff; }
+
+/* Empty state */
+.berita-empty-state {
+  text-align: center; padding: 80px 20px;
+  color: var(--gray-400);
+}
+.berita-empty-state .empty-icon { font-size: 3rem; margin-bottom: 12px; }
+.berita-empty-state h3 { font-size: 1.1rem; font-weight: 700; color: var(--gray-600); margin-bottom: 6px; }
+.berita-empty-state p  { font-size: .875rem; }
+
+/* Category color map */
+.berita-cat.Pembangunan { background: #dbeafe; color: #1e40af; }
+.berita-cat.Sosial      { background: var(--green-light); color: #166534; }
+.berita-cat.Pemerintahan{ background: #ede9fe; color: #5b21b6; }
+.berita-cat.Ekonomi     { background: #fef3c7; color: #92400e; }
+.berita-cat.Kesehatan   { background: #fce7f3; color: #9d174d; }
+.berita-cat.Budaya      { background: #fef9c3; color: #713f12; }
+.berita-cat.Lainnya     { background: var(--gray-100); color: var(--gray-600); }

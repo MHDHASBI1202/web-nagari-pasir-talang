@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -603,109 +603,49 @@
         <p class="section-desc">Informasi terkini tentang kegiatan dan pembangunan Nagari Pasir Talang</p>
       </div>
 
-      <div class="berita-grid">
-        <!-- ✅ Berita: klik buka modal detail artikel -->
-        <div class="berita-featured"
-             data-modal="true"
-             data-img="assets/images/hero.jpg"
-             data-cat="Pembangunan"
-             data-date="12 Juli 2025"
-             data-author="Admin Nagari"
-             data-title="Pembangunan Jalan Usaha Tani Jorong Pasir Talang Capai 70%"
-             data-body="Proyek pembangunan jalan usaha tani sepanjang 1,2 km di Jorong Pasir Talang telah mencapai progress 70%. Diharapkan selesai pada akhir Agustus 2025 dan akan memperlancar akses petani ke lahan pertanian. Proyek ini didanai dari Dana Desa tahun anggaran 2025 dengan total anggaran Rp 480 juta. Pengerjaan dilakukan secara swakelola oleh masyarakat setempat dengan pengawasan dari Pendamping Desa."
-             role="button" tabindex="0" id="berita-1">
-          <div class="berita-img-wrap">
-            <img src="assets/images/hero.jpg" alt="Berita Utama" loading="lazy" />
-            <span class="berita-cat-badge">Pembangunan</span>
-          </div>
-          <div class="berita-content">
-            <div class="berita-meta">
-              <span class="meta-date">&#128197; 12 Juli 2025</span>
-              <span class="meta-author">&#128100; Admin Nagari</span>
-            </div>
-            <h3 class="berita-title">Pembangunan Jalan Usaha Tani Jorong Pasir Talang Capai 70%</h3>
-            <p class="berita-excerpt">Proyek pembangunan jalan usaha tani sepanjang 1,2 km di Jorong Pasir Talang telah mencapai progress 70%. Diharapkan selesai pada akhir Agustus 2025...</p>
-            <span class="berita-read">Baca Selengkapnya <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-          </div>
-        </div>
+      <!-- Filter Kategori -->
+      <div class="berita-filter" id="beritaFilter">
+        <button class="filter-btn active" data-kat="">Semua</button>
+        <button class="filter-btn" data-kat="Pembangunan">Pembangunan</button>
+        <button class="filter-btn" data-kat="Sosial">Sosial</button>
+        <button class="filter-btn" data-kat="Pemerintahan">Pemerintahan</button>
+        <button class="filter-btn" data-kat="Ekonomi">Ekonomi</button>
+        <button class="filter-btn" data-kat="Kesehatan">Kesehatan</button>
+        <button class="filter-btn" data-kat="Budaya">Budaya</button>
+      </div>
 
-        <div class="berita-list">
-          <div class="berita-item"
-               data-modal="true"
-               data-img="assets/images/sawah.jpg"
-               data-cat="Sosial"
-               data-date="8 Juli 2025"
-               data-author="Admin Nagari"
-               data-title="Penyaluran BLT Dana Desa Tahap III Dimulai"
-               data-body="Sebanyak 125 Keluarga Penerima Manfaat (KPM) di Nagari Pasir Talang menerima Bantuan Langsung Tunai (BLT) dari Dana Desa tahap ketiga tahun 2025. Penyaluran dilakukan langsung di Kantor Nagari dengan dihadiri oleh Wali Nagari, BPD, dan pendamping desa. Setiap KPM menerima Rp 300.000 per bulan."
-               role="button" tabindex="0" id="berita-2">
-            <div class="berita-item-img"><img src="assets/images/sawah.jpg" alt="BLT Dana Desa" loading="lazy" /></div>
-            <div class="berita-item-content">
-              <span class="berita-cat green">Sosial</span>
-              <h4>Penyaluran BLT Dana Desa Tahap III Dimulai</h4>
-              <p>Sebanyak 125 KPM menerima bantuan langsung tunai dari Dana Desa...</p>
-              <span class="meta-date">&#128197; 8 Juli 2025</span>
-            </div>
-          </div>
-
-          <div class="berita-item"
-               data-modal="true"
-               data-img="assets/images/rumah_gadang.jpg"
-               data-cat="Pemerintahan"
-               data-date="3 Juli 2025"
-               data-author="Admin Nagari"
-               data-title="Musyawarah Nagari Tetapkan RPJMNag 2025-2031"
-               data-body="Dengan melibatkan seluruh elemen masyarakat dari 7 jorong, Musyawarah Nagari berhasil menetapkan Rencana Pembangunan Jangka Menengah Nagari (RPJMNag) periode 2025–2031. Dokumen ini menjadi panduan pembangunan selama 6 tahun ke depan, mencakup bidang infrastruktur, ekonomi, sosial, dan lingkungan."
-               role="button" tabindex="0" id="berita-3">
-            <div class="berita-item-img"><img src="assets/images/rumah_gadang.jpg" alt="Musyawarah Nagari" loading="lazy" /></div>
-            <div class="berita-item-content">
-              <span class="berita-cat blue">Pemerintahan</span>
-              <h4>Musyawarah Nagari Tetapkan RPJMNag 2025&ndash;2031</h4>
-              <p>Dengan melibatkan seluruh elemen masyarakat dari 7 jorong...</p>
-              <span class="meta-date">&#128197; 3 Juli 2025</span>
-            </div>
-          </div>
-
-          <div class="berita-item"
-               data-modal="true"
-               data-img="assets/images/kerajinan.jpg"
-               data-cat="Ekonomi"
-               data-date="28 Juni 2025"
-               data-author="Admin Nagari"
-               data-title="BUMNag Pasir Talang Mandiri Raih Omzet Rp 150 Juta"
-               data-body="Berkat pengelolaan yang profesional dan inovatif, Badan Usaha Milik Nagari (BUMNag) Pasir Talang Mandiri berhasil mencatat omzet positif sebesar Rp 150 juta pada semester pertama 2025. Unit usaha yang dikelola meliputi simpan pinjam, pengelolaan air bersih, dan usaha perdagangan hasil pertanian lokal."
-               role="button" tabindex="0" id="berita-4">
-            <div class="berita-item-img"><img src="assets/images/kerajinan.jpg" alt="BUMNag" loading="lazy" /></div>
-            <div class="berita-item-content">
-              <span class="berita-cat gold">Ekonomi</span>
-              <h4>BUMNag Pasir Talang Mandiri Raih Omzet Rp 150 Juta</h4>
-              <p>Berkat pengelolaan yang profesional, BUMNag berhasil mencatat omzet positif...</p>
-              <span class="meta-date">&#128197; 28 Juni 2025</span>
-            </div>
-          </div>
-
-          <div class="berita-item"
-               data-modal="true"
-               data-img="assets/images/sawah.jpg"
-               data-cat="Kesehatan"
-               data-date="20 Juni 2025"
-               data-author="Admin Nagari"
-               data-title="Posyandu Aktif Layani Ratusan Balita dan Lansia"
-               data-body="Program Posyandu terintegrasi di Nagari Pasir Talang kini melayani lebih dari 300 balita dan 150 lansia setiap bulannya. Kegiatan mencakup penimbangan, imunisasi, pemberian vitamin, dan konsultasi kesehatan gratis. Program ini berjalan atas dukungan Dana Desa dan tenaga kesehatan dari Puskesmas Sungai Pagu."
-               role="button" tabindex="0" id="berita-5">
-            <div class="berita-item-img"><img src="assets/images/sawah.jpg" alt="Posyandu" loading="lazy" /></div>
-            <div class="berita-item-content">
-              <span class="berita-cat purple">Kesehatan</span>
-              <h4>Posyandu Aktif Layani Ratusan Balita &amp; Lansia</h4>
-              <p>Program Posyandu terintegrasi kini melayani lebih dari 300 balita...</p>
-              <span class="meta-date">&#128197; 20 Juni 2025</span>
-            </div>
+      <!-- Loading Skeleton -->
+      <div class="berita-loading" id="beritaLoading">
+        <div class="berita-grid">
+          <div class="berita-skeleton featured-skel"></div>
+          <div class="berita-list">
+            <div class="berita-skeleton item-skel"></div>
+            <div class="berita-skeleton item-skel"></div>
+            <div class="berita-skeleton item-skel"></div>
+            <div class="berita-skeleton item-skel"></div>
           </div>
         </div>
       </div>
+
+      <!-- Dynamic Content -->
+      <div id="beritaContent" style="display:none">
+        <div class="berita-grid" id="beritaGrid"></div>
+        <div class="berita-more-wrap" id="beritaMoreWrap" style="display:none">
+          <button class="btn-load-more" id="btnLoadMore" onclick="loadMoreBerita()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            Muat Berita Lainnya
+          </button>
+        </div>
+      </div>
+
+      <!-- Empty State -->
+      <div id="beritaEmpty" class="berita-empty-state" style="display:none">
+        <div class="empty-icon">📭</div>
+        <h3>Belum ada berita</h3>
+        <p>Berita akan segera hadir. Pantau terus halaman ini!</p>
+      </div>
     </div>
   </section>
-
   <!-- ========== POTENSI NAGARI ========== -->
   <section class="section section-alt">
     <div class="container">
