@@ -140,8 +140,22 @@
     .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--green); }
     .form-textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
     .form-hint { font-size: .7rem; color: var(--gray-400); margin-top: 4px; }
-    .img-preview { width: 100%; aspect-ratio: 16/7; object-fit: cover; border-radius: 8px; border: 1.5px solid var(--gray-200); display: none; margin-top: 8px; }
+    .img-preview { width: 100%; aspect-ratio: 16/7; object-fit: cover; border-radius: 8px; border: 1.5px solid var(--gray-200); display: none; margin-top: 12px; }
     .img-preview.show { display: block; }
+
+    /* Image picker tabs */
+    .img-tab-bar { display: flex; gap: 4px; background: var(--gray-100); padding: 4px; border-radius: 10px; margin-bottom: 10px; }
+    .img-tab { flex: 1; padding: 7px; border-radius: 7px; font-size: .78rem; font-weight: 700; cursor: pointer; transition: all .2s; color: var(--gray-400); background: transparent; }
+    .img-tab.active { background: #fff; color: var(--green); box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+
+    /* Upload drop zone */
+    .upload-drop-zone { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 24px 16px; border: 2px dashed var(--gray-200); border-radius: 10px; cursor: pointer; transition: all .2s; text-align: center; }
+    .upload-drop-zone:hover, .upload-drop-zone.drag-over { border-color: var(--green); background: var(--green-light); }
+    .upload-drop-zone span:first-of-type { font-size: .82rem; font-weight: 600; color: var(--gray-600); }
+    .upload-hint { font-size: .7rem; color: var(--gray-400); }
+
+    /* Compress info */
+    .compress-info { display: flex; align-items: center; gap: 6px; font-size: .75rem; color: var(--gray-600); margin-top: 8px; padding: 8px 12px; background: #f0fdf4; border-radius: 8px; flex-wrap: wrap; }
 
     .form-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .switch-row { display: flex; align-items: center; justify-content: space-between; background: var(--gray-50); padding: 12px; border-radius: 8px; }
@@ -335,9 +349,44 @@
           </div>
 
           <div class="form-group">
-            <label class="form-label">URL Gambar</label>
-            <input type="text" class="form-input" id="fGambar" placeholder="assets/images/hero.jpg" oninput="previewImg()" />
-            <p class="form-hint">Gunakan path relatif seperti <code>assets/images/nama-file.jpg</code></p>
+            <label class="form-label">Gambar Berita</label>
+
+            <!-- Tab Toggle -->
+            <div class="img-tab-bar">
+              <button type="button" class="img-tab active" id="tabUpload" onclick="switchImgTab('upload')">⬆️ Upload File</button>
+              <button type="button" class="img-tab" id="tabUrl" onclick="switchImgTab('url')">🔗 URL Eksternal</button>
+            </div>
+
+            <!-- Tab: Upload File -->
+            <div id="panelUpload" class="img-panel">
+              <label class="upload-drop-zone" id="dropZone" for="fileInput">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span id="dropLabel">Klik atau seret foto ke sini</span>
+                <span class="upload-hint">JPG, PNG, WebP &bull; Otomatis dikompres &bull; Maks 5MB</span>
+                <input type="file" id="fileInput" accept="image/*" style="display:none" onchange="handleFileUpload(event)" />
+              </label>
+              <div class="compress-info" id="compressInfo" style="display:none">
+                <span id="compressFrom"></span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <span id="compressTo" style="color:#16a34a;font-weight:700"></span>
+                <span style="color:#16a34a">✅ Terkompresi</span>
+              </div>
+            </div>
+
+            <!-- Tab: URL Eksternal -->
+            <div id="panelUrl" class="img-panel" style="display:none">
+              <input type="text" class="form-input" id="fGambarUrl"
+                placeholder="https://i.ibb.co/xxx/foto.jpg atau assets/images/hero.jpg"
+                oninput="previewImgUrl()" />
+              <p class="form-hint" style="margin-top:6px">
+                Bisa pakai URL dari <strong>ImgBB</strong>, <strong>Cloudinary</strong>, Google Drive, atau path lokal.
+              </p>
+            </div>
+
+            <!-- Hidden: nilai gambar final yang akan disimpan -->
+            <input type="hidden" id="fGambar" value="" />
+
+            <!-- Preview -->
             <img id="imgPreview" class="img-preview" alt="Preview" />
           </div>
 
@@ -503,47 +552,141 @@
     if (!el.value) el.value = new Date().toISOString().slice(0, 10);
   }
 
+  // ─── Image Tab Switching ────────────────────────
+  function switchImgTab(mode) {
+    const isUpload = mode === 'upload';
+    document.getElementById('tabUpload').classList.toggle('active', isUpload);
+    document.getElementById('tabUrl').classList.toggle('active', !isUpload);
+    document.getElementById('panelUpload').style.display = isUpload ? '' : 'none';
+    document.getElementById('panelUrl').style.display    = isUpload ? 'none' : '';
+  }
+
+  // ─── File Upload + Auto Compress ────────────────
+  function handleFileUpload(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    if (file.size > 5 * 1024 * 1024) { toast('File terlalu besar! Maks 5MB.', 'red'); return; }
+    const origKB = (file.size / 1024).toFixed(0);
+    document.getElementById('dropLabel').textContent = '⏳ Mengompres...';
+
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = new Image();
+      img.onload = () => {
+        // Compress: max 900px wide, quality 0.78
+        const MAX_W = 900;
+        const scale = img.width > MAX_W ? MAX_W / img.width : 1;
+        const canvas = document.createElement('canvas');
+        canvas.width  = Math.round(img.width  * scale);
+        canvas.height = Math.round(img.height * scale);
+        canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+
+        canvas.toBlob(blob => {
+          const compKB = (blob.size / 1024).toFixed(0);
+          const dataUrl = canvas.toDataURL('image/jpeg', 0.78);
+
+          // Store as base64 (small images) or show size warning
+          document.getElementById('fGambar').value = dataUrl;
+          const preview = document.getElementById('imgPreview');
+          preview.src = dataUrl;
+          preview.className = 'img-preview show';
+
+          // Show compress result
+          const info = document.getElementById('compressInfo');
+          document.getElementById('compressFrom').textContent = origKB + ' KB';
+          document.getElementById('compressTo').textContent   = compKB + ' KB';
+          info.style.display = 'flex';
+
+          document.getElementById('dropLabel').textContent = '✅ ' + file.name;
+          toast(`Gambar dikompres: ${origKB}KB → ${compKB}KB ✅`, 'green');
+        }, 'image/jpeg', 0.78);
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  // Drag & drop support
+  document.addEventListener('DOMContentLoaded', () => {
+    const zone = document.getElementById('dropZone');
+    if (!zone) return;
+    zone.addEventListener('dragover',  e => { e.preventDefault(); zone.classList.add('drag-over'); });
+    zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+    zone.addEventListener('drop', e => {
+      e.preventDefault(); zone.classList.remove('drag-over');
+      const file = e.dataTransfer.files[0];
+      if (file && file.type.startsWith('image/')) {
+        document.getElementById('fileInput').files = e.dataTransfer.files;
+        handleFileUpload({ target: { files: e.dataTransfer.files } });
+      }
+    });
+  });
+
+  function previewImgUrl() {
+    const val = document.getElementById('fGambarUrl').value.trim();
+    document.getElementById('fGambar').value = val;
+    const img = document.getElementById('imgPreview');
+    if (val) {
+      const src = val.startsWith('http') ? val : '../' + val;
+      img.src = src;
+      img.className = 'img-preview show';
+    } else {
+      img.className = 'img-preview';
+    }
+  }
+
   function resetForm() {
-    document.getElementById('editId').value   = '';
-    document.getElementById('fJudul').value   = '';
-    document.getElementById('fKat').value     = '';
+    document.getElementById('editId').value     = '';
+    document.getElementById('fJudul').value     = '';
+    document.getElementById('fKat').value       = '';
     setTodayDate();
-    document.getElementById('fPenulis').value = 'Admin Nagari';
-    document.getElementById('fGambar').value  = '';
+    document.getElementById('fPenulis').value   = 'Admin Nagari';
+    document.getElementById('fGambar').value    = '';
+    document.getElementById('fGambarUrl').value = '';
     document.getElementById('fRingkasan').value = '';
-    document.getElementById('fIsi').value     = '';
+    document.getElementById('fIsi').value       = '';
     document.getElementById('fFeatured').checked = false;
     document.getElementById('imgPreview').className = 'img-preview';
+    document.getElementById('compressInfo').style.display = 'none';
+    document.getElementById('dropLabel').textContent = 'Klik atau seret foto ke sini';
     document.getElementById('btnSave').className = 'btn-save';
     document.getElementById('formTitle').textContent = 'Form Berita Baru';
     document.getElementById('formSectionTitle').childNodes[0].nodeValue = 'Tambah Berita Baru ';
+    switchImgTab('upload');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function editBerita(id) {
     const b = beritaList.find(x => x.id === id);
     if (!b) return;
-    document.getElementById('editId').value   = id;
-    document.getElementById('fJudul').value   = b.judul;
-    document.getElementById('fKat').value     = b.kategori;
-    document.getElementById('fTanggal').value = b.tanggal;
-    document.getElementById('fPenulis').value = b.penulis || 'Admin Nagari';
-    document.getElementById('fGambar').value  = b.gambar || '';
+    document.getElementById('editId').value     = id;
+    document.getElementById('fJudul').value     = b.judul;
+    document.getElementById('fKat').value       = b.kategori;
+    document.getElementById('fTanggal').value   = b.tanggal;
+    document.getElementById('fPenulis').value   = b.penulis || 'Admin Nagari';
+    document.getElementById('fGambar').value    = b.gambar || '';
     document.getElementById('fRingkasan').value = b.ringkasan;
-    document.getElementById('fIsi').value     = b.isi;
+    document.getElementById('fIsi').value       = b.isi;
     document.getElementById('fFeatured').checked = b.featured || false;
-    previewImg();
+
+    // Show URL tab if gambar is a URL/path string
+    if (b.gambar && !b.gambar.startsWith('data:')) {
+      switchImgTab('url');
+      document.getElementById('fGambarUrl').value = b.gambar;
+      const src = b.gambar.startsWith('http') ? b.gambar : '../' + b.gambar;
+      const img = document.getElementById('imgPreview');
+      img.src = src; img.className = 'img-preview show';
+    } else if (b.gambar && b.gambar.startsWith('data:')) {
+      switchImgTab('upload');
+      const img = document.getElementById('imgPreview');
+      img.src = b.gambar; img.className = 'img-preview show';
+      document.getElementById('dropLabel').textContent = '✅ Gambar tersimpan';
+    }
+
     document.getElementById('btnSave').className = 'btn-save editing';
     document.getElementById('formTitle').textContent = 'Edit Berita';
     document.getElementById('formSectionTitle').childNodes[0].nodeValue = 'Edit Berita ';
     document.querySelector('.form-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  function previewImg() {
-    const val = document.getElementById('fGambar').value.trim();
-    const img = document.getElementById('imgPreview');
-    if (val) { img.src = '../' + val; img.className = 'img-preview show'; }
-    else { img.className = 'img-preview'; }
   }
 
   function saveBerita() {
