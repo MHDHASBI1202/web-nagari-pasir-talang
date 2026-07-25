@@ -2340,3 +2340,172 @@ a.hero-stat:hover { transform:translateY(-2px); }
   .org-head-card { padding: 14px 16px; }
   .orgs-tab { min-width: 72px; font-size: .74rem; padding: 8px 10px; }
 }
+
+/* ============================================
+   ORG CHART v2 — dark section standalone
+   ============================================ */
+
+/* Tree nodes */
+.org-level { display:flex; justify-content:center; margin-bottom:0; }
+.org-node {
+  display:flex; align-items:center; gap:16px;
+  border-radius:16px; padding:18px 28px;
+  max-width:480px; width:100%;
+}
+.org-node-wali {
+  background:linear-gradient(135deg,#d97706,#92400e);
+  box-shadow:0 8px 32px rgba(217,119,6,.45);
+}
+.org-node-sekre {
+  background:rgba(22,163,74,.18);
+  border:2px solid rgba(22,163,74,.5);
+  max-width:380px;
+}
+.org-node-avatar {
+  width:56px;height:56px;border-radius:50%;
+  background:rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;flex-shrink:0;
+}
+.org-node-icon { font-size:1.8rem; flex-shrink:0; }
+.org-node-role {
+  display:block;font-size:.68rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.6px;
+  color:rgba(255,255,255,.7);margin-bottom:4px;
+}
+.org-node-name { display:block;font-size:1.15rem;font-weight:800;color:#fff; }
+.org-node-period { display:block;font-size:.75rem;color:rgba(255,255,255,.6);margin-top:3px; }
+
+.org-tree-line {
+  width:2px;height:32px;margin:0 auto;
+  background:linear-gradient(to bottom,#d97706,#16a34a);
+}
+.org-divider-label {
+  text-align:center;font-size:.72rem;font-weight:700;
+  color:rgba(255,255,255,.35);text-transform:uppercase;
+  letter-spacing:1.2px;margin-bottom:16px;
+}
+
+/* Org cards grid */
+.org-grid-3 {
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+}
+.org-card {
+  border-radius:14px;padding:16px 12px;
+  text-align:center;transition:transform .2s,box-shadow .2s;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+}
+.org-card:hover { transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.3); }
+.org-card-kaur { background:rgba(37,99,235,.18);border:1.5px solid rgba(37,99,235,.4); }
+.org-card-kasi { background:rgba(109,40,217,.18);border:1.5px solid rgba(109,40,217,.4); }
+.org-card-icon { font-size:1.8rem; }
+.org-card-role {
+  font-size:.68rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.5px;color:rgba(255,255,255,.5);
+}
+.org-card-kaur .org-card-role { color:#60a5fa; }
+.org-card-kasi .org-card-role { color:#c084fc; }
+.org-card-name { font-size:.85rem;font-weight:700;color:#fff;line-height:1.3; }
+
+/* Wali Jorong pills */
+.org-jorong-row {
+  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;
+  margin-top:4px;
+}
+.org-jorong-pill {
+  display:flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:12px;padding:10px 12px;
+  transition:all .2s;
+}
+.org-jorong-pill:hover { background:rgba(255,255,255,.12);border-color:#4ade80; }
+.ojp-num {
+  width:30px;height:30px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,#16a34a,#15803d);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.68rem;font-weight:800;color:#fff;
+}
+.org-jorong-pill b { display:block;font-size:.82rem;color:#fff;line-height:1.2; }
+.org-jorong-pill small { display:block;font-size:.68rem;color:rgba(255,255,255,.45);margin-top:2px; }
+
+/* Lembaga banner */
+.lembaga-banner {
+  display:flex;align-items:center;gap:18px;
+  border-radius:18px;padding:22px 28px;margin-bottom:28px;
+  box-shadow:0 8px 32px rgba(0,0,0,.3);
+}
+.lb-emoji { font-size:2.4rem;flex-shrink:0; }
+.lembaga-banner h3 { font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:4px; }
+.lembaga-banner p  { font-size:.8rem;color:rgba(255,255,255,.65); }
+
+/* Pimpinan cards */
+.lembaga-pimpinan {
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px;
+}
+.lp-card {
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;padding:20px 16px;text-align:center;
+  transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:6px;
+}
+.lp-card:hover { background:rgba(255,255,255,.12);transform:translateY(-3px); }
+.lp-ketua { border-color:rgba(251,191,36,.4);background:rgba(251,191,36,.08); }
+.lp-crown { font-size:1.5rem; }
+.lp-role {
+  font-size:.65rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.6px;color:#4ade80;
+}
+.lp-ketua .lp-role { color:#fbbf24; }
+.lp-card strong { font-size:.9rem;color:#fff;font-weight:700;line-height:1.4; }
+.lp-card small { font-size:.72rem;color:rgba(255,255,255,.55); }
+
+/* Anggota chips */
+.lembaga-anggota { }
+.la-title {
+  font-size:.72rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:1px;color:rgba(255,255,255,.35);margin-bottom:12px;
+}
+.la-chips { display:flex;flex-wrap:wrap;gap:8px; }
+.la-chips span {
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  color:rgba(255,255,255,.8);font-size:.8rem;
+  padding:8px 18px;border-radius:9999px;transition:all .2s;cursor:default;
+}
+.la-chips span:hover { background:rgba(255,255,255,.15);color:#fff; }
+
+/* KAN placeholder */
+.kan-placeholder {
+  display:flex;flex-direction:column;align-items:center;
+  gap:14px;padding:56px 24px;text-align:center;
+  border:2px dashed rgba(217,119,6,.35);border-radius:18px;
+  background:rgba(217,119,6,.04);
+}
+.kp-icon { font-size:3rem; }
+.kan-placeholder h4 { font-size:1.1rem;font-weight:800;color:rgba(255,255,255,.85); }
+.kan-placeholder p  { font-size:.88rem;color:rgba(255,255,255,.5);max-width:380px;line-height:1.65; }
+.kan-wa-btn {
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 26px;background:#25d366;color:#fff;
+  font-size:.84rem;font-weight:700;border-radius:9999px;
+  text-decoration:none;transition:all .25s;
+}
+.kan-wa-btn:hover { background:#1da851;transform:translateY(-2px); }
+
+@media (max-width:1024px) {
+  .org-jorong-row { grid-template-columns:repeat(3,1fr); }
+  .lembaga-pimpinan { grid-template-columns:repeat(3,1fr); }
+}
+@media (max-width:768px) {
+  .org-grid-3 { grid-template-columns:repeat(2,1fr); }
+  .org-jorong-row { grid-template-columns:repeat(2,1fr); }
+  .lembaga-pimpinan { grid-template-columns:repeat(2,1fr); }
+  .org-node { padding:14px 16px; }
+}
+@media (max-width:480px) {
+  .org-grid-3 { grid-template-columns:1fr 1fr; }
+  .org-jorong-row { grid-template-columns:1fr 1fr; }
+  .lembaga-pimpinan { grid-template-columns:1fr; }
+  .lembaga-banner { padding:16px; gap:12px; }
+  .lb-emoji { font-size:1.8rem; }
+  .lembaga-banner h3 { font-size:1rem; }
+}

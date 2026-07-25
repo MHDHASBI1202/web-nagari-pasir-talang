@@ -81,6 +81,7 @@
         <a href="#profil"    class="nav-link" id="nav-profil">Profil</a>
         <a href="#layanan"   class="nav-link" id="nav-layanan">Layanan</a>
         <a href="#statistik" class="nav-link" id="nav-statistik">Data</a>
+        <a href="#organisasi" class="nav-link" id="nav-organisasi">Organisasi</a>
         <a href="#galeri"    class="nav-link" id="nav-galeri">Wisata &amp; Galeri</a>
         <a href="#berita"    class="nav-link" id="nav-berita">Berita</a>
         <a href="#kontak"    class="nav-cta"  id="nav-kontak">Kontak</a>
@@ -537,181 +538,199 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- ========== STRUKTUR ORGANISASI ========== -->
-      <div class="orgs-section">
-        <div class="orgs-header">
-          <h3>&#127981; Struktur Organisasi &amp; Lembaga Nagari</h3>
-          <p>Perangkat pemerintahan dan lembaga yang menjalankan roda kehidupan Nagari Pasir Talang</p>
-        </div>
+  <!-- ========== STRUKTUR ORGANISASI (SEKSI MANDIRI) ========== -->
+  <section id="organisasi" class="section section-dark">
+    <div class="container">
+      <div class="section-header light">
+        <span class="section-badge">Organisasi</span>
+        <h2 class="section-title">Struktur Organisasi Nagari</h2>
+        <p class="section-desc" style="color:rgba(255,255,255,.7)">Pemerintahan, Lembaga Nagari &amp; Kerapatan Adat &mdash; Periode 2026</p>
+      </div>
 
-        <!-- Tab Navigation -->
-        <div class="orgs-tabs" id="orgsTabs">
-          <button class="orgs-tab active" onclick="switchOrg('pemerintahan')">&#127981; Pemerintahan</button>
-          <button class="orgs-tab" onclick="switchOrg('bamus')">&#9876; BAMUS</button>
-          <button class="orgs-tab" onclick="switchOrg('lpm')">&#128101; LPM</button>
-          <button class="orgs-tab" onclick="switchOrg('kan')">&#129412; KAN</button>
-        </div>
+      <!-- Tab Navigation -->
+      <div class="orgs-tabs" id="orgsTabs">
+        <button class="orgs-tab active" onclick="switchOrg('pemerintahan')">&#127981; Pemerintahan</button>
+        <button class="orgs-tab" onclick="switchOrg('bamus')">&#128203; BAMUS</button>
+        <button class="orgs-tab" onclick="switchOrg('lpm')">&#128101; LPM</button>
+        <button class="orgs-tab" onclick="switchOrg('kan')">&#129412; KAN</button>
+      </div>
 
-        <!-- Panel: Pemerintahan Nagari -->
-        <div class="orgs-panel active" id="org-pemerintahan">
-          <!-- Kepala -->
-          <div class="org-top">
-            <div class="org-head-card">
-              <div class="org-avatar org-avatar-gold">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              </div>
-              <div class="org-head-info">
-                <span class="org-jabatan-badge">Pj. Wali Nagari</span>
-                <h4>Afri Yendri</h4>
-                <span class="org-period">Periode 2026</span>
-              </div>
-            </div>
-            <div class="org-connector-v"></div>
-          </div>
+      <!-- ======= PANEL: PEMERINTAHAN ======= -->
+      <div class="orgs-panel active" id="org-pemerintahan">
 
-          <!-- Sekretaris -->
-          <div class="org-sekretaris-row">
-            <div class="org-sekretaris-card">
-              <span class="org-jabatan-sm">Sekretaris Nagari</span>
-              <strong>Nila Wati, SE</strong>
+        <!-- Level 1: Wali Nagari -->
+        <div class="org-level">
+          <div class="org-node org-node-wali">
+            <div class="org-node-avatar">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             </div>
-          </div>
-          <div class="org-connector-v"></div>
-
-          <!-- Kaur & Kasi -->
-          <div class="org-middle-label">Kaur &amp; Kasi</div>
-          <div class="org-staff-grid">
-            <div class="org-staff-card kaur">
-              <div class="org-staff-icon">&#128188;</div>
-              <span class="org-jabatan-sm">Kaur Keuangan</span>
-              <strong>Afni Yenita, SE</strong>
-            </div>
-            <div class="org-staff-card kaur">
-              <div class="org-staff-icon">&#128203;</div>
-              <span class="org-jabatan-sm">Kaur Perencanaan</span>
-              <strong>Sri Herlina</strong>
-            </div>
-            <div class="org-staff-card kaur">
-              <div class="org-staff-icon">&#128196;</div>
-              <span class="org-jabatan-sm">Kaur Umum &amp; TU</span>
-              <strong>Syari&rsquo;ah Turrahmi</strong>
-            </div>
-            <div class="org-staff-card kasi">
-              <div class="org-staff-icon">&#128081;</div>
-              <span class="org-jabatan-sm">Kasi Pemerintahan</span>
-              <strong>Ilham Wahyudi</strong>
-            </div>
-            <div class="org-staff-card kasi">
-              <div class="org-staff-icon">&#128101;</div>
-              <span class="org-jabatan-sm">Kasi Pelayanan</span>
-              <strong>Vivi Anora, S.Pd</strong>
-            </div>
-            <div class="org-staff-card kasi">
-              <div class="org-staff-icon">&#128149;</div>
-              <span class="org-jabatan-sm">Kasi Kesejahteraan</span>
-              <strong>Toni Nofehendra</strong>
-            </div>
-          </div>
-
-          <!-- Wali Jorong -->
-          <div class="org-connector-v"></div>
-          <div class="org-middle-label">Wali Jorong</div>
-          <div class="org-jorong-grid">
-            <div class="org-jorong-card"><span class="org-jorong-num">01</span><div><span class="org-jorong-name">Pasir Talang</span><strong>Julied Verdo</strong></div></div>
-            <div class="org-jorong-card"><span class="org-jorong-num">02</span><div><span class="org-jorong-name">Melayu Palak Lawe</span><strong>Dwiva Mamella</strong></div></div>
-            <div class="org-jorong-card"><span class="org-jorong-num">03</span><div><span class="org-jorong-name">MPL Timur</span><strong>Gery Daniel</strong></div></div>
-            <div class="org-jorong-card"><span class="org-jorong-num">04</span><div><span class="org-jorong-name">Tigo Lareh Bakapanjangan</span><strong>Orieza Ananda</strong></div></div>
-            <div class="org-jorong-card"><span class="org-jorong-num">05</span><div><span class="org-jorong-name">TLB Selatan</span><strong>Eko Agustrio</strong></div></div>
-            <div class="org-jorong-card"><span class="org-jorong-num">06</span><div><span class="org-jorong-name">Panai</span><strong>Ari Anggriawan</strong></div></div>
-            <div class="org-jorong-card"><span class="org-jorong-num">07</span><div><span class="org-jorong-name">Batang Pagu</span><strong>Aliza</strong></div></div>
-          </div>
-        </div>
-
-        <!-- Panel: BAMUS -->
-        <div class="orgs-panel" id="org-bamus">
-          <div class="lembaga-header-card bamus-color">
-            <div class="lembaga-icon">&#9876;</div>
-            <div>
-              <h4>Badan Musyawarah (BAMUS)</h4>
-              <span>Periode 2023 &ndash; 2031</span>
-            </div>
-          </div>
-          <div class="lembaga-pimpinan-row">
-            <div class="lembaga-pimpinan-card">
-              <span class="lembaga-jabatan">Ketua</span>
-              <strong>Zulsantoni, S.Pd, MM</strong>
-            </div>
-            <div class="lembaga-pimpinan-card">
-              <span class="lembaga-jabatan">Wakil Ketua</span>
-              <strong>Besnovelliza Rizal, Dt. Stn. Dubalang</strong>
-            </div>
-            <div class="lembaga-pimpinan-card">
-              <span class="lembaga-jabatan">Sekretaris</span>
-              <strong>Septri Andiko, S.Pd</strong>
-            </div>
-          </div>
-          <div class="lembaga-anggota-wrap">
-            <div class="lembaga-anggota-label">&#128101; Anggota</div>
-            <div class="lembaga-anggota-grid">
-              <div class="lembaga-anggota-chip">Sabri Dt. Bando Basau</div>
-              <div class="lembaga-anggota-chip">Syafrudin R</div>
-              <div class="lembaga-anggota-chip">Zulkarnaini, S.Pd.I</div>
-              <div class="lembaga-anggota-chip">Fitri Roja Wati</div>
-              <div class="lembaga-anggota-chip">Hendra Putra</div>
-              <div class="lembaga-anggota-chip">Gus Hendri Doni</div>
+            <div class="org-node-body">
+              <span class="org-node-role">Pj. Wali Nagari</span>
+              <strong class="org-node-name">Afri Yendri</strong>
+              <span class="org-node-period">Periode 2026</span>
             </div>
           </div>
         </div>
 
-        <!-- Panel: LPM -->
-        <div class="orgs-panel" id="org-lpm">
-          <div class="lembaga-header-card lpm-color">
-            <div class="lembaga-icon">&#128101;</div>
-            <div>
-              <h4>Lembaga Pemberdayaan Masyarakat (LPM)</h4>
-              <span>Periode 2021 &ndash; 2027</span>
-            </div>
-          </div>
-          <div class="lembaga-pimpinan-row">
-            <div class="lembaga-pimpinan-card">
-              <span class="lembaga-jabatan">Ketua</span>
-              <strong>Hasbul</strong>
-            </div>
-            <div class="lembaga-pimpinan-card">
-              <span class="lembaga-jabatan">Sekretaris</span>
-              <strong>Hadi Ismanto</strong>
-            </div>
-          </div>
-          <div class="lembaga-anggota-wrap">
-            <div class="lembaga-anggota-label">&#128101; Anggota</div>
-            <div class="lembaga-anggota-grid">
-              <div class="lembaga-anggota-chip">Sabri Mulyadi</div>
-              <div class="lembaga-anggota-chip">Krispol</div>
-              <div class="lembaga-anggota-chip">Mario Naldi</div>
-              <div class="lembaga-anggota-chip">Deli Pero Ariadi</div>
-              <div class="lembaga-anggota-chip">Hendri Yanto</div>
+        <div class="org-tree-line org-line-down"></div>
+
+        <!-- Level 2: Sekretaris -->
+        <div class="org-level">
+          <div class="org-node org-node-sekre">
+            <div class="org-node-icon">&#128196;</div>
+            <div class="org-node-body">
+              <span class="org-node-role">Sekretaris Nagari</span>
+              <strong class="org-node-name">Nila Wati, SE</strong>
             </div>
           </div>
         </div>
 
-        <!-- Panel: KAN -->
-        <div class="orgs-panel" id="org-kan">
-          <div class="lembaga-header-card kan-color">
-            <div class="lembaga-icon">&#129412;</div>
-            <div>
-              <h4>Kerapatan Adat Nagari (KAN)</h4>
-              <span>Lembaga Adat Minangkabau</span>
-            </div>
+        <div class="org-tree-line org-line-down"></div>
+
+        <!-- Level 3: Kaur & Kasi -->
+        <div class="org-divider-label">&#9660; Kepala Urusan (Kaur)</div>
+        <div class="org-grid-3">
+          <div class="org-card org-card-kaur">
+            <div class="org-card-icon">&#128188;</div>
+            <span class="org-card-role">Kaur Keuangan</span>
+            <strong class="org-card-name">Afni Yenita, SE</strong>
           </div>
-          <div class="kan-info-box">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(180,130,10,.4)" stroke-width="1.2"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 10v11M12 10v11M16 10v11"/></svg>
-            <p>Data pengurus KAN Nagari Pasir Talang sedang dalam proses pengumpulan dan akan segera ditampilkan.</p>
-            <a href="https://wa.me/6281234567890?text=Assalamualaikum%2C%20saya%20ingin%20informasi%20tentang%20KAN%20Nagari%20Pasir%20Talang." target="_blank" rel="noopener" class="kan-contact-btn">&#128172; Hubungi via WhatsApp</a>
+          <div class="org-card org-card-kaur">
+            <div class="org-card-icon">&#128203;</div>
+            <span class="org-card-role">Kaur Perencanaan</span>
+            <strong class="org-card-name">Sri Herlina</strong>
+          </div>
+          <div class="org-card org-card-kaur">
+            <div class="org-card-icon">&#128220;</div>
+            <span class="org-card-role">Kaur Umum &amp; TU</span>
+            <strong class="org-card-name">Syari&rsquo;ah Turrahmi</strong>
           </div>
         </div>
 
-      </div><!-- /orgs-section -->
+        <div class="org-divider-label" style="margin-top:24px">&#9660; Kepala Seksi (Kasi)</div>
+        <div class="org-grid-3">
+          <div class="org-card org-card-kasi">
+            <div class="org-card-icon">&#127963;</div>
+            <span class="org-card-role">Kasi Pemerintahan</span>
+            <strong class="org-card-name">Ilham Wahyudi</strong>
+          </div>
+          <div class="org-card org-card-kasi">
+            <div class="org-card-icon">&#128101;</div>
+            <span class="org-card-role">Kasi Pelayanan</span>
+            <strong class="org-card-name">Vivi Anora, S.Pd</strong>
+          </div>
+          <div class="org-card org-card-kasi">
+            <div class="org-card-icon">&#10084;</div>
+            <span class="org-card-role">Kasi Kesejahteraan</span>
+            <strong class="org-card-name">Toni Nofehendra</strong>
+          </div>
+        </div>
+
+        <div class="org-tree-line org-line-down" style="margin-top:24px"></div>
+        <div class="org-divider-label">&#9660; Wali Jorong (7 Jorong)</div>
+
+        <div class="org-jorong-row">
+          <div class="org-jorong-pill"><span class="ojp-num">01</span><div><b>Julied Verdo</b><small>Pasir Talang</small></div></div>
+          <div class="org-jorong-pill"><span class="ojp-num">02</span><div><b>Dwiva Mamella</b><small>Melayu Palak Lawe</small></div></div>
+          <div class="org-jorong-pill"><span class="ojp-num">03</span><div><b>Gery Daniel</b><small>MPL Timur</small></div></div>
+          <div class="org-jorong-pill"><span class="ojp-num">04</span><div><b>Orieza Ananda</b><small>Tigo Lareh Bakapanjangan</small></div></div>
+          <div class="org-jorong-pill"><span class="ojp-num">05</span><div><b>Eko Agustrio</b><small>TLB Selatan</small></div></div>
+          <div class="org-jorong-pill"><span class="ojp-num">06</span><div><b>Ari Anggriawan</b><small>Panai</small></div></div>
+          <div class="org-jorong-pill"><span class="ojp-num">07</span><div><b>Aliza</b><small>Batang Pagu</small></div></div>
+        </div>
+      </div>
+
+      <!-- ======= PANEL: BAMUS ======= -->
+      <div class="orgs-panel" id="org-bamus">
+        <div class="lembaga-banner" style="background:linear-gradient(135deg,#1e3a8a,#2563eb)">
+          <div class="lb-emoji">&#128203;</div>
+          <div>
+            <h3>Badan Musyawarah (BAMUS)</h3>
+            <p>Periode 2023 &ndash; 2031</p>
+          </div>
+        </div>
+        <div class="lembaga-pimpinan">
+          <div class="lp-card lp-ketua">
+            <div class="lp-crown">&#128081;</div>
+            <span class="lp-role">Ketua</span>
+            <strong>Zulsantoni, S.Pd, MM</strong>
+          </div>
+          <div class="lp-card">
+            <div class="lp-crown">&#127775;</div>
+            <span class="lp-role">Wakil Ketua</span>
+            <strong>Besnovelliza Rizal<br/><small>Dt. Stn. Dubalang</small></strong>
+          </div>
+          <div class="lp-card">
+            <div class="lp-crown">&#128221;</div>
+            <span class="lp-role">Sekretaris</span>
+            <strong>Septri Andiko, S.Pd</strong>
+          </div>
+        </div>
+        <div class="lembaga-anggota">
+          <p class="la-title">Anggota</p>
+          <div class="la-chips">
+            <span>Sabri Dt. Bando Basau</span>
+            <span>Syafrudin R</span>
+            <span>Zulkarnaini, S.Pd.I</span>
+            <span>Fitri Roja Wati</span>
+            <span>Hendra Putra</span>
+            <span>Gus Hendri Doni</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======= PANEL: LPM ======= -->
+      <div class="orgs-panel" id="org-lpm">
+        <div class="lembaga-banner" style="background:linear-gradient(135deg,#064e3b,#059669)">
+          <div class="lb-emoji">&#128101;</div>
+          <div>
+            <h3>Lembaga Pemberdayaan Masyarakat (LPM)</h3>
+            <p>Periode 2021 &ndash; 2027</p>
+          </div>
+        </div>
+        <div class="lembaga-pimpinan">
+          <div class="lp-card lp-ketua">
+            <div class="lp-crown">&#128081;</div>
+            <span class="lp-role">Ketua</span>
+            <strong>Hasbul</strong>
+          </div>
+          <div class="lp-card">
+            <div class="lp-crown">&#128221;</div>
+            <span class="lp-role">Sekretaris</span>
+            <strong>Hadi Ismanto</strong>
+          </div>
+        </div>
+        <div class="lembaga-anggota">
+          <p class="la-title">Anggota</p>
+          <div class="la-chips">
+            <span>Sabri Mulyadi</span>
+            <span>Krispol</span>
+            <span>Mario Naldi</span>
+            <span>Deli Pero Ariadi</span>
+            <span>Hendri Yanto</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======= PANEL: KAN ======= -->
+      <div class="orgs-panel" id="org-kan">
+        <div class="lembaga-banner" style="background:linear-gradient(135deg,#78350f,#d97706)">
+          <div class="lb-emoji">&#129412;</div>
+          <div>
+            <h3>Kerapatan Adat Nagari (KAN)</h3>
+            <p>Lembaga Adat Minangkabau Nagari Pasir Talang</p>
+          </div>
+        </div>
+        <div class="kan-placeholder">
+          <div class="kp-icon">&#127963;</div>
+          <h4>Data Sedang Dikumpulkan</h4>
+          <p>Data pengurus KAN Nagari Pasir Talang sedang dalam proses pengumpulan dan akan segera ditampilkan di halaman ini.</p>
+          <a href="https://wa.me/6281234567890?text=Assalamualaikum%2C%20saya%20ingin%20informasi%20KAN%20Nagari%20Pasir%20Talang." target="_blank" rel="noopener" class="kan-wa-btn">&#128172; Tanya via WhatsApp</a>
+        </div>
+      </div>
 
     </div>
   </section>
