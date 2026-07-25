@@ -476,3 +476,32 @@ function escapeHtml(str) {
 document.addEventListener('DOMContentLoaded', () => {
   loadBerita();
 });
+
+/* ============================================
+   STRUKTUR ORGANISASI — Tab Switcher
+   ============================================ */
+function switchOrg(panel) {
+  ['pemnas', 'bamus', 'kan'].forEach(id => {
+    const p = document.getElementById('panel-' + id);
+    const t = document.getElementById('tab-' + id);
+    if (!p || !t) return;
+    const isActive = id === panel;
+    p.style.display = isActive ? '' : 'none';
+    t.classList.toggle('active', isActive);
+  });
+}
+
+// ============================================
+// STRUKTUR ORGANISASI – Tab switcher
+// ============================================
+function switchOrgTab(panel, btn) {
+  // Hide all panels
+  document.querySelectorAll('.org-panel').forEach(p => p.style.display = 'none');
+  // Remove active from all tabs
+  document.querySelectorAll('.org-tab').forEach(t => t.classList.remove('active'));
+  // Show target panel
+  const target = document.getElementById('panel-' + panel);
+  if (target) target.style.display = '';
+  // Set active tab
+  if (btn) btn.classList.add('active');
+}

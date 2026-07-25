@@ -538,32 +538,166 @@
         </div>
       </div>
 
-      <div class="apbnag-section">
-        <div class="apbnag-header">
-          <h3>APBNag 2025 &ndash; Ringkasan</h3>
-          <span class="apbnag-year">Tahun Anggaran 2025</span>
+      <!-- ===== STRUKTUR ORGANISASI ===== -->
+      <div class="org-section">
+        <div class="org-section-header">
+          <h3>&#127963; Struktur Organisasi Nagari</h3>
+          <p>Periode 2026 &ndash; Pemerintahan, Lembaga Nagari &amp; Kerapatan Adat</p>
         </div>
-        <div class="apbnag-grid">
-          <div class="apbnag-card pendapatan">
-            <div class="apbnag-icon">&#128229;</div>
-            <div class="apbnag-label">Total Pendapatan</div>
-            <div class="apbnag-value">Rp 1.847.500.000</div>
-            <div class="apbnag-source">Dana Desa + ADD + PAD</div>
+
+        <!-- Tab Nav -->
+        <div class="org-tabs" id="orgTabs">
+          <button class="org-tab active" onclick="switchOrgTab('pemerintahan',this)">&#127963; Pemerintahan</button>
+          <button class="org-tab" onclick="switchOrgTab('bamus',this)">&#128203; BAMUS</button>
+          <button class="org-tab" onclick="switchOrgTab('lpm',this)">&#127968; LPM</button>
+          <button class="org-tab" onclick="switchOrgTab('kan',this)">&#128081; KAN</button>
+        </div>
+
+        <!-- Panel: Pemerintahan Nagari -->
+        <div class="org-panel" id="panel-pemerintahan">
+          <!-- Kepala -->
+          <div class="org-head-card">
+            <div class="org-head-avatar">&#128100;</div>
+            <div class="org-head-info">
+              <span class="org-jabatan-badge badge-wali">Pj. Wali Nagari</span>
+              <strong>Afri Yendri</strong>
+              <span class="org-periode">Tahun 2026</span>
+            </div>
           </div>
-          <div class="apbnag-card belanja">
-            <div class="apbnag-icon">&#128228;</div>
-            <div class="apbnag-label">Total Belanja</div>
-            <div class="apbnag-value">Rp 1.800.000.000</div>
-            <div class="apbnag-source">Pembangunan + Operasional</div>
+          <!-- Staff grid -->
+          <div class="org-staff-grid">
+            <div class="org-staff-card">
+              <span class="org-jabatan-badge badge-sekre">Sekretaris Nagari</span>
+              <strong>Nila Wati, SE</strong>
+            </div>
+            <div class="org-staff-card">
+              <span class="org-jabatan-badge badge-kaur">Kaur Keuangan</span>
+              <strong>Afni Yenita, SE</strong>
+            </div>
+            <div class="org-staff-card">
+              <span class="org-jabatan-badge badge-kaur">Kaur Perencanaan</span>
+              <strong>Sri Herlina</strong>
+            </div>
+            <div class="org-staff-card">
+              <span class="org-jabatan-badge badge-kaur">Kaur Umum &amp; TU</span>
+              <strong>Syari&apos;ah Turrahmi</strong>
+            </div>
+            <div class="org-staff-card">
+              <span class="org-jabatan-badge badge-kasi">Kasi Pemerintahan</span>
+              <strong>Ilham Wahyudi</strong>
+            </div>
+            <div class="org-staff-card">
+              <span class="org-jabatan-badge badge-kasi">Kasi Pelayanan</span>
+              <strong>Vivi Anora, S.Pd</strong>
+            </div>
+            <div class="org-staff-card">
+              <span class="org-jabatan-badge badge-kasi">Kasi Kesejahteraan</span>
+              <strong>Toni Nofehendra</strong>
+            </div>
           </div>
-          <div class="apbnag-card surplus">
-            <div class="apbnag-icon">&#128176;</div>
-            <div class="apbnag-label">Surplus / Saldo</div>
-            <div class="apbnag-value">Rp 47.500.000</div>
-            <div class="apbnag-source">Cadangan Nagari</div>
+          <!-- Wali Jorong -->
+          <div class="org-jorong-group">
+            <div class="org-group-label">&#128205; Wali Jorong</div>
+            <div class="org-jorong-grid">
+              <div class="org-jorong-card"><span class="org-jorong-name">Pasir Talang</span><span class="org-jorong-wali">Julied Verdo</span></div>
+              <div class="org-jorong-card"><span class="org-jorong-name">Melayu Palak Lawe</span><span class="org-jorong-wali">Dwiva Mamella</span></div>
+              <div class="org-jorong-card"><span class="org-jorong-name">MPL Timur</span><span class="org-jorong-wali">Gery Daniel</span></div>
+              <div class="org-jorong-card"><span class="org-jorong-name">Tigo Lareh Bakapanjangan</span><span class="org-jorong-wali">Orieza Ananda</span></div>
+              <div class="org-jorong-card"><span class="org-jorong-name">TLB Selatan</span><span class="org-jorong-wali">Eko Agustrio</span></div>
+              <div class="org-jorong-card"><span class="org-jorong-name">Panai</span><span class="org-jorong-wali">Ari Anggriawan</span></div>
+              <div class="org-jorong-card"><span class="org-jorong-name">Batang Pagu</span><span class="org-jorong-wali">Aliza</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel: BAMUS -->
+        <div class="org-panel" id="panel-bamus" style="display:none">
+          <div class="org-lembaga-info">
+            <span class="org-lembaga-badge">Badan Musyawarah (BAMUS)</span>
+            <span class="org-periode-lembaga">Periode 2023 &ndash; 2031</span>
+          </div>
+          <div class="org-head-card">
+            <div class="org-head-avatar">&#127881;</div>
+            <div class="org-head-info">
+              <span class="org-jabatan-badge badge-wali">Ketua BAMUS</span>
+              <strong>Zulsantoni, S.Pd, MM</strong>
+            </div>
+          </div>
+          <div class="org-staff-grid">
+            <div class="org-staff-card">
+              <span class="org-jabatan-badge badge-sekre">Wakil Ketua</span>
+              <strong>Besnovelliza Rizal, Dt. Stn. Dubalang</strong>
+            </div>
+            <div class="org-staff-card">
+              <span class="org-jabatan-badge badge-kaur">Sekretaris</span>
+              <strong>Septri Andiko, S.Pd</strong>
+            </div>
+          </div>
+          <div class="org-jorong-group">
+            <div class="org-group-label">&#128101; Anggota BAMUS</div>
+            <div class="org-anggota-list">
+              <span>Sabri Dt. Bando Basau</span>
+              <span>Syafrudin R</span>
+              <span>Zulkarnaini, S.Pd.I</span>
+              <span>Fitri Roja Wati</span>
+              <span>Hendra Putra</span>
+              <span>Gus Hendri Doni</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel: LPM -->
+        <div class="org-panel" id="panel-lpm" style="display:none">
+          <div class="org-lembaga-info">
+            <span class="org-lembaga-badge">Lembaga Pemberdayaan Masyarakat (LPM)</span>
+            <span class="org-periode-lembaga">Periode 2021 &ndash; 2027</span>
+          </div>
+          <div class="org-head-card">
+            <div class="org-head-avatar">&#127968;</div>
+            <div class="org-head-info">
+              <span class="org-jabatan-badge badge-wali">Ketua LPM</span>
+              <strong>Hasbul</strong>
+            </div>
+          </div>
+          <div class="org-staff-grid">
+            <div class="org-staff-card">
+              <span class="org-jabatan-badge badge-kaur">Sekretaris</span>
+              <strong>Hadi Ismanto</strong>
+            </div>
+          </div>
+          <div class="org-jorong-group">
+            <div class="org-group-label">&#128101; Anggota LPM</div>
+            <div class="org-anggota-list">
+              <span>Sabri Mulyadi</span>
+              <span>Krispol</span>
+              <span>Mario Naldi</span>
+              <span>Deli Pero Ariadi</span>
+              <span>Hendri Yanto</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel: KAN -->
+        <div class="org-panel" id="panel-kan" style="display:none">
+          <div class="org-lembaga-info">
+            <span class="org-lembaga-badge badge-adat">Kerapatan Adat Nagari (KAN)</span>
+            <span class="org-periode-lembaga">Lembaga Adat Tertinggi Nagari</span>
+          </div>
+          <div class="org-kan-placeholder">
+            <div class="org-kan-icon">&#128081;</div>
+            <h4>Kerapatan Adat Nagari Pasir Talang</h4>
+            <p>KAN merupakan lembaga adat yang berfungsi menjaga, memelihara, dan mengembangkan adat istiadat serta tradisi Minangkabau di Nagari Pasir Talang. KAN berperan sebagai mitra pemerintah nagari dalam penyelesaian sengketa adat dan pelestarian budaya.</p>
+            <div class="org-kan-peran">
+              <div class="kan-peran-item"><span>&#9989;</span> Pelestarian Adat &amp; Budaya Minangkabau</div>
+              <div class="kan-peran-item"><span>&#9989;</span> Penyelesaian Sengketa Adat Nagari</div>
+              <div class="kan-peran-item"><span>&#9989;</span> Pembinaan Ninik Mamak &amp; Penghulu</div>
+              <div class="kan-peran-item"><span>&#9989;</span> Mitra Pemerintahan Nagari</div>
+            </div>
+            <p class="org-kan-note">&#128274; Data kepengurusan KAN akan segera diperbarui.</p>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 

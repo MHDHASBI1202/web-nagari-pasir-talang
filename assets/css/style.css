@@ -1862,3 +1862,286 @@ a.hero-stat:hover { transform:translateY(-2px); }
   padding: 6px 18px; border-radius: 9999px;
   border: 1px solid rgba(255,255,255,.15);
 }
+
+/* ============================================
+   STRUKTUR ORGANISASI TABS
+   ============================================ */
+.orgs-section { margin-top: 40px; }
+
+/* --- Tabs --- */
+.orgs-tabs {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  background: #f1f5f9; padding: 5px;
+  border-radius: 14px; margin-bottom: 24px;
+}
+.orgs-tab {
+  flex: 1; min-width: 140px;
+  padding: 10px 16px;
+  background: transparent; color: #64748b;
+  font-size: .82rem; font-weight: 700;
+  border-radius: 10px; cursor: pointer;
+  transition: all .25s; white-space: nowrap;
+}
+.orgs-tab.active {
+  background: #fff; color: #16a34a;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+.orgs-tab:hover:not(.active) { color: #374151; background: rgba(255,255,255,.6); }
+
+/* --- Head card (leader) --- */
+.orgs-top { margin-bottom: 20px; }
+.orgs-head-card {
+  display: flex; align-items: center; gap: 18px;
+  background: linear-gradient(135deg, #14532d, #16a34a);
+  border-radius: 14px; padding: 20px 24px; color: #fff;
+}
+.orgs-head-icon { font-size: 2.2rem; }
+.orgs-head-pos  { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; opacity: .8; margin-bottom: 2px; }
+.orgs-head-name { font-size: 1.15rem; font-weight: 800; }
+.orgs-head-period { font-size: .75rem; opacity: .75; margin-top: 2px; }
+
+/* --- Two-column grid --- */
+.orgs-grid-2 {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+
+/* --- Group card --- */
+.orgs-group {
+  background: #f8fafc; border: 1.5px solid #e5e7eb;
+  border-radius: 12px; padding: 16px;
+}
+.orgs-group-title {
+  font-size: .75rem; font-weight: 700; color: #6b7280;
+  text-transform: uppercase; letter-spacing: .5px;
+  margin-bottom: 14px; padding-bottom: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* --- Member row --- */
+.orgs-member-list { display: flex; flex-direction: column; gap: 10px; }
+.orgs-member { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.orgs-pos-pill {
+  display: inline-block; padding: 3px 10px;
+  border-radius: 9999px; font-size: .68rem;
+  font-weight: 700; color: #fff; white-space: nowrap;
+}
+.orgs-pos-pill.green  { background: #16a34a; }
+.orgs-pos-pill.blue   { background: #2563eb; }
+.orgs-pos-pill.gold   { background: #d97706; }
+.orgs-name { font-size: .83rem; font-weight: 600; color: #1f2937; }
+
+/* --- Jorong grid --- */
+.orgs-jorong-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+}
+.orgs-jorong-card {
+  display: flex; align-items: center; gap: 10px;
+  background: #fff; border: 1.5px solid #e5e7eb;
+  border-radius: 10px; padding: 10px 12px;
+  transition: all .2s;
+}
+.orgs-jorong-card:hover { border-color: #16a34a; background: #f0fdf4; }
+.orgs-jorong-num {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: linear-gradient(135deg,#16a34a,#15803d);
+  color: #fff; font-size: .7rem; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.orgs-jorong-name { font-size: .78rem; font-weight: 700; color: #1f2937; }
+.orgs-jorong-wali { font-size: .7rem; color: #6b7280; }
+
+/* --- Anggota grid --- */
+.orgs-anggota-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+}
+.orgs-anggota-item {
+  background: #eff6ff; border: 1px solid #bfdbfe;
+  border-radius: 8px; padding: 8px 12px;
+  font-size: .78rem; font-weight: 600; color: #1e40af;
+  text-align: center;
+}
+
+/* --- KAN panel --- */
+.orgs-kan-info { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.orgs-kan-desc p { font-size: .85rem; color: #374151; line-height: 1.7; margin-bottom: 10px; }
+.orgs-kan-desc em { font-style: italic; color: #92400e; font-weight: 600; }
+.orgs-kan-placeholder {
+  background: linear-gradient(135deg,#fef3c7,#fde68a);
+  border: 1.5px solid #f59e0b; border-radius: 12px;
+  padding: 24px; text-align: center; display: flex;
+  flex-direction: column; align-items: center; gap: 10px;
+}
+.orgs-kan-icon { font-size: 2.5rem; }
+.orgs-kan-placeholder p { font-size: .8rem; color: #92400e; font-weight: 600; }
+.orgs-kan-btn {
+  padding: 8px 20px; background: #d97706; color: #fff;
+  border-radius: 9999px; font-size: .78rem; font-weight: 700;
+  text-decoration: none; transition: background .2s;
+}
+.orgs-kan-btn:hover { background: #b45309; }
+
+@media (max-width: 768px) {
+  .orgs-grid-2     { grid-template-columns: 1fr; }
+  .orgs-jorong-grid{ grid-template-columns: repeat(2,1fr); }
+  .orgs-anggota-grid { grid-template-columns: repeat(2,1fr); }
+  .orgs-kan-info   { grid-template-columns: 1fr; }
+  .orgs-tab { min-width: 100px; font-size: .75rem; }
+}
+
+/* ============================================
+   STRUKTUR ORGANISASI
+   ============================================ */
+.org-section {
+  background: #fff; border-radius: 20px;
+  border: 1.5px solid #e5e7eb;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,.06);
+}
+.org-section-header {
+  background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+  padding: 28px 32px 24px;
+  text-align: center;
+}
+.org-section-header h3 { font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 4px; }
+.org-section-header p  { font-size: .82rem; color: rgba(255,255,255,.7); }
+
+/* Tabs */
+.org-tabs {
+  display: flex; background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  overflow-x: auto; gap: 0;
+}
+.org-tab {
+  flex: 1; min-width: 110px;
+  padding: 14px 20px;
+  font-size: .8rem; font-weight: 700;
+  color: #6b7280; background: transparent;
+  border: none; border-bottom: 3px solid transparent;
+  cursor: pointer; transition: all .2s;
+  white-space: nowrap;
+}
+.org-tab:hover { color: #16a34a; background: #f0fdf4; }
+.org-tab.active { color: #16a34a; border-bottom-color: #16a34a; background: #fff; }
+
+/* Panel */
+.org-panel { padding: 28px 32px; }
+
+/* Lembaga badge */
+.org-lembaga-info {
+  display: flex; align-items: center; gap: 12px;
+  flex-wrap: wrap; margin-bottom: 20px;
+}
+.org-lembaga-badge {
+  background: #dcfce7; color: #15803d;
+  font-size: .75rem; font-weight: 800;
+  padding: 5px 14px; border-radius: 9999px;
+  letter-spacing: .3px;
+}
+.org-lembaga-badge.badge-adat {
+  background: #fef3c7; color: #92400e;
+}
+.org-periode-lembaga { font-size: .75rem; color: #9ca3af; font-weight: 600; }
+
+/* Head card (Wali / Ketua) */
+.org-head-card {
+  display: flex; align-items: center; gap: 20px;
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border: 1.5px solid #bbf7d0;
+  border-radius: 14px; padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.org-head-avatar {
+  font-size: 2.5rem; width: 64px; height: 64px;
+  background: #fff; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 12px rgba(21,128,61,.15);
+  flex-shrink: 0;
+}
+.org-head-info { display: flex; flex-direction: column; gap: 4px; }
+.org-head-info strong { font-size: 1.1rem; font-weight: 800; color: #111827; }
+.org-periode { font-size: .72rem; color: #6b7280; }
+
+/* Jabatan badges */
+.org-jabatan-badge {
+  display: inline-block; font-size: .67rem; font-weight: 800;
+  padding: 3px 10px; border-radius: 9999px;
+  text-transform: uppercase; letter-spacing: .4px;
+}
+.badge-wali   { background: #16a34a; color: #fff; }
+.badge-sekre  { background: #2563eb; color: #fff; }
+.badge-kaur   { background: #d97706; color: #fff; }
+.badge-kasi   { background: #7c3aed; color: #fff; }
+
+/* Staff grid */
+.org-staff-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 12px; margin-bottom: 24px;
+}
+.org-staff-card {
+  background: #f9fafb; border: 1px solid #e5e7eb;
+  border-radius: 12px; padding: 14px 16px;
+  display: flex; flex-direction: column; gap: 6px;
+  transition: all .2s;
+}
+.org-staff-card:hover { border-color: #16a34a; background: #f0fdf4; transform: translateY(-2px); }
+.org-staff-card strong { font-size: .85rem; color: #111827; font-weight: 700; }
+
+/* Jorong group & grid */
+.org-jorong-group { margin-top: 8px; }
+.org-group-label {
+  font-size: .75rem; font-weight: 800; color: #6b7280;
+  text-transform: uppercase; letter-spacing: .5px;
+  margin-bottom: 12px;
+}
+.org-jorong-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.org-jorong-card {
+  background: #fff; border: 1px solid #e5e7eb;
+  border-radius: 10px; padding: 12px 14px;
+  display: flex; flex-direction: column; gap: 4px;
+  transition: all .2s;
+}
+.org-jorong-card:hover { border-color: #16a34a; background: #f0fdf4; }
+.org-jorong-name { font-size: .75rem; font-weight: 700; color: #374151; }
+.org-jorong-wali { font-size: .72rem; color: #16a34a; font-weight: 600; }
+
+/* Anggota list (chip style) */
+.org-anggota-list {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: 4px;
+}
+.org-anggota-list span {
+  background: #f3f4f6; color: #374151;
+  font-size: .78rem; font-weight: 600;
+  padding: 6px 14px; border-radius: 9999px;
+  border: 1px solid #e5e7eb;
+}
+
+/* KAN placeholder */
+.org-kan-placeholder {
+  text-align: center; padding: 20px;
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border: 1.5px solid #fde68a; border-radius: 14px;
+}
+.org-kan-icon { font-size: 3.5rem; margin-bottom: 12px; }
+.org-kan-placeholder h4 { font-size: 1.1rem; font-weight: 800; color: #92400e; margin-bottom: 10px; }
+.org-kan-placeholder p  { font-size: .85rem; color: #78350f; max-width: 560px; margin: 0 auto 20px; line-height: 1.6; }
+.org-kan-peran {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 10px; max-width: 480px; margin: 0 auto 18px;
+  text-align: left;
+}
+.kan-peran-item { display: flex; align-items: flex-start; gap: 6px; font-size: .8rem; color: #78350f; font-weight: 600; background: rgba(255,255,255,.6); padding: 8px 12px; border-radius: 8px; }
+.org-kan-note { font-size: .75rem; color: #a16207; margin: 0; font-style: italic; }
+
+/* Responsive */
+@media (max-width: 1024px) { .org-staff-grid { grid-template-columns: repeat(2, 1fr); } .org-jorong-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) {
+  .org-panel { padding: 20px 16px; }
+  .org-staff-grid { grid-template-columns: 1fr 1fr; }
+  .org-jorong-grid { grid-template-columns: 1fr 1fr; }
+  .org-kan-peran { grid-template-columns: 1fr; }
+  .org-head-card { flex-direction: column; text-align: center; }
+}
