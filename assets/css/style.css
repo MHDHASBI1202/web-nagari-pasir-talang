@@ -1681,3 +1681,53 @@ a.hero-stat:hover { transform:translateY(-2px); }
 .berita-cat.Kesehatan   { background: #fce7f3; color: #9d174d; }
 .berita-cat.Budaya      { background: #fef9c3; color: #713f12; }
 .berita-cat.Lainnya     { background: var(--gray-100); color: var(--gray-600); }
+
+/* ============================================
+   VISI MISI & BATAS WILAYAH (NEW)
+   ============================================ */
+.visi-misi-box {
+  margin-top: 18px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.vm-item {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: var(--green-light, #dcfce7);
+  border-left: 4px solid #16a34a;
+  border-radius: 0 10px 10px 0;
+  padding: 14px;
+}
+.vm-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+.vm-item strong { display: block; font-weight: 700; color: #15803d; margin-bottom: 4px; font-size: .85rem; text-transform: uppercase; letter-spacing: .5px; }
+.vm-item p { margin: 0; font-size: .875rem; color: #374151; line-height: 1.6; font-style: italic; }
+.misi-list { margin: 4px 0 0 18px; padding: 0; }
+.misi-list li { font-size: .875rem; color: #374151; margin-bottom: 4px; line-height: 1.5; }
+
+.batas-wilayah {
+  margin-top: 18px;
+  background: #f8fafc;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+}
+.batas-wilayah h4 { font-size: .85rem; font-weight: 700; color: #374151; margin-bottom: 12px; }
+.batas-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+}
+.batas-item {
+  display: flex; flex-direction: column; gap: 2px;
+  background: #fff; border: 1px solid #e5e7eb;
+  border-radius: 8px; padding: 10px 12px;
+}
+.batas-arah { font-size: .72rem; font-weight: 700; color: #16a34a; text-transform: uppercase; letter-spacing: .5px; }
+.batas-item > span:last-child { font-size: .8rem; color: #374151; font-weight: 500; }
+
+/* Jorong wali name */
+.jorong-wali {
+  font-size: .7rem; color: rgba(255,255,255,.75);
+  margin-top: 4px; font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .batas-grid { grid-template-columns: 1fr 1fr; }
+  .visi-misi-box { gap: 10px; }
+}
