@@ -2724,3 +2724,242 @@ a.hero-stat:hover { transform:translateY(-2px); }
   .org-tab { min-width: unset; }
 }
 @media (max-width: 480px) { .jorong-org-grid { grid-template-columns: 1fr; } }
+
+/* ============================================
+   ORG CHART V2 — PREMIUM REDESIGN
+   ============================================ */
+
+/* === Main Chart Wrapper === */
+.orgv2-chart {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 0; padding: 0 0 16px;
+}
+
+/* === Level containers === */
+.orgv2-level { display: flex; justify-content: center; width: 100%; }
+.orgv2-connector { display: flex; flex-direction: column; align-items: center; }
+.orgv2-vline {
+  width: 3px; height: 36px;
+  background: linear-gradient(to bottom, #16a34a 0%, #bbf7d0 100%);
+  border-radius: 3px;
+}
+.orgv2-branch { position: relative; }
+.orgv2-hfork {
+  width: 65%; height: 3px;
+  background: linear-gradient(90deg, #16a34a, #4ade80, #16a34a);
+  border-radius: 3px; margin: 0 auto;
+}
+
+/* === TOP CARD — Wali Nagari === */
+.orgv2-card.orgv2-top {
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; gap: 20px;
+  padding: 28px 40px;
+  background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+  border-radius: 24px; border: none;
+  box-shadow: 0 16px 48px rgba(4,78,59,.4), 0 0 0 1px rgba(255,255,255,.1);
+  color: #fff; min-width: 300px;
+}
+.orgv2-top-glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255,255,255,.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+.orgv2-avatar-wali {
+  font-size: 3rem; flex-shrink: 0;
+  width: 72px; height: 72px; border-radius: 18px;
+  background: rgba(255,255,255,.15); backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid rgba(255,255,255,.2);
+}
+.orgv2-top-content { display: flex; flex-direction: column; gap: 4px; }
+.orgv2-period-badge {
+  display: inline-block; font-size: .65rem; font-weight: 700;
+  letter-spacing: .8px; text-transform: uppercase;
+  background: rgba(255,255,255,.2); border: 1px solid rgba(255,255,255,.3);
+  padding: 3px 10px; border-radius: 9999px; width: fit-content; color: #d1fae5;
+}
+.orgv2-top .orgv2-role { font-size: .75rem; font-weight: 600; color: #6ee7b7; text-transform: uppercase; letter-spacing: .6px; margin-top: 4px; }
+.orgv2-top .orgv2-name { font-size: 1.5rem; font-weight: 800; color: #fff; }
+
+/* === SEKRETARIS CARD === */
+.orgv2-card.orgv2-sekret {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 32px;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  border: 2px solid #93c5fd; border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(37,99,235,.15);
+  transition: all .3s;
+}
+.orgv2-card.orgv2-sekret:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(37,99,235,.25); }
+.orgv2-avatar-sekret {
+  font-size: 1.8rem; width: 52px; height: 52px; border-radius: 14px;
+  background: #dbeafe; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; border: 1.5px solid #bfdbfe;
+}
+.orgv2-sekret .orgv2-role { font-size: .68rem; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: .5px; }
+.orgv2-sekret .orgv2-name { font-size: 1.05rem; font-weight: 800; color: #1e3a8a; }
+
+/* === SPLIT LEVEL (Kaur + Kasi) === */
+.orgv2-level-split {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 24px; width: 100%; align-items: start;
+}
+
+/* === GROUP HEADERS === */
+.orgv2-group-header {
+  display: flex; align-items: center; gap: 8px;
+  font-size: .78rem; font-weight: 800; letter-spacing: .5px;
+  text-transform: uppercase; padding: 10px 16px;
+  border-radius: 12px 12px 0 0; margin-bottom: 0;
+}
+.orgv2-group-icon { font-size: 1rem; }
+.kaur-header { background: linear-gradient(90deg, #78350f, #b45309); color: #fff; }
+.kasi-header { background: linear-gradient(90deg, #4c1d95, #7c3aed); color: #fff; }
+
+.orgv2-group-cards {
+  display: flex; flex-direction: column; gap: 10px;
+  background: #fafafa; border: 1.5px solid #e5e7eb;
+  border-top: none; border-radius: 0 0 16px 16px;
+  padding: 14px;
+}
+
+/* === KAUR / KASI CARDS === */
+.orgv2-card.orgv2-kaur,
+.orgv2-card.orgv2-kasi {
+  border-radius: 12px; padding: 14px 16px;
+  transition: all .25s; cursor: default;
+  display: flex; flex-direction: column; gap: 2px;
+  border: 1.5px solid transparent;
+}
+.orgv2-card.orgv2-kaur {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-color: #fcd34d;
+}
+.orgv2-card.orgv2-kaur:hover {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border-color: #f59e0b; transform: translateX(3px);
+  box-shadow: 0 4px 14px rgba(245,158,11,.2);
+}
+.orgv2-card.orgv2-kasi {
+  background: linear-gradient(135deg, #faf5ff, #ede9fe);
+  border-color: #c4b5fd;
+}
+.orgv2-card.orgv2-kasi:hover {
+  background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+  border-color: #8b5cf6; transform: translateX(3px);
+  box-shadow: 0 4px 14px rgba(139,92,246,.2);
+}
+.orgv2-badge-sm {
+  display: inline-block; font-size: .58rem; font-weight: 800;
+  letter-spacing: .6px; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 9999px; width: fit-content;
+  margin-bottom: 4px;
+}
+.orgv2-kaur .kaur-badge { background: #fbbf24; color: #7c2d12; }
+.orgv2-kasi .kasi-badge { background: #a78bfa; color: #4c1d95; }
+.orgv2-role { font-size: .72rem; font-weight: 600; color: #374151; }
+.orgv2-name { font-size: .9rem; font-weight: 800; color: #111827; }
+.orgv2-staff-row {
+  font-size: .66rem; color: #6b7280;
+  padding: 6px 10px; margin-top: 6px;
+  background: rgba(0,0,0,.04); border-radius: 8px;
+  border-left: 3px solid #9ca3af;
+}
+
+/* === SUPPORT STAFF === */
+.orgv2-support {
+  width: 100%; margin-top: 28px; padding-top: 20px;
+  border-top: 2px dashed #e5e7eb;
+}
+.orgv2-support-label {
+  font-size: .72rem; font-weight: 700; letter-spacing: .5px;
+  text-transform: uppercase; color: #9ca3af; text-align: center; margin-bottom: 14px;
+}
+.orgv2-support-row { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+.orgv2-support-chip {
+  display: flex; align-items: center; gap: 12px;
+  background: #fff; border: 1.5px dashed #d1d5db;
+  border-radius: 14px; padding: 14px 20px;
+  transition: all .25s;
+}
+.orgv2-support-chip:hover { border-color: #6b7280; background: #f9fafb; }
+.orgv2-support-ico { font-size: 1.5rem; }
+.orgv2-support-role { font-size: .65rem; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: .5px; }
+.orgv2-support-name { font-size: .85rem; font-weight: 700; color: #374151; margin-top: 2px; }
+
+/* ============================================
+   WALI JORONG — PREMIUM LIST CARDS
+   ============================================ */
+.orgv2-jorong-section {
+  margin-top: 40px; padding-top: 36px;
+  border-top: 2px solid #e5e7eb;
+}
+.orgv2-jorong-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 24px; flex-wrap: wrap; gap: 12px;
+}
+.orgv2-jorong-title-wrap { display: flex; align-items: center; gap: 14px; }
+.orgv2-jorong-icon {
+  font-size: 2rem; width: 52px; height: 52px; border-radius: 14px;
+  background: linear-gradient(135deg, #16a34a, #065f46);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.orgv2-jorong-title-wrap h3 { font-size: 1.1rem; font-weight: 800; color: #065f46; margin: 0; }
+.orgv2-jorong-title-wrap p  { font-size: .78rem; color: #6b7280; margin: 2px 0 0; }
+.orgv2-jorong-count {
+  font-size: 1.8rem; font-weight: 900; color: #16a34a;
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border: 2px solid #bbf7d0; border-radius: 16px;
+  padding: 8px 22px; line-height: 1;
+}
+
+.orgv2-jorong-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+}
+.orgv2-jorong-card {
+  display: flex; align-items: center; gap: 14px;
+  background: #fff; border: 1.5px solid #e5e7eb;
+  border-radius: 16px; padding: 16px 18px;
+  transition: all .3s ease; cursor: default;
+  position: relative; overflow: hidden;
+}
+.orgv2-jorong-card::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 4px; background: linear-gradient(to bottom, #16a34a, #4ade80);
+  border-radius: 4px 0 0 4px; transition: width .3s;
+}
+.orgv2-jorong-card:hover {
+  border-color: #16a34a; transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(22,163,74,.18);
+  background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+}
+.orgv2-jorong-card:hover::before { width: 6px; }
+.ojc-num {
+  width: 38px; height: 38px; border-radius: 12px; flex-shrink: 0;
+  background: linear-gradient(135deg, #16a34a, #065f46);
+  color: #fff; font-size: .75rem; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 10px rgba(22,163,74,.3);
+}
+.ojc-body { flex: 1; min-width: 0; }
+.ojc-jorong { font-size: .78rem; font-weight: 800; color: #065f46; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ojc-name   { font-size: .85rem; color: #374151; font-weight: 700; margin-top: 2px; }
+.ojc-label  { font-size: .62rem; color: #9ca3af; margin-top: 2px; text-transform: uppercase; letter-spacing: .4px; font-weight: 600; }
+.ojc-arrow {
+  color: #d1d5db; font-size: 1.2rem; font-weight: 700; flex-shrink: 0;
+  transition: all .3s; transform: translateX(0);
+}
+.orgv2-jorong-card:hover .ojc-arrow { color: #16a34a; transform: translateX(4px); }
+
+/* Responsive */
+@media (max-width: 1024px) { .orgv2-jorong-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) {
+  .orgv2-level-split { grid-template-columns: 1fr; }
+  .orgv2-card.orgv2-top { flex-direction: column; text-align: center; padding: 24px; }
+  .orgv2-jorong-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .orgv2-jorong-grid { grid-template-columns: 1fr; }
+  .orgv2-jorong-count { display: none; }
+}
