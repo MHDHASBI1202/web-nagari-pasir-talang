@@ -1843,3 +1843,22 @@ a.hero-stat:hover { transform:translateY(-2px); }
   .wisata-card.wisata-wide { flex-direction: column; }
   .wisata-wide-img { width: 100% !important; aspect-ratio: 16/9 !important; }
 }
+/* ============================================
+   WISATA DIVIDER (galeri ? destinasi)
+   ============================================ */
+.wisata-divider {
+  display: flex; align-items: center; gap: 16px;
+  margin: 0 0 40px;
+}
+.wisata-divider::before, .wisata-divider::after {
+  content: ''; flex: 1;
+  height: 1px; background: rgba(255,255,255,.2);
+}
+.wisata-divider span {
+  color: rgba(255,255,255,.85);
+  font-size: .85rem; font-weight: 700;
+  white-space: nowrap;
+  background: rgba(255,255,255,.08);
+  padding: 6px 18px; border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,.15);
+}
