@@ -505,3 +505,20 @@ function switchOrgTab(panel, btn) {
   // Set active tab
   if (btn) btn.classList.add('active');
 }
+
+// ============================================
+// SWITCH ORGANISASI TAB
+// ============================================
+function switchOrg(id) {
+  // panels
+  document.querySelectorAll('.orgs-panel').forEach(p => p.classList.remove('active'));
+  const panel = document.getElementById('org-' + id);
+  if (panel) panel.classList.add('active');
+  // tabs
+  document.querySelectorAll('.orgs-tab').forEach((btn, i) => {
+    btn.classList.remove('active');
+    if (btn.getAttribute('onclick') === "switchOrg('" + id + "')") {
+      btn.classList.add('active');
+    }
+  });
+}
