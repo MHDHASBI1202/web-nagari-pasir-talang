@@ -522,3 +522,25 @@ function switchOrg(id) {
     }
   });
 }
+
+// ============================================
+// STRUKTUR ORGANISASI — TAB SYSTEM
+// ============================================
+(function() {
+  const tabs = document.querySelectorAll('.org-tab');
+  const panels = document.querySelectorAll('.org-panel');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      const target = this.getAttribute('data-tab');
+      tabs.forEach(function(t) {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      panels.forEach(function(p) { p.classList.remove('active'); });
+      this.classList.add('active');
+      this.setAttribute('aria-selected', 'true');
+      var panel = document.getElementById('panel-' + target);
+      if (panel) panel.classList.add('active');
+    }.bind(tab));
+  });
+})();
