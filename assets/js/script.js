@@ -544,3 +544,28 @@ function switchOrg(id) {
     }.bind(tab));
   });
 })();
+
+// ============================================
+// HERO STAT "7 Jorong" — buka tab Pemerintahan + scroll ke Wali Jorong
+// ============================================
+function bukaTabJorong(e) {
+  e.preventDefault();
+  // Aktifkan tab Pemerintahan
+  var tabs   = document.querySelectorAll('.org-tab');
+  var panels = document.querySelectorAll('.org-panel');
+  tabs.forEach(function(t)   { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+  panels.forEach(function(p) { p.classList.remove('active'); });
+  var tabBtn = document.getElementById('tab-btn-pemerintahan');
+  var panel  = document.getElementById('panel-pemerintahan');
+  if (tabBtn) { tabBtn.classList.add('active'); tabBtn.setAttribute('aria-selected','true'); }
+  if (panel)    panel.classList.add('active');
+  // Scroll ke #struktur, lalu ke bagian Wali Jorong
+  var seksi = document.getElementById('struktur');
+  if (seksi) {
+    seksi.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(function() {
+      var jorong = document.querySelector('.orgv2-jorong-section');
+      if (jorong) jorong.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 600);
+  }
+}
