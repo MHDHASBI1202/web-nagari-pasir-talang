@@ -569,3 +569,9 @@ function bukaTabJorong(e) {
     }, 600);
   }
 }
+
+// Auto-update footer year
+(function() {
+  var el = document.getElementById('footerYear');
+  if (el) el.textContent = new Date().getFullYear();
+})();

@@ -1,0 +1,7 @@
+﻿User-agent: *
+Allow: /
+
+# Blok akses ke panel admin
+Disallow: /admin/
+
+Sitemap: https://mhdhasbi1202.github.io/web-nagari-pasir-talang/sitemap.xml
