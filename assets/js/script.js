@@ -575,3 +575,34 @@ function bukaTabJorong(e) {
   var el = document.getElementById('footerYear');
   if (el) el.textContent = new Date().getFullYear();
 })();
+
+// =========================================
+// SCROLL REVEAL — Enhanced v2
+// =========================================
+(function() {
+  // Add reveal-up class to key elements
+  const revealSelectors = [
+    '.layanan-card', '.info-card', '.big-stat-card',
+    '.wisata-card', '.berita-item', '.kontak-card',
+    '.anggota-chip', '.orgv2-jorong-card', '.pimpinan-card',
+    '.stat-chart-card', '.section-header'
+  ];
+  
+  revealSelectors.forEach(sel => {
+    document.querySelectorAll(sel).forEach((el, i) => {
+      el.classList.add('reveal-up');
+      el.style.transitionDelay = (i % 4) * 0.08 + 's';
+    });
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal-up').forEach(el => io.observe(el));
+})();

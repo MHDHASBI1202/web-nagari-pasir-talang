@@ -3032,3 +3032,332 @@ a.hero-stat:hover { transform:translateY(-2px); }
 
 /* lembaga-hero-icon (old class) — hide if still present */
 .lembaga-hero-icon { display: none; }
+
+/* ================================================================
+   GLOBAL POLISH v3 — Premium Refresh
+   ================================================================ */
+
+/* === Section header upgrade === */
+.section-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .7rem; font-weight: 800; letter-spacing: 1.2px;
+  text-transform: uppercase; color: var(--green-700);
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  border: 1.5px solid #86efac; border-radius: 999px;
+  padding: 5px 14px; margin-bottom: 14px;
+}
+.section-badge::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green-600);
+  box-shadow: 0 0 0 3px rgba(22,163,74,.2);
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(22,163,74,.2); }
+  50%       { box-shadow: 0 0 0 6px rgba(22,163,74,.05); }
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700; line-height: 1.2;
+  color: var(--gray-900); margin-bottom: 14px;
+  position: relative;
+}
+.section-title::after {
+  content: ''; display: block;
+  width: 48px; height: 4px; border-radius: 4px;
+  background: linear-gradient(90deg, var(--green-500), var(--green-300));
+  margin-top: 12px;
+}
+.section-header.text-center .section-title::after { margin-left: auto; margin-right: auto; }
+.section-desc { font-size: 1rem; color: var(--gray-500); max-width: 560px; line-height: 1.7; }
+.section-header.text-center .section-desc { margin: 0 auto; }
+
+/* === Section spacing upgrade === */
+.section { padding: 88px 0; }
+.section-alt { padding: 88px 0; background: var(--gray-50); }
+.section-dark { padding: 88px 0; }
+
+/* === Navbar upgrade === */
+.navbar {
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+}
+.navbar.scrolled {
+  background: rgba(255,255,255,.95);
+  box-shadow: 0 1px 0 rgba(0,0,0,.06), 0 4px 24px rgba(0,0,0,.08);
+}
+.nav-link {
+  position: relative; font-size: .875rem; font-weight: 600;
+  color: var(--gray-600); padding: 6px 4px;
+  transition: color .25s;
+}
+.nav-link::after {
+  content: ''; position: absolute; bottom: -2px; left: 0; right: 0;
+  height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--green-500), var(--green-400));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .3s cubic-bezier(.4,0,.2,1);
+}
+.nav-link:hover { color: var(--green-700); }
+.nav-link:hover::after,
+.nav-link.active::after { transform: scaleX(1); }
+.nav-link.active { color: var(--green-700); }
+
+.nav-cta {
+  background: linear-gradient(135deg, var(--green-600), var(--green-700));
+  color: #fff !important; padding: 9px 20px !important;
+  border-radius: 999px; font-weight: 700; font-size: .85rem;
+  box-shadow: 0 4px 14px rgba(22,163,74,.3);
+  transition: all .25s;
+}
+.nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(22,163,74,.4);
+  background: linear-gradient(135deg, var(--green-500), var(--green-600));
+}
+.nav-cta::after { display: none !important; }
+
+/* === Hero stats upgrade === */
+.hero-stats {
+  display: flex; gap: 0; align-items: stretch;
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 20px; overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,.2);
+}
+.hero-stat {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 18px 20px; gap: 4px;
+  transition: background .25s;
+}
+.hero-stat:hover { background: rgba(255,255,255,.08); }
+.stat-num {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 900; color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.stat-label { font-size: .7rem; font-weight: 600; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: .8px; }
+.hero-stat-divider { width: 1px; background: rgba(255,255,255,.15); align-self: stretch; flex-shrink: 0; }
+
+/* === Profil cards upgrade === */
+.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 16px; margin-top: 32px; }
+.info-card {
+  background: #fff;
+  border: 1.5px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px; text-align: center;
+  transition: all .3s;
+  box-shadow: var(--shadow-sm);
+}
+.info-card:hover {
+  border-color: var(--green-300);
+  box-shadow: 0 8px 24px rgba(22,163,74,.12);
+  transform: translateY(-4px);
+}
+.info-card-icon {
+  width: 52px; height: 52px; border-radius: 14px;
+  background: linear-gradient(135deg, var(--green-50), var(--green-100));
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 12px;
+  transition: transform .3s;
+}
+.info-card:hover .info-card-icon { transform: scale(1.1) rotate(-3deg); }
+
+/* === Layanan cards upgrade === */
+.layanan-card {
+  background: #fff;
+  border-radius: var(--radius-xl);
+  border: 1.5px solid var(--gray-100);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-sm);
+  transition: all .35s cubic-bezier(.4,0,.2,1);
+  position: relative; overflow: hidden;
+}
+.layanan-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green-400), var(--green-600));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .35s;
+}
+.layanan-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,.12); border-color: var(--green-200); }
+.layanan-card:hover::before { transform: scaleX(1); }
+
+.layanan-icon-wrap {
+  width: 60px; height: 60px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; transition: transform .3s;
+}
+.layanan-card:hover .layanan-icon-wrap { transform: scale(1.1) rotate(-4deg); }
+
+/* === Stats section upgrade === */
+.big-stat-card {
+  background: #fff; border-radius: var(--radius-xl);
+  border: 1.5px solid var(--gray-100);
+  padding: 36px 28px; text-align: center;
+  transition: all .3s;
+  box-shadow: var(--shadow-sm);
+}
+.big-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(22,163,74,.12);
+  border-color: var(--green-200);
+}
+
+/* === Berita upgrade === */
+.berita-featured {
+  border-radius: var(--radius-xl) !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-md) !important;
+  transition: transform .3s, box-shadow .3s !important;
+}
+.berita-featured:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+.berita-item {
+  border-radius: var(--radius-md) !important;
+  border: 1.5px solid var(--gray-100) !important;
+  background: #fff !important;
+  transition: all .25s !important;
+}
+.berita-item:hover {
+  border-color: var(--green-200) !important;
+  box-shadow: 0 6px 20px rgba(22,163,74,.1) !important;
+  transform: translateX(4px) !important;
+}
+
+/* === Anggota chip upgrade (BAMUS/LPM) === */
+.anggota-chip {
+  background: #fff;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-full);
+  padding: 8px 18px; font-size: .85rem;
+  font-weight: 600; color: var(--gray-700);
+  transition: all .2s;
+  box-shadow: var(--shadow-sm);
+}
+.anggota-chip:hover {
+  background: var(--green-50);
+  border-color: var(--green-300);
+  color: var(--green-800);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(22,163,74,.15);
+}
+
+/* === Footer upgrade === */
+.footer {
+  background: linear-gradient(170deg, #051c10 0%, var(--dark-bg) 50%, #061224 100%);
+  position: relative; overflow: hidden;
+}
+.footer::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--green-600), transparent);
+}
+.footer-bottom {
+  background: rgba(0,0,0,.25);
+  border-top: 1px solid rgba(255,255,255,.05);
+}
+
+/* === Kontak cards upgrade === */
+.kontak-card {
+  border-radius: var(--radius-xl) !important;
+  border: 1.5px solid var(--gray-100) !important;
+  transition: all .3s !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+.kontak-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 12px 36px rgba(22,163,74,.12) !important;
+  border-color: var(--green-200) !important;
+}
+
+/* === Org tab upgrade === */
+.org-tabs {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  background: var(--gray-100); border-radius: var(--radius-lg);
+  padding: 6px; margin-bottom: 32px;
+}
+.org-tab {
+  flex: 1; min-width: 120px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 10px 16px; border-radius: var(--radius-md);
+  font-size: .82rem; font-weight: 700; color: var(--gray-500);
+  background: transparent; transition: all .25s;
+  white-space: nowrap;
+}
+.org-tab:hover { color: var(--gray-700); background: rgba(255,255,255,.6); }
+.org-tab.active {
+  background: #fff; color: var(--green-700);
+  box-shadow: 0 2px 10px rgba(0,0,0,.1);
+}
+
+/* === Wisata card upgrade === */
+.wisata-card {
+  border-radius: var(--radius-xl) !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-md) !important;
+  transition: all .35s !important;
+}
+.wisata-card:hover {
+  transform: translateY(-6px) scale(1.01) !important;
+  box-shadow: 0 20px 48px rgba(0,0,0,.25) !important;
+}
+
+/* === Scroll reveal animations === */
+.reveal-up {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal-up.revealed { opacity: 1; transform: translateY(0); }
+
+/* === Button upgrade === */
+.btn-primary {
+  background: linear-gradient(135deg, var(--green-500), var(--green-700));
+  box-shadow: 0 6px 20px rgba(22,163,74,.35);
+  border-radius: 999px; padding: 13px 28px;
+  font-weight: 700; color: #fff;
+  transition: all .3s; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(22,163,74,.45);
+}
+.btn-secondary {
+  background: rgba(255,255,255,.15);
+  backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255,255,255,.4);
+  border-radius: 999px; padding: 12px 28px;
+  font-weight: 700; color: #fff;
+  transition: all .3s; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-secondary:hover {
+  background: rgba(255,255,255,.25);
+  transform: translateY(-2px);
+}
+
+/* === Lembaga pimpinan upgrade === */
+.pimpinan-card {
+  border-radius: var(--radius-xl) !important;
+  padding: 28px 20px !important; text-align: center !important;
+  border-width: 1.5px !important;
+  transition: all .3s !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+.pimpinan-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,.1) !important;
+}
+
+/* === Map placeholder upgrade === */
+.map-placeholder {
+  border-radius: var(--radius-xl) !important;
+  overflow: hidden !important;
+  transition: all .3s !important;
+}
+.map-placeholder:hover { transform: scale(1.01) !important; }
+
