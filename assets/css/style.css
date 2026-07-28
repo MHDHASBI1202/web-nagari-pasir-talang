@@ -1,4 +1,4 @@
-/* =============================================
+ï»¿/* =============================================
    NAGARI PASIR TALANG - Main Stylesheet
    Modern, Premium Village Website
    ============================================= */
@@ -468,7 +468,7 @@ input, textarea, select { font-family: inherit; }
   flex-shrink: 0;
 }
 .ticker-items span::before {
-  content: 'â€¢'; margin-right: 12px;
+  content: 'Ã¢â‚¬Â¢'; margin-right: 12px;
   color: var(--green-400);
 }
 
@@ -1562,7 +1562,7 @@ a.hero-stat:hover { transform:translateY(-2px); }
 /* Ticker links */
 .ticker-link { font-size:.82rem; font-weight:500; color:rgba(255,255,255,.9); flex-shrink:0; text-decoration:none; transition:color .2s; }
 .ticker-link:hover { color:#4ade80; }
-.ticker-link::before { content:'•'; margin-right:12px; color:#4ade80; }
+.ticker-link::before { content:'â€¢'; margin-right:12px; color:#4ade80; }
 
 /* Layanan footer */
 .layanan-footer { display:flex; align-items:center; justify-content:space-between; margin-top:16px; padding-top:14px; border-top:1px solid #e5e7eb; flex-wrap:wrap; gap:8px; }
@@ -2342,7 +2342,7 @@ a.hero-stat:hover { transform:translateY(-2px); }
 }
 
 /* ============================================
-   ORG CHART v2 — dark section standalone
+   ORG CHART v2 â€” dark section standalone
    ============================================ */
 
 /* Tree nodes */
@@ -2511,7 +2511,7 @@ a.hero-stat:hover { transform:translateY(-2px); }
 }
 
 /* ============================================
-   STRUKTUR ORGANISASI — TAB SYSTEM
+   STRUKTUR ORGANISASI â€” TAB SYSTEM
    ============================================ */
 .org-tabs {
   display: flex; flex-wrap: wrap; gap: 10px;
@@ -2539,7 +2539,7 @@ a.hero-stat:hover { transform:translateY(-2px); }
 @keyframes fadePanel { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: none; } }
 
 /* ============================================
-   ORG CHART — PEMERINTAHAN
+   ORG CHART â€” PEMERINTAHAN
    ============================================ */
 .org-chart { display: flex; flex-direction: column; align-items: center; gap: 0; }
 
@@ -2726,7 +2726,7 @@ a.hero-stat:hover { transform:translateY(-2px); }
 @media (max-width: 480px) { .jorong-org-grid { grid-template-columns: 1fr; } }
 
 /* ============================================
-   ORG CHART V2 — PREMIUM REDESIGN
+   ORG CHART V2 â€” PREMIUM REDESIGN
    ============================================ */
 
 /* === Main Chart Wrapper === */
@@ -2750,7 +2750,7 @@ a.hero-stat:hover { transform:translateY(-2px); }
   border-radius: 3px; margin: 0 auto;
 }
 
-/* === TOP CARD — Wali Nagari === */
+/* === TOP CARD â€” Wali Nagari === */
 .orgv2-card.orgv2-top {
   position: relative; overflow: hidden;
   display: flex; align-items: center; gap: 20px;
@@ -2889,7 +2889,7 @@ a.hero-stat:hover { transform:translateY(-2px); }
 .orgv2-support-name { font-size: .85rem; font-weight: 700; color: #374151; margin-top: 2px; }
 
 /* ============================================
-   WALI JORONG — PREMIUM LIST CARDS
+   WALI JORONG â€” PREMIUM LIST CARDS
    ============================================ */
 .orgv2-jorong-section {
   margin-top: 40px; padding-top: 36px;
@@ -2965,7 +2965,7 @@ a.hero-stat:hover { transform:translateY(-2px); }
 }
 
 /* ============================================
-   ORG V2 — PATCH: SVG icons, pc-icon, lembaga-hero-svg
+   ORG V2 â€” PATCH: SVG icons, pc-icon, lembaga-hero-svg
    ============================================ */
 /* Tab SVG icon */
 .org-tab-svg {
@@ -3001,7 +3001,7 @@ a.hero-stat:hover { transform:translateY(-2px); }
   display: flex; align-items: center; justify-content: center;
 }
 
-/* anggota-label — remove old emoji style */
+/* anggota-label â€” remove old emoji style */
 .anggota-label {
   display: flex; align-items: center; gap: 8px;
   font-size: .8rem; font-weight: 700; color: #374151; margin-bottom: 14px;
@@ -3012,7 +3012,7 @@ a.hero-stat:hover { transform:translateY(-2px); }
   background: linear-gradient(to bottom, #16a34a, #4ade80);
 }
 
-/* kan-empty-icon — SVG container */
+/* kan-empty-icon â€” SVG container */
 .kan-empty-icon {
   width: 72px; height: 72px; border-radius: 20px;
   background: #fffbeb; border: 2px solid #fcd34d;
@@ -3027,14 +3027,14 @@ a.hero-stat:hover { transform:translateY(-2px); }
   background: #f3f4f6; flex-shrink: 0;
 }
 
-/* override pc-crown (old class) — hide if still present */
+/* override pc-crown (old class) â€” hide if still present */
 .pc-crown { display: none; }
 
-/* lembaga-hero-icon (old class) — hide if still present */
+/* lembaga-hero-icon (old class) â€” hide if still present */
 .lembaga-hero-icon { display: none; }
 
 /* ================================================================
-   GLOBAL POLISH v3 — Premium Refresh
+   GLOBAL POLISH v3 â€” Premium Refresh
    ================================================================ */
 
 /* === Section header upgrade === */
@@ -3079,45 +3079,77 @@ a.hero-stat:hover { transform:translateY(-2px); }
 .section-alt { padding: 88px 0; background: var(--gray-50); }
 .section-dark { padding: 88px 0; }
 
-/* === Navbar upgrade === */
+/* === Navbar upgrade â€” sistem transparan/putih === */
+
+/* === State awal: di atas hero (gelap) â†’ teks putih === */
 .navbar {
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
 }
-.navbar.scrolled {
-  background: rgba(255,255,255,.95);
-  box-shadow: 0 1px 0 rgba(0,0,0,.06), 0 4px 24px rgba(0,0,0,.08);
-}
+
+/* nav-link default = putih (untuk hero gelap) */
 .nav-link {
   position: relative; font-size: .875rem; font-weight: 600;
-  color: var(--gray-600); padding: 6px 4px;
-  transition: color .25s;
+  color: rgba(255,255,255,.85); padding: 8px 14px;
+  border-radius: var(--radius-full);
+  transition: color .25s, background .25s;
 }
 .nav-link::after {
-  content: ''; position: absolute; bottom: -2px; left: 0; right: 0;
+  content: ''; position: absolute; bottom: 4px; left: 14px; right: 14px;
   height: 2px; border-radius: 2px;
-  background: linear-gradient(90deg, var(--green-500), var(--green-400));
+  background: #fff;
   transform: scaleX(0); transform-origin: left;
   transition: transform .3s cubic-bezier(.4,0,.2,1);
 }
-.nav-link:hover { color: var(--green-700); }
+.nav-link:hover { color: #fff; background: rgba(255,255,255,.12); }
 .nav-link:hover::after,
 .nav-link.active::after { transform: scaleX(1); }
-.nav-link.active { color: var(--green-700); }
+.nav-link.active { color: #fff; background: rgba(255,255,255,.1); }
 
+/* Tombol Kontak default (transparan) */
 .nav-cta {
-  background: linear-gradient(135deg, var(--green-600), var(--green-700));
-  color: #fff !important; padding: 9px 20px !important;
+  background: rgba(255,255,255,.15);
+  border: 1.5px solid rgba(255,255,255,.5);
+  color: #fff !important; padding: 9px 22px !important;
   border-radius: 999px; font-weight: 700; font-size: .85rem;
-  box-shadow: 0 4px 14px rgba(22,163,74,.3);
   transition: all .25s;
+  backdrop-filter: blur(8px);
 }
 .nav-cta:hover {
+  background: rgba(255,255,255,.28);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(22,163,74,.4);
-  background: linear-gradient(135deg, var(--green-500), var(--green-600));
 }
 .nav-cta::after { display: none !important; }
+
+/* === State scrolled: navbar putih solid â†’ teks gelap === */
+.navbar.scrolled {
+  background: rgba(255,255,255,.97) !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,.06), 0 4px 24px rgba(0,0,0,.08) !important;
+}
+.navbar.scrolled .brand-name { color: var(--gray-900); text-shadow: none; }
+.navbar.scrolled .brand-sub  { color: var(--gray-500); }
+.navbar.scrolled .hamburger span { background: var(--gray-800); }
+
+.navbar.scrolled .nav-link {
+  color: var(--gray-600);
+  background: transparent !important;
+}
+.navbar.scrolled .nav-link::after {
+  background: linear-gradient(90deg, var(--green-500), var(--green-400));
+}
+.navbar.scrolled .nav-link:hover { color: var(--green-700); }
+.navbar.scrolled .nav-link.active { color: var(--green-700); }
+
+.navbar.scrolled .nav-cta {
+  background: linear-gradient(135deg, var(--green-600), var(--green-700)) !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(22,163,74,.3) !important;
+  backdrop-filter: none !important;
+}
+.navbar.scrolled .nav-cta:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(22,163,74,.4) !important;
+}
 
 /* === Hero stats upgrade === */
 .hero-stats {
