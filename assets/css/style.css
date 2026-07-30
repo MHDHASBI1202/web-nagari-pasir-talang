@@ -3393,3 +3393,6 @@ a.hero-stat:hover { transform:translateY(-2px); }
 }
 .map-placeholder:hover { transform: scale(1.01) !important; }
 
+
+/* stat-text: tampilkan langsung, tidak di-count-up */
+.stat-text { font-variant-numeric: tabular-nums; }
