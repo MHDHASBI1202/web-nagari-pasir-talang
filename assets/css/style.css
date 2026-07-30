@@ -3396,3 +3396,190 @@ a.hero-stat:hover { transform:translateY(-2px); }
 
 /* stat-text: tampilkan langsung, tidak di-count-up */
 .stat-text { font-variant-numeric: tabular-nums; }
+
+/* ================================================================
+   KAN — Kerapatan Adat Nagari Styles
+   ================================================================ */
+
+.kan-desc {
+  background: linear-gradient(135deg, #fffbeb, #fef9c3);
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  color: var(--gray-700);
+  font-size: .9rem;
+  line-height: 1.7;
+}
+
+/* === Section Label === */
+.kan-section-label {
+  display: flex; align-items: center; gap: 8px;
+  font-size: .78rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--green-700);
+  margin: 28px 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--green-100);
+}
+
+/* === Pimpinan Utama (Ketua, Sekretaris, Bendahara) === */
+.kan-pimpinan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin-bottom: 8px;
+}
+.kan-pimpinan-card {
+  border-radius: var(--radius-lg);
+  padding: 20px 18px;
+  text-align: center;
+  border: 1.5px solid transparent;
+  transition: all .3s;
+  box-shadow: var(--shadow-sm);
+}
+.kan-pimpinan-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+.kan-ketua {
+  background: linear-gradient(135deg, #14532d, #166534);
+  border-color: #15803d;
+}
+.kan-ketua .kan-badge { background: rgba(255,255,255,.15); color: #fff; }
+.kan-ketua .kan-pimpinan-name { color: #fff; }
+
+.kan-sekretaris {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-color: #86efac;
+}
+.kan-sekretaris .kan-badge { background: var(--green-600); color: #fff; }
+.kan-sekretaris .kan-pimpinan-name { color: var(--gray-800); }
+.kan-sekretaris .kan-pimpinan-sub { color: var(--gray-500); font-size: .78rem; margin-top: 6px; }
+
+.kan-bendahara {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-color: #fcd34d;
+}
+.kan-bendahara .kan-badge { background: var(--gold-600); color: #fff; }
+.kan-bendahara .kan-pimpinan-name { color: var(--gray-800); }
+
+.kan-badge {
+  display: inline-block;
+  font-size: .68rem; font-weight: 800;
+  letter-spacing: .8px; text-transform: uppercase;
+  border-radius: 999px; padding: 3px 12px;
+  margin-bottom: 10px;
+}
+.kan-pimpinan-name { font-weight: 700; font-size: .9rem; line-height: 1.4; }
+
+/* === Penasehat === */
+.kan-penasehat-grid {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin-bottom: 8px;
+}
+.kan-penasehat-chip {
+  background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+  border: 1.5px solid #c4b5fd;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: .82rem; font-weight: 600;
+  color: #5b21b6;
+  transition: all .2s;
+}
+.kan-penasehat-chip:hover {
+  background: #ddd6fe;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(124,58,237,.15);
+}
+
+/* === Bidang / Wakil Ketua Grid === */
+.kan-bidang-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.kan-bidang-card {
+  background: #fff;
+  border: 1.5px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  transition: all .3s;
+  box-shadow: var(--shadow-sm);
+}
+.kan-bidang-card:hover {
+  border-color: var(--green-200);
+  box-shadow: 0 8px 24px rgba(22,163,74,.1);
+  transform: translateY(-4px);
+}
+
+.kan-wk-header {
+  display: flex; align-items: flex-start; gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1.5px solid var(--gray-100);
+}
+.kan-wk-num {
+  flex-shrink: 0;
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--green-600), var(--green-800));
+  color: #fff;
+  font-weight: 900; font-size: .85rem;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+}
+.kan-wk-name { font-weight: 700; font-size: .88rem; color: var(--gray-800); line-height: 1.4; }
+.kan-wk-label { font-size: .72rem; color: var(--green-600); font-weight: 600; margin-top: 2px; }
+
+.kan-bidang-title {
+  font-size: .8rem; font-weight: 800;
+  color: var(--gray-700);
+  text-transform: uppercase; letter-spacing: .5px;
+  margin-bottom: 12px;
+}
+.kan-bidang-ketua-chip {
+  display: inline-block;
+  background: var(--green-50);
+  border: 1px solid var(--green-200);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: .78rem; font-weight: 700;
+  color: var(--green-800);
+  margin-bottom: 10px;
+}
+.kan-anggota-list {
+  display: flex; flex-direction: column; gap: 5px;
+}
+.kan-anggota-list span {
+  font-size: .8rem; color: var(--gray-600);
+  padding: 4px 0 4px 10px;
+  border-left: 2px solid var(--gray-200);
+}
+
+/* === Unsur Pendukung === */
+.kan-pendukung-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+.kan-pendukung-card {
+  background: var(--gray-50);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+  transition: all .25s;
+}
+.kan-pendukung-card:hover {
+  border-color: var(--green-300);
+  background: var(--green-50);
+}
+.kan-pendukung-role {
+  font-size: .72rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .8px;
+  color: var(--gray-400);
+  margin-bottom: 6px;
+}
+.kan-pendukung-name {
+  font-weight: 700; font-size: .88rem;
+  color: var(--gray-700);
+}
