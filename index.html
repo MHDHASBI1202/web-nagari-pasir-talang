@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -1041,6 +1041,7 @@
 
       <section id="apbnag" class="section apb-section">
     <div class="apb-container">
+
         <div class="apb-header">
             <span class="apb-badge">Transparansi Anggaran</span>
             <h2 class="apb-title">APB Nagari &amp; Realisasi 2026</h2>
@@ -1050,842 +1051,483 @@
         <!-- Mode Switcher -->
         <div class="apb-main-switcher">
             <button class="apb-switch-btn active" data-view="view-anggaran">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                 Perubahan APBNag 2026 (Anggaran)
             </button>
             <button class="apb-switch-btn" data-view="view-realisasi">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                 Laporan Realisasi Semester I 2026
             </button>
         </div>
 
-        <!-- VIEW 1: ANGGARAN (APBNag 2026) -->
+        <!-- ===== VIEW 1: ANGGARAN ===== -->
         <div id="view-anggaran" class="apb-view-pane active">
-<div class="apb-summary-grid">
-            <div class="apb-summary-card apb-card-green">
-                <div class="apb-summary-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                </div>
-                <div class="apb-summary-content">
-                    <div class="apb-summary-label">Total Pendapatan</div>
-                    <div class="apb-summary-value">Rp1.312.914.442</div>
-                </div>
-            </div>
-            
-            <div class="apb-summary-card apb-card-gold">
-                <div class="apb-summary-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
-                </div>
-                <div class="apb-summary-content">
-                    <div class="apb-summary-label">Total Belanja</div>
-                    <div class="apb-summary-value">Rp1.556.432.444,49</div>
-                </div>
-            </div>
-
-            <div class="apb-summary-card apb-card-blue">
-                <div class="apb-summary-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                </div>
-                <div class="apb-summary-content">
-                    <div class="apb-summary-label">Pembiayaan Netto</div>
-                    <div class="apb-summary-value">Rp243.518.002,49</div>
-                </div>
-            </div>
-
-            <div class="apb-summary-card apb-card-purple">
-                <div class="apb-summary-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h0M2 9.5h20"/></svg>
-                </div>
-                <div class="apb-summary-content">
-                    <div class="apb-summary-label">SiLPA Tahun Berjalan</div>
-                    <div class="apb-summary-value">Rp0</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="apb-content-grid">
-            <div class="apb-col-left">
-                <div class="apb-card apb-detailed-card">
-                    <div class="apb-card-header">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="apb-card-icon text-green"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                        <h3 class="apb-card-title">Rincian Pendapatan</h3>
-                    </div>
-                    
-                    <div class="apb-detail-group">
-                        <div class="apb-detail-group-header">
-                            <span class="apb-detail-group-title">Pendapatan Transfer</span>
-                            <span class="apb-detail-group-total">Rp1.300.448.442</span>
-                        </div>
-                        <ul class="apb-detail-list">
-                            <li><span>Dana Desa</span> <span>Rp330.420.000</span></li>
-                            <li><span>Bagi Hasil Pajak & Retribusi</span> <span>Rp11.862.827</span></li>
-                            <li><span>Alokasi Dana Desa (ADD)</span> <span>Rp958.165.615</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="apb-detail-group">
-                        <div class="apb-detail-group-header">
-                            <span class="apb-detail-group-title">Pendapatan Lain-lain</span>
-                            <span class="apb-detail-group-total">Rp12.466.000</span>
-                        </div>
-                        <ul class="apb-detail-list">
-                            <li><span>Bunga Bank</span> <span>Rp3.000.000</span></li>
-                            <li><span>Pendapatan Sah Lainnya</span> <span>Rp9.466.000</span></li>
-                        </ul>
+            <div class="apb-summary-grid">
+                <div class="apb-summary-card apb-card-green">
+                    <div class="apb-summary-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                    <div class="apb-summary-content">
+                        <div class="apb-summary-label">Total Pendapatan</div>
+                        <div class="apb-summary-value">Rp1.312.914.442</div>
                     </div>
                 </div>
-
-                <div class="apb-card apb-detailed-card">
-                    <div class="apb-card-header">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="apb-card-icon text-blue"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                        <h3 class="apb-card-title">Rincian Pembiayaan</h3>
+                <div class="apb-summary-card apb-card-gold">
+                    <div class="apb-summary-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg></div>
+                    <div class="apb-summary-content">
+                        <div class="apb-summary-label">Total Belanja</div>
+                        <div class="apb-summary-value">Rp1.556.432.444,49</div>
                     </div>
-                    
-                    <div class="apb-detail-group">
-                        <div class="apb-detail-group-header">
-                            <span class="apb-detail-group-title">Penerimaan Pembiayaan</span>
-                            <span class="apb-detail-group-total">Rp493.518.002,49</span>
-                        </div>
-                        <ul class="apb-detail-list">
-                            <li><span>SiLPA Tahun Sebelumnya</span> <span>Rp493.518.002,49</span></li>
-                        </ul>
+                </div>
+                <div class="apb-summary-card apb-card-blue">
+                    <div class="apb-summary-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                    <div class="apb-summary-content">
+                        <div class="apb-summary-label">Pembiayaan Netto</div>
+                        <div class="apb-summary-value">Rp243.518.002,49</div>
                     </div>
-                    
-                    <div class="apb-detail-group">
-                        <div class="apb-detail-group-header">
-                            <span class="apb-detail-group-title">Pengeluaran Pembiayaan</span>
-                            <span class="apb-detail-group-total">Rp250.000.000</span>
-                        </div>
-                        <ul class="apb-detail-list">
-                            <li><span>Penyertaan Modal Desa</span> <span>Rp250.000.000</span></li>
-                        </ul>
+                </div>
+                <div class="apb-summary-card apb-card-purple">
+                    <div class="apb-summary-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h0M2 9.5h20"/></svg></div>
+                    <div class="apb-summary-content">
+                        <div class="apb-summary-label">SiLPA Tahun Berjalan</div>
+                        <div class="apb-summary-value">Rp0</div>
                     </div>
                 </div>
             </div>
 
-            <div class="apb-col-right">
-                <div class="apb-card apb-tabs-card">
-                    <div class="apb-card-header">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="apb-card-icon text-gold"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
-                        <h3 class="apb-card-title">Rincian Belanja per Bidang</h3>
+            <div class="apb-content-grid">
+                <div class="apb-col-left">
+                    <div class="apb-card apb-detailed-card">
+                        <div class="apb-card-header">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="apb-card-icon text-green"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            <h3 class="apb-card-title">Rincian Pendapatan</h3>
+                        </div>
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">Pendapatan Transfer</span>
+                                <span class="apb-detail-group-total">Rp1.300.448.442</span>
+                            </div>
+                            <ul class="apb-detail-list">
+                                <li><span>Dana Desa</span><span>Rp330.420.000</span></li>
+                                <li><span>Bagi Hasil Pajak &amp; Retribusi</span><span>Rp11.862.827</span></li>
+                                <li><span>Alokasi Dana Desa (ADD)</span><span>Rp958.165.615</span></li>
+                            </ul>
+                        </div>
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">Pendapatan Lain-lain</span>
+                                <span class="apb-detail-group-total">Rp12.466.000</span>
+                            </div>
+                            <ul class="apb-detail-list">
+                                <li><span>Bunga Bank</span><span>Rp3.000.000</span></li>
+                                <li><span>Pendapatan Sah Lainnya</span><span>Rp9.466.000</span></li>
+                            </ul>
+                        </div>
                     </div>
-                    
-                    <div class="apb-tabs-nav">
-                        <button class="apb-tab-btn active" data-target="apb-bidang-a">A. Pemerintahan</button>
-                        <button class="apb-tab-btn" data-target="apb-bidang-b">B. Pembangunan</button>
-                        <button class="apb-tab-btn" data-target="apb-bidang-c">C. Kemasyarakatan</button>
-                        <button class="apb-tab-btn" data-target="apb-bidang-d">D. Pemberdayaan</button>
-                        <button class="apb-tab-btn" data-target="apb-bidang-e">E. Bencana & Mendesak</button>
+                    <div class="apb-card apb-detailed-card">
+                        <div class="apb-card-header">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="apb-card-icon text-blue"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                            <h3 class="apb-card-title">Rincian Pembiayaan</h3>
+                        </div>
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">Penerimaan Pembiayaan</span>
+                                <span class="apb-detail-group-total">Rp493.518.002,49</span>
+                            </div>
+                            <ul class="apb-detail-list">
+                                <li><span>SiLPA Tahun Sebelumnya</span><span>Rp493.518.002,49</span></li>
+                            </ul>
+                        </div>
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">Pengeluaran Pembiayaan</span>
+                                <span class="apb-detail-group-total">Rp250.000.000</span>
+                            </div>
+                            <ul class="apb-detail-list">
+                                <li><span>Penyertaan Modal Desa</span><span>Rp250.000.000</span></li>
+                            </ul>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="apb-tab-contents">
-                        <!-- Bidang A -->
-                        <div class="apb-tab-pane active" id="apb-bidang-a">
-                            <div class="apb-tab-header">
-                                <div>
-                                    <h4>A. Penyelenggaraan Pemerintahan Nagari</h4>
-                                    <div class="apb-subgroup-meta">Semula Rp1.146.742.817,49 <span class="apb-chip chip-up">Bertambah Rp26.195.000,00</span></div>
-                                </div>
-                                <div class="apb-tab-total">Rp1.172.937.817,49</div>
-                            </div>
-                            
-                            <!-- Sub 1 -->
-                            <div class="apb-subgroup">
-                                <div class="apb-subgroup-title">
-                                    <span>1. Siltap, Tunjangan &amp; Operasional Pemdes</span>
-                                    <span class="apb-subgroup-meta">Semula Rp869.528.482 ➔ <strong>Rp862.212.482,00</strong></span>
-                                </div>
-                                <ul class="apb-sub-list">
-                                    <li>
-                                        <span>Penyediaan Penghasilan Tetap &amp; Tunjangan Kepala Desa</span>
-                                        <span>Rp28.200.000,00 <span class="apb-chip chip-down">Berkurang Rp16.350.000</span></span>
-                                    </li>
-                                    <li>
-                                        <span>Penyediaan Penghasilan Tetap &amp; Tunjangan Perangkat Desa</span>
-                                        <span>Rp431.157.500,00 <span class="apb-chip chip-up">Bertambah Rp32.217.500</span></span>
-                                    </li>
-                                    <li>
-                                        <span>Penyediaan Jaminan Sosial Kades &amp; Perangkat Desa</span>
-                                        <span>Rp19.528.200,00 <span class="apb-chip chip-down">Berkurang Rp1.850.040</span></span>
-                                    </li>
-                                    <li>
-                                        <span>Operasional Pemerintah Desa (ATK, Honor PKPKD, PPKD, dll.)</span>
-                                        <span>Rp201.509.335,00 <span class="apb-chip chip-down">Berkurang Rp21.333.460</span></span>
-                                    </li>
-                                    <li>
-                                        <span>Tunjangan BPD</span>
-                                        <span>Rp122.700.000,00</span>
-                                    </li>
-                                    <li>
-                                        <span>Operasional BPD</span>
-                                        <span>Rp18.415.000,00</span>
-                                    </li>
-                                    <li>
-                                        <span>Operasional Pemdes (Dana Desa): Barang &amp; Jasa (Rp8.412.000) &amp; BTT (Rp1.500.000)</span>
-                                        <span>Rp9.912.000,00</span>
-                                    </li>
-                                    <li>
-                                        <span>Jaminan Sosial Anggota BPD</span>
-                                        <span>Rp662.580,00</span>
-                                    </li>
-                                    <li>
-                                        <span>Lain-lain Sub Bidang Siltap</span>
-                                        <span>Rp30.127.867,00</span>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!-- Sub 2 -->
-                            <div class="apb-subgroup">
-                                <div class="apb-subgroup-title">
-                                    <span>2. Sarana dan Prasarana Pemerintahan Nagari</span>
-                                    <span>Rp164.238.335,49</span>
-                                </div>
-                                <ul class="apb-sub-list">
-                                    <li><span>Penyediaan Sarana/Aset Tetap Perkantoran</span> <span>Rp39.229.522,99</span></li>
-                                    <li><span>Pembangunan/Rehabilitasi Gedung Kantor Nagari</span> <span>Rp125.008.812,50</span></li>
-                                </ul>
-                            </div>
-
-                            <!-- Sub 3 -->
-                            <div class="apb-subgroup">
-                                <div class="apb-subgroup-title">
-                                    <span>3. Administrasi Kependudukan</span>
-                                    <span>Rp23.194.000,00</span>
-                                </div>
-                                <ul class="apb-sub-list">
-                                    <li><span>Penyusunan, Pendataan, dan Pemutakhiran Profil Desa</span> <span>Rp23.194.000,00</span></li>
-                                </ul>
-                            </div>
-
-                            <!-- Sub 4 -->
-                            <div class="apb-subgroup">
-                                <div class="apb-subgroup-title">
-                                    <span>4. Tata Praja, Perencanaan, Keuangan &amp; Pelaporan</span>
-                                    <span class="apb-subgroup-meta">Semula Rp89.782.000 ➔ <strong>Rp123.293.000,00</strong> <span class="apb-chip chip-up">+Rp33.511.000</span></span>
-                                </div>
-                                <ul class="apb-sub-list">
-                                    <li><span>Musyawarah Perencanaan Nagari</span> <span>Aktif</span></li>
-                                    <li><span>Musyawarah Desa lainnya</span> <span>Aktif</span></li>
-                                    <li><span>Penyusunan Dokumen Perencanaan Desa</span> <span>Aktif</span></li>
-                                    <li><span>Pengembangan Sistem Informasi Nagari</span> <span>Aktif</span></li>
-                                    <li><span>Sosialisasi Pilkades, Pemilihan Kepala Kewilayahan &amp; BPD</span> <span>Rp102.593.000,00 <span class="apb-chip chip-up">Bertambah</span></span></li>
-                                </ul>
-                            </div>
+                <div class="apb-col-right">
+                    <div class="apb-card apb-tabs-card">
+                        <div class="apb-card-header">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="apb-card-icon text-gold"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+                            <h3 class="apb-card-title">Rincian Belanja per Bidang</h3>
                         </div>
-                        
-                        <!-- Bidang B -->
-                        <div class="apb-tab-pane" id="apb-bidang-b">
-                            <div class="apb-tab-header">
-                                <div>
-                                    <h4>B. Pelaksanaan Pembangunan Nagari</h4>
-                                    <div class="apb-subgroup-meta">Semula Rp214.361.002,00 <span class="apb-chip chip-up">Bertambah Rp60.242.000,00</span></div>
-                                </div>
-                                <div class="apb-tab-total">Rp274.603.002,00</div>
-                            </div>
-                            
-                            <div class="apb-subgroup">
-                                <div class="apb-subgroup-title">
-                                    <span>1. Pendidikan</span>
-                                    <span>Rp27.600.000,00</span>
-                                </div>
-                                <ul class="apb-sub-list">
-                                    <li><span>Penyelenggaraan PAUD / TK / TPA / TPQ</span> <span>Rp27.600.000,00</span></li>
-                                    <li><span>Penyuluhan dan Pelatihan Pendidikan</span> <span><span class="apb-chip chip-del">Dihapus (Rp0,00)</span></span></li>
-                                </ul>
-                            </div>
-
-                            <div class="apb-subgroup">
-                                <div class="apb-subgroup-title">
-                                    <span>2. Kesehatan</span>
-                                    <span>Rp243.003.002,00</span>
-                                </div>
-                                <ul class="apb-sub-list">
-                                    <li><span>Penyelenggaraan Posyandu</span> <span>Rp108.945.000,00</span></li>
-                                    <li><span>Bina Keluarga Balita (BKB)</span> <span>Rp9.068.000,00</span></li>
-                                    <li><span>Pembangunan / Rehabilitasi Posyandu</span> <span>Rp124.990.002,00</span></li>
-                                </ul>
-                            </div>
-
-                            <div class="apb-subgroup">
-                                <div class="apb-subgroup-title">
-                                    <span>3. Kawasan Permukiman</span>
-                                    <span><span class="apb-chip chip-del">Rp0,00</span></span>
-                                </div>
-                                <ul class="apb-sub-list">
-                                    <li><span>Program Pembangunan MCK Umum</span> <span><span class="apb-chip chip-del">Dihapus (Rp0,00)</span></span></li>
-                                </ul>
-                            </div>
-
-                            <div class="apb-subgroup">
-                                <div class="apb-subgroup-title">
-                                    <span>4. Perhubungan, Komunikasi &amp; Informatika</span>
-                                    <span>Rp4.000.000,00</span>
-                                </div>
-                                <ul class="apb-sub-list">
-                                    <li><span>Penyelenggaraan Informasi Publik Nagari</span> <span>Rp4.000.000,00</span></li>
-                                </ul>
-                            </div>
+                        <div class="apb-tabs-nav">
+                            <button class="apb-tab-btn active" data-target="apb-bidang-a">A. Pemerintahan</button>
+                            <button class="apb-tab-btn" data-target="apb-bidang-b">B. Pembangunan</button>
+                            <button class="apb-tab-btn" data-target="apb-bidang-c">C. Kemasyarakatan</button>
+                            <button class="apb-tab-btn" data-target="apb-bidang-d">D. Pemberdayaan</button>
+                            <button class="apb-tab-btn" data-target="apb-bidang-e">E. Bencana &amp; Mendesak</button>
                         </div>
-                        
-                        <!-- Bidang C -->
-                        <div class="apb-tab-pane" id="apb-bidang-c">
-                            <div class="apb-tab-header">
-                                <div>
-                                    <h4>C. Pembinaan Kemasyarakatan</h4>
-                                    <div class="apb-subgroup-meta">Semula Rp96.035.625,00 ➔ <strong>Rp62.466.825,00</strong></div>
+                        <div class="apb-tab-contents">
+                            <div class="apb-tab-pane active" id="apb-bidang-a">
+                                <div class="apb-tab-header">
+                                    <div><h4>A. Penyelenggaraan Pemerintahan Nagari</h4><div class="apb-subgroup-meta">Semula Rp1.146.742.817,49 <span class="apb-chip chip-up">Bertambah Rp26.195.000,00</span></div></div>
+                                    <div class="apb-tab-total">Rp1.172.937.817,49</div>
                                 </div>
-                                <div class="apb-tab-total">Rp62.466.825,00</div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>1. Siltap, Tunjangan &amp; Operasional Pemdes</span><span class="apb-subgroup-meta">Semula Rp869.528.482 &#8594; <strong>Rp862.212.482,00</strong></span></div>
+                                    <ul class="apb-sub-list">
+                                        <li><span>Penghasilan Tetap &amp; Tunjangan Kepala Desa</span><span>Rp28.200.000 <span class="apb-chip chip-down">-Rp16.350.000</span></span></li>
+                                        <li><span>Penghasilan Tetap &amp; Tunjangan Perangkat Desa</span><span>Rp431.157.500 <span class="apb-chip chip-up">+Rp32.217.500</span></span></li>
+                                        <li><span>Jaminan Sosial Kades &amp; Perangkat Desa</span><span>Rp19.528.200 <span class="apb-chip chip-down">-Rp1.850.040</span></span></li>
+                                        <li><span>Operasional Pemerintah Desa</span><span>Rp201.509.335 <span class="apb-chip chip-down">-Rp21.333.460</span></span></li>
+                                        <li><span>Tunjangan BPD</span><span>Rp122.700.000</span></li>
+                                        <li><span>Operasional BPD</span><span>Rp18.415.000</span></li>
+                                        <li><span>Operasional Pemdes (Dana Desa)</span><span>Rp9.912.000</span></li>
+                                        <li><span>Jaminan Sosial Anggota BPD</span><span>Rp662.580</span></li>
+                                        <li><span>Lain-lain Sub Bidang Siltap</span><span>Rp30.127.867</span></li>
+                                    </ul>
+                                </div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>2. Sarana dan Prasarana Pemerintahan Nagari</span><span>Rp164.238.335,49</span></div>
+                                    <ul class="apb-sub-list">
+                                        <li><span>Penyediaan Sarana/Aset Tetap Perkantoran</span><span>Rp39.229.522,99</span></li>
+                                        <li><span>Pembangunan/Rehabilitasi Gedung Kantor Nagari</span><span>Rp125.008.812,50</span></li>
+                                    </ul>
+                                </div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>3. Administrasi Kependudukan</span><span>Rp23.194.000,00</span></div>
+                                    <ul class="apb-sub-list">
+                                        <li><span>Penyusunan, Pendataan, dan Pemutakhiran Profil Desa</span><span>Rp23.194.000</span></li>
+                                    </ul>
+                                </div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>4. Tata Praja, Perencanaan, Keuangan &amp; Pelaporan</span><span class="apb-subgroup-meta">Semula Rp89.782.000 &#8594; <strong>Rp123.293.000</strong> <span class="apb-chip chip-up">+Rp33.511.000</span></span></div>
+                                    <ul class="apb-sub-list">
+                                        <li><span>Musyawarah Perencanaan Nagari</span><span>Aktif</span></li>
+                                        <li><span>Musyawarah Desa lainnya</span><span>Aktif</span></li>
+                                        <li><span>Penyusunan Dokumen Perencanaan Desa</span><span>Aktif</span></li>
+                                        <li><span>Pengembangan Sistem Informasi Nagari</span><span>Aktif</span></li>
+                                        <li><span>Sosialisasi Pilkades, Pemilihan Kewilayahan &amp; BPD</span><span>Rp102.593.000 <span class="apb-chip chip-up">Bertambah</span></span></li>
+                                    </ul>
+                                </div>
                             </div>
-                            
-                            <div class="apb-subgroup">
-                                <div class="apb-subgroup-title">
-                                    <span>1. Ketenteraman &amp; Perlindungan Masyarakat</span>
-                                    <span><span class="apb-chip chip-del">Rp0,00</span></span>
+                            <div class="apb-tab-pane" id="apb-bidang-b">
+                                <div class="apb-tab-header">
+                                    <div><h4>B. Pelaksanaan Pembangunan Nagari</h4><div class="apb-subgroup-meta">Semula Rp214.361.002 <span class="apb-chip chip-up">Bertambah Rp60.242.000</span></div></div>
+                                    <div class="apb-tab-total">Rp274.603.002,00</div>
                                 </div>
-                                <ul class="apb-sub-list">
-                                    <li><span>Kegiatan Kesiapsiagaan Bencana</span> <span><span class="apb-chip chip-del">Dihapus (Rp0,00)</span></span></li>
-                                </ul>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>1. Pendidikan</span><span>Rp27.600.000,00</span></div>
+                                    <ul class="apb-sub-list">
+                                        <li><span>Penyelenggaraan PAUD / TK / TPA / TPQ</span><span>Rp27.600.000</span></li>
+                                        <li><span>Penyuluhan dan Pelatihan Pendidikan</span><span><span class="apb-chip chip-del">Dihapus (Rp0)</span></span></li>
+                                    </ul>
+                                </div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>2. Kesehatan</span><span>Rp243.003.002,00</span></div>
+                                    <ul class="apb-sub-list">
+                                        <li><span>Penyelenggaraan Posyandu</span><span>Rp108.945.000</span></li>
+                                        <li><span>Bina Keluarga Balita (BKB)</span><span>Rp9.068.000</span></li>
+                                        <li><span>Pembangunan / Rehabilitasi Posyandu</span><span>Rp124.990.002</span></li>
+                                    </ul>
+                                </div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>3. Kawasan Permukiman</span><span><span class="apb-chip chip-del">Rp0</span></span></div>
+                                    <ul class="apb-sub-list"><li><span>Program Pembangunan MCK Umum</span><span><span class="apb-chip chip-del">Dihapus</span></span></li></ul>
+                                </div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>4. Perhubungan, Komunikasi &amp; Informatika</span><span>Rp4.000.000,00</span></div>
+                                    <ul class="apb-sub-list"><li><span>Penyelenggaraan Informasi Publik Nagari</span><span>Rp4.000.000</span></li></ul>
+                                </div>
                             </div>
-
-                            <div class="apb-subgroup">
-                                <div class="apb-subgroup-title">
-                                    <span>2. Kebudayaan dan Keagamaan</span>
-                                    <span>Rp32.852.000,00</span>
+                            <div class="apb-tab-pane" id="apb-bidang-c">
+                                <div class="apb-tab-header">
+                                    <div><h4>C. Pembinaan Kemasyarakatan</h4><div class="apb-subgroup-meta">Semula Rp96.035.625 &#8594; <strong>Rp62.466.825</strong></div></div>
+                                    <div class="apb-tab-total">Rp62.466.825,00</div>
                                 </div>
-                                <ul class="apb-sub-list">
-                                    <li><span>Pengiriman Kontingen Kesenian</span> <span>Teranggarkan</span></li>
-                                    <li><span>Festival Kesenian dan Keagamaan</span> <span>Teranggarkan</span></li>
-                                    <li><span>Kegiatan Kebudayaan lainnya</span> <span>Teranggarkan</span></li>
-                                </ul>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>1. Ketenteraman &amp; Perlindungan Masyarakat</span><span><span class="apb-chip chip-del">Rp0</span></span></div>
+                                    <ul class="apb-sub-list"><li><span>Kegiatan Kesiapsiagaan Bencana</span><span><span class="apb-chip chip-del">Dihapus</span></span></li></ul>
+                                </div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>2. Kebudayaan dan Keagamaan</span><span>Rp32.852.000,00</span></div>
+                                    <ul class="apb-sub-list">
+                                        <li><span>Pengiriman Kontingen Kesenian</span><span>Teranggarkan</span></li>
+                                        <li><span>Festival Kesenian dan Keagamaan</span><span>Teranggarkan</span></li>
+                                        <li><span>Kegiatan Kebudayaan lainnya</span><span>Teranggarkan</span></li>
+                                    </ul>
+                                </div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>3. Kepemudaan dan Olahraga</span><span>Rp10.614.825,00</span></div>
+                                    <ul class="apb-sub-list">
+                                        <li><span>Pemeliharaan Sarana Olahraga</span><span>Teranggarkan</span></li>
+                                        <li><span>Pembinaan Karang Taruna</span><span>Teranggarkan</span></li>
+                                    </ul>
+                                </div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>4. Kelembagaan Masyarakat</span><span>Rp19.000.000,00</span></div>
+                                    <ul class="apb-sub-list">
+                                        <li><span>Pembinaan Lembaga Adat</span><span>Teranggarkan</span></li>
+                                        <li><span>Pembinaan LPM</span><span>Teranggarkan</span></li>
+                                        <li><span>Pembinaan PKK</span><span>Teranggarkan</span></li>
+                                    </ul>
+                                </div>
                             </div>
-
-                            <div class="apb-subgroup">
-                                <div class="apb-subgroup-title">
-                                    <span>3. Kepemudaan dan Olahraga</span>
-                                    <span>Rp10.614.825,00</span>
+                            <div class="apb-tab-pane" id="apb-bidang-d">
+                                <div class="apb-tab-header">
+                                    <div><h4>D. Pemberdayaan Masyarakat</h4><div class="apb-subgroup-meta">Semula Rp70.493.000 &#8594; <strong>Rp7.624.800</strong></div></div>
+                                    <div class="apb-tab-total">Rp7.624.800,00</div>
                                 </div>
-                                <ul class="apb-sub-list">
-                                    <li><span>Pemeliharaan Sarana Olahraga</span> <span>Teranggarkan</span></li>
-                                    <li><span>Pembinaan Karang Taruna</span> <span>Teranggarkan</span></li>
-                                </ul>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>1. Pertanian dan Peternakan</span><span><span class="apb-chip chip-del">Rp0</span></span></div>
+                                    <ul class="apb-sub-list"><li><span>Program Pembangunan Saluran Irigasi</span><span><span class="apb-chip chip-del">Dihapus</span></span></li></ul>
+                                </div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>2. Pemberdayaan Perempuan &amp; Perlindungan Anak</span><span>Rp7.624.800,00</span></div>
+                                    <ul class="apb-sub-list"><li><span>Pelatihan &amp; Penyuluhan Perlindungan Anak</span><span>Rp7.624.800 <span class="apb-chip chip-up">Kegiatan Baru</span></span></li></ul>
+                                </div>
                             </div>
-
-                            <div class="apb-subgroup">
-                                <div class="apb-subgroup-title">
-                                    <span>4. Kelembagaan Masyarakat</span>
-                                    <span>Rp19.000.000,00</span>
+                            <div class="apb-tab-pane" id="apb-bidang-e">
+                                <div class="apb-tab-header">
+                                    <div><h4>E. Penanggulangan Bencana, Darurat &amp; Mendesak</h4><div class="apb-subgroup-meta">Semula Rp28.800.000 &#8594; <strong>Rp38.800.000</strong></div></div>
+                                    <div class="apb-tab-total">Rp38.800.000,00</div>
                                 </div>
-                                <ul class="apb-sub-list">
-                                    <li><span>Pembinaan Lembaga Adat</span> <span>Teranggarkan</span></li>
-                                    <li><span>Pembinaan LPM</span> <span>Teranggarkan</span></li>
-                                    <li><span>Pembinaan PKK</span> <span>Teranggarkan</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <!-- Bidang D -->
-                        <div class="apb-tab-pane" id="apb-bidang-d">
-                            <div class="apb-tab-header">
-                                <div>
-                                    <h4>D. Pemberdayaan Masyarakat</h4>
-                                    <div class="apb-subgroup-meta">Semula Rp70.493.000,00 ➔ <strong>Rp7.624.800,00</strong></div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>1. Penanggulangan Bencana</span><span>Rp10.000.000 <span class="apb-chip chip-up">+Rp10.000.000</span></span></div>
+                                    <ul class="apb-sub-list"><li><span>Anggaran Penanggulangan Bencana</span><span>Rp10.000.000</span></li></ul>
                                 </div>
-                                <div class="apb-tab-total">Rp7.624.800,00</div>
-                            </div>
-                            
-                            <div class="apb-subgroup">
-                                <div class="apb-subgroup-title">
-                                    <span>1. Pertanian dan Peternakan</span>
-                                    <span><span class="apb-chip chip-del">Rp0,00</span></span>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>2. Penanganan Keadaan Mendesak</span><span>Rp28.800.000,00</span></div>
+                                    <ul class="apb-sub-list"><li><span>Bantuan Penanganan Keadaan Mendesak</span><span>Rp28.800.000 (Tetap)</span></li></ul>
                                 </div>
-                                <ul class="apb-sub-list">
-                                    <li><span>Program Pembangunan Saluran Irigasi</span> <span><span class="apb-chip chip-del">Dihapus (Rp0,00)</span></span></li>
-                                </ul>
-                            </div>
-
-                            <div class="apb-subgroup">
-                                <div class="apb-subgroup-title">
-                                    <span>2. Pemberdayaan Perempuan &amp; Perlindungan Anak</span>
-                                    <span>Rp7.624.800,00</span>
-                                </div>
-                                <ul class="apb-sub-list">
-                                    <li><span>Pelatihan &amp; Penyuluhan Perlindungan Anak</span> <span>Rp7.624.800,00 <span class="apb-chip chip-up">Kegiatan Baru</span></span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <!-- Bidang E -->
-                        <div class="apb-tab-pane" id="apb-bidang-e">
-                            <div class="apb-tab-header">
-                                <div>
-                                    <h4>E. Penanggulangan Bencana, Darurat &amp; Mendesak</h4>
-                                    <div class="apb-subgroup-meta">Semula Rp28.800.000,00 ➔ <strong>Rp38.800.000,00</strong></div>
-                                </div>
-                                <div class="apb-tab-total">Rp38.800.000,00</div>
-                            </div>
-                            
-                            <div class="apb-subgroup">
-                                <div class="apb-subgroup-title">
-                                    <span>1. Penanggulangan Bencana</span>
-                                    <span>Rp10.000.000,00</span>
-                                </div>
-                                <ul class="apb-sub-list">
-                                    <li><span>Anggaran Penanggulangan Bencana</span> <span>Rp10.000.000,00 <span class="apb-chip chip-up">+Rp10.000.000</span></span></li>
-                                </ul>
-                            </div>
-
-                            <div class="apb-subgroup">
-                                <div class="apb-subgroup-title">
-                                    <span>2. Penanganan Keadaan Mendesak</span>
-                                    <span>Rp28.800.000,00</span>
-                                </div>
-                                <ul class="apb-sub-list">
-                                    <li><span>Bantuan Penanganan Keadaan Mendesak</span> <span>Rp28.800.000,00 (Tetap)</span></li>
-                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </div><!-- end view-anggaran -->
 
-
-        </div>
-
-        <!-- VIEW 2: REALISASI (Semester I 2026) -->
+        <!-- ===== VIEW 2: REALISASI ===== -->
         <div id="view-realisasi" class="apb-view-pane">
 
-            <!-- Konteks Header Realisasi -->
-            <div class="real-context-bar">
-                <div class="real-context-info">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-                    <span>Laporan Realisasi <strong>Semester I</strong> Tahun Anggaran 2026 — Data per 30 Juni 2026</span>
-                </div>
-                <div class="real-context-badge">Telah Diverifikasi</div>
-            </div>
-
-            <!-- KPI Cards -->
-            <div class="real-kpi-grid">
-                <div class="real-kpi-card real-kpi-green">
-                    <div class="real-kpi-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                    </div>
-                    <div class="real-kpi-content">
-                        <div class="real-kpi-label">Realisasi Pendapatan</div>
-                        <div class="real-kpi-value">Rp826.550.510</div>
-                        <div class="real-kpi-meta">dari target Rp1.312.914.442</div>
-                        <div class="real-kpi-bar-wrap"><div class="real-kpi-bar" style="width:62.95%;background:#16a34a;"></div></div>
-                        <div class="real-kpi-pct real-pct-green">62,95%</div>
+            <div class="apb-summary-grid">
+                <div class="apb-summary-card apb-card-green">
+                    <div class="apb-summary-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                    <div class="apb-summary-content">
+                        <div class="apb-summary-label">Realisasi Pendapatan (62,95%)</div>
+                        <div class="apb-summary-value">Rp826.550.510</div>
                     </div>
                 </div>
-                <div class="real-kpi-card real-kpi-amber">
-                    <div class="real-kpi-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-                    </div>
-                    <div class="real-kpi-content">
-                        <div class="real-kpi-label">Realisasi Belanja</div>
-                        <div class="real-kpi-value">Rp819.255.575</div>
-                        <div class="real-kpi-meta">dari anggaran Rp1.556.432.444</div>
-                        <div class="real-kpi-bar-wrap"><div class="real-kpi-bar" style="width:52.64%;background:#d97706;"></div></div>
-                        <div class="real-kpi-pct real-pct-amber">52,64%</div>
+                <div class="apb-summary-card apb-card-gold">
+                    <div class="apb-summary-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+                    <div class="apb-summary-content">
+                        <div class="apb-summary-label">Realisasi Belanja (52,64%)</div>
+                        <div class="apb-summary-value">Rp819.255.575</div>
                     </div>
                 </div>
-                <div class="real-kpi-card real-kpi-blue">
-                    <div class="real-kpi-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    </div>
-                    <div class="real-kpi-content">
-                        <div class="real-kpi-label">Realisasi Pembiayaan</div>
-                        <div class="real-kpi-value">Rp262.226.002</div>
-                        <div class="real-kpi-meta">Netto dari SiLPA sebelumnya</div>
-                        <div class="real-kpi-bar-wrap"><div class="real-kpi-bar" style="width:100%;background:#2563eb;"></div></div>
-                        <div class="real-kpi-pct real-pct-blue">100%</div>
+                <div class="apb-summary-card apb-card-blue">
+                    <div class="apb-summary-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                    <div class="apb-summary-content">
+                        <div class="apb-summary-label">Pembiayaan Netto</div>
+                        <div class="apb-summary-value">Rp262.226.002</div>
                     </div>
                 </div>
-                <div class="real-kpi-card real-kpi-emerald">
-                    <div class="real-kpi-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                    </div>
-                    <div class="real-kpi-content">
-                        <div class="real-kpi-label">Hasil Semester I</div>
-                        <div class="real-kpi-value real-surplus-val">SURPLUS</div>
-                        <div class="real-kpi-meta">Rp7.294.935,00 positif</div>
-                        <div class="real-kpi-bar-wrap"><div class="real-kpi-bar" style="width:100%;background:#059669;"></div></div>
-                        <div class="real-kpi-pct real-pct-emerald">Sehat</div>
+                <div class="apb-summary-card apb-card-purple">
+                    <div class="apb-summary-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                    <div class="apb-summary-content">
+                        <div class="apb-summary-label">Hasil Semester I</div>
+                        <div class="apb-summary-value" style="color:#059669;">SURPLUS Rp7.294.935</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Dua Kolom Utama -->
             <div class="apb-content-grid">
-
-                <!-- KOLOM KIRI: Pendapatan + Pembiayaan -->
                 <div class="apb-col-left">
-
-                    <!-- Pendapatan -->
-                    <div class="real-section-card">
-                        <div class="real-section-header real-header-green">
-                            <div class="real-section-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                            </div>
-                            <div>
-                                <div class="real-section-title">Realisasi Pendapatan</div>
-                                <div class="real-section-sub">Semester I TA 2026</div>
-                            </div>
-                            <div class="real-section-total real-total-green">Rp826.550.510</div>
+                    <div class="apb-card apb-detailed-card">
+                        <div class="apb-card-header">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="apb-card-icon text-green"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            <h3 class="apb-card-title">Realisasi Pendapatan</h3>
                         </div>
-
-                        <!-- Kelompok A: Transfer -->
-                        <div class="real-group">
-                            <div class="real-group-head">
-                                <span class="real-group-label">A. Pendapatan Transfer</span>
-                                <span class="real-group-amount">Rp807.783.987</span>
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">A. Pendapatan Transfer</span>
+                                <span class="apb-detail-group-total">Rp807.783.987 <span class="apb-chip chip-up">62,11%</span></span>
                             </div>
                             <div class="real-group-progress"><div style="width:62.11%;background:#16a34a;"></div></div>
-                            <div class="real-group-meta">Target Rp1.300.448.442 &nbsp;|&nbsp; Sisa Rp492.664.455 &nbsp;|&nbsp; <strong class="real-pct-tag pct-tag-green">62,11%</strong></div>
-                            <div class="real-item-list">
-                                <div class="real-item">
-                                    <span class="real-item-name">1. Dana Desa</span>
-                                    <span class="real-item-right">
-                                        <span class="real-item-amount">Rp330.420.000</span>
-                                        <span class="real-pct-tag pct-tag-green">100%</span>
-                                    </span>
-                                </div>
-                                <div class="real-item">
-                                    <span class="real-item-name">2. Bagi Hasil Pajak &amp; Retribusi</span>
-                                    <span class="real-item-right">
-                                        <span class="real-item-amount">Rp0</span>
-                                        <span class="real-pct-tag pct-tag-red">0%</span>
-                                    </span>
-                                </div>
-                                <div class="real-item">
-                                    <span class="real-item-name">3. Alokasi Dana Desa (ADD)</span>
-                                    <span class="real-item-right">
-                                        <span class="real-item-amount">Rp477.363.987</span>
-                                        <span class="real-pct-tag pct-tag-amber">49,82%</span>
-                                    </span>
-                                </div>
-                            </div>
+                            <div class="apb-subgroup-meta" style="margin-bottom:8px;">Target Rp1.300.448.442 | Sisa Rp492.664.455</div>
+                            <ul class="apb-detail-list">
+                                <li><span>1. Dana Desa</span><span>Rp330.420.000 <span class="apb-chip chip-up">100%</span></span></li>
+                                <li><span>2. Bagi Hasil Pajak &amp; Retribusi</span><span>Rp0 <span class="apb-chip chip-down">0%</span></span></li>
+                                <li><span>3. Alokasi Dana Desa (ADD)</span><span>Rp477.363.987 <span class="apb-chip" style="background:#fef3c7;color:#b45309;border:1px solid #fde68a;">49,82%</span></span></li>
+                            </ul>
                         </div>
-
-                        <!-- Kelompok B: Lain-lain -->
-                        <div class="real-group">
-                            <div class="real-group-head">
-                                <span class="real-group-label">B. Pendapatan Lain-lain</span>
-                                <span class="real-group-amount">Rp18.766.523</span>
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">B. Pendapatan Lain-lain</span>
+                                <span class="apb-detail-group-total">Rp18.766.523 <span class="apb-chip chip-up">150,54%</span></span>
                             </div>
                             <div class="real-group-progress"><div style="width:100%;background:#16a34a;"></div></div>
-                            <div class="real-group-meta">Target Rp12.466.000 &nbsp;|&nbsp; <span class="real-over-target">Melampaui Target +Rp6.300.523</span> &nbsp;|&nbsp; <strong class="real-pct-tag pct-tag-green">150,54%</strong></div>
+                            <div class="apb-subgroup-meta">Target Rp12.466.000 &mdash; <strong style="color:#059669;">Melampaui +Rp6.300.523</strong></div>
                         </div>
-
-                        <!-- Total -->
-                        <div class="real-total-row">
-                            <span>Total Pendapatan Semester I</span>
-                            <span class="real-total-num">Rp826.550.510 <span class="real-pct-tag pct-tag-green">62,95%</span></span>
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title" style="font-weight:800;">Total Pendapatan Sem. I</span>
+                                <span class="apb-detail-group-total">Rp826.550.510 <span class="apb-chip chip-up">62,95%</span></span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Pembiayaan -->
-                    <div class="real-section-card">
-                        <div class="real-section-header real-header-blue">
-                            <div class="real-section-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                            </div>
-                            <div>
-                                <div class="real-section-title">Realisasi Pembiayaan &amp; SiLPA</div>
-                                <div class="real-section-sub">Semester I TA 2026</div>
-                            </div>
-                            <div class="real-section-total real-total-blue">Rp262.226.002</div>
+                    <div class="apb-card apb-detailed-card">
+                        <div class="apb-card-header">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="apb-card-icon text-blue"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                            <h3 class="apb-card-title">Realisasi Pembiayaan &amp; SiLPA</h3>
                         </div>
-
-                        <div class="real-group">
-                            <div class="real-group-head">
-                                <span class="real-group-label">A. Penerimaan (SiLPA)</span>
-                                <span class="real-group-amount">Rp493.518.002</span>
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">A. Penerimaan (SiLPA)</span>
+                                <span class="apb-detail-group-total">Rp493.518.002 <span class="apb-chip chip-up">100%</span></span>
                             </div>
                             <div class="real-group-progress"><div style="width:100%;background:#2563eb;"></div></div>
-                            <div class="real-group-meta">Realisasi 100% dari SiLPA tahun sebelumnya &nbsp;|&nbsp; <strong class="real-pct-tag pct-tag-blue">100%</strong></div>
+                            <div class="apb-subgroup-meta">Seluruh penerimaan pembiayaan terealisasi penuh dari SiLPA sebelumnya</div>
                         </div>
-
-                        <div class="real-group">
-                            <div class="real-group-head">
-                                <span class="real-group-label">B. Pengeluaran Pembiayaan</span>
-                                <span class="real-group-amount">Rp231.292.000</span>
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">B. Pengeluaran Pembiayaan</span>
+                                <span class="apb-detail-group-total">Rp231.292.000 <span class="apb-chip" style="background:#f3e8ff;color:#7e22ce;border:1px solid #d8b4fe;">92,52%</span></span>
                             </div>
                             <div class="real-group-progress"><div style="width:92.52%;background:#7c3aed;"></div></div>
-                            <div class="real-group-meta">Anggaran Rp250.000.000 &nbsp;|&nbsp; Sisa Rp18.708.000 &nbsp;|&nbsp; <strong class="real-pct-tag pct-tag-purple">92,52%</strong></div>
+                            <div class="apb-subgroup-meta">Anggaran Rp250.000.000 | Sisa Rp18.708.000</div>
                         </div>
-
-                        <div class="real-total-row">
-                            <span>Pembiayaan Netto</span>
-                            <span class="real-total-num">Rp262.226.002 <span class="real-pct-tag pct-tag-blue">Netto</span></span>
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">C. Pembiayaan Netto</span>
+                                <span class="apb-detail-group-total">Rp262.226.002</span>
+                            </div>
                         </div>
-                        <div class="real-silpa-row">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            SiLPA Tahun Berjalan: <strong>Rp0,00</strong>
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">SiLPA Tahun Berjalan</span>
+                                <span class="apb-detail-group-total">Rp0,00</span>
+                            </div>
                         </div>
                     </div>
-
                 </div>
 
-                <!-- KOLOM KANAN: Belanja per Bidang -->
                 <div class="apb-col-right">
-
-                    <div class="real-section-card">
-                        <div class="real-section-header real-header-amber">
-                            <div class="real-section-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-                            </div>
-                            <div>
-                                <div class="real-section-title">Realisasi Belanja per Bidang</div>
-                                <div class="real-section-sub">5 Bidang Pengeluaran — Semester I 2026</div>
-                            </div>
-                            <div class="real-section-total real-total-amber">Rp819.255.575</div>
+                    <div class="apb-card apb-tabs-card">
+                        <div class="apb-card-header">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="apb-card-icon text-gold"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+                            <h3 class="apb-card-title">Realisasi Belanja per Bidang</h3>
                         </div>
-
-                        <!-- Tab Nav -->
-                        <div class="real-bidang-tabs">
-                            <button class="real-bidang-tab active" data-target="rb-a">
-                                <span class="rbt-letter">A</span>
-                                <span class="rbt-name">Pemerintahan</span>
-                            </button>
-                            <button class="real-bidang-tab" data-target="rb-b">
-                                <span class="rbt-letter">B</span>
-                                <span class="rbt-name">Pembangunan</span>
-                            </button>
-                            <button class="real-bidang-tab" data-target="rb-c">
-                                <span class="rbt-letter">C</span>
-                                <span class="rbt-name">Kemasyarakatan</span>
-                            </button>
-                            <button class="real-bidang-tab" data-target="rb-d">
-                                <span class="rbt-letter">D</span>
-                                <span class="rbt-name">Pemberdayaan</span>
-                            </button>
-                            <button class="real-bidang-tab" data-target="rb-e">
-                                <span class="rbt-letter">E</span>
-                                <span class="rbt-name">Bencana &amp; Darurat</span>
-                            </button>
+                        <div class="apb-tabs-nav">
+                            <button class="apb-tab-btn active" data-target="real-a">A. Pemerintahan</button>
+                            <button class="apb-tab-btn" data-target="real-b">B. Pembangunan</button>
+                            <button class="apb-tab-btn" data-target="real-c">C. Kemasyarakatan</button>
+                            <button class="apb-tab-btn" data-target="real-d">D. Pemberdayaan</button>
+                            <button class="apb-tab-btn" data-target="real-e">E. Bencana &amp; Mendesak</button>
                         </div>
-
-                        <!-- Bidang A -->
-                        <div class="real-bidang-pane active" id="rb-a">
-                            <div class="real-bidang-overview">
-                                <div class="rbo-circle">
-                                    <svg viewBox="0 0 36 36" class="rbo-svg">
-                                        <path class="rbo-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                        <path class="rbo-fill" stroke-dasharray="51.24, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" style="stroke:#f59e0b;"/>
-                                        <text x="18" y="18" class="rbo-pct-text">51,24</text>
-                                        <text x="18" y="23" class="rbo-pct-sub">%</text>
-                                    </svg>
+                        <div class="apb-tab-contents">
+                            <div class="apb-tab-pane active" id="real-a">
+                                <div class="apb-tab-header">
+                                    <div><h4>A. Penyelenggaraan Pemerintahan Nagari</h4><div class="apb-subgroup-meta">Anggaran Rp1.172.937.817 | Sisa Rp571.878.608</div></div>
+                                    <div class="apb-tab-total">Rp601.059.209 <span class="apb-chip" style="background:#fef3c7;color:#b45309;border:1px solid #fde68a;">51,24%</span></div>
                                 </div>
-                                <div class="rbo-info">
-                                    <div class="rbo-title">A. Penyelenggaraan Pemerintahan Nagari</div>
-                                    <div class="rbo-amounts">
-                                        <span class="rbo-realisasi">Realisasi: <strong>Rp601.059.209</strong></span>
-                                        <span class="rbo-anggaran">Anggaran: Rp1.172.937.817</span>
-                                        <span class="rbo-sisa">Belum Terealisasi: Rp571.878.608</span>
-                                    </div>
+                                <div class="real-group-progress" style="margin:4px 0 14px;"><div style="width:51.24%;background:#f59e0b;"></div></div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>Siltap &amp; Tunjangan Perangkat</span><span>Rp431.106.241 <span class="apb-chip chip-up">100%</span></span></div>
                                 </div>
-                            </div>
-                            <div class="real-group-progress" style="margin:14px 0 8px;"><div style="width:51.24%;background:#f59e0b;"></div></div>
-                            <div class="real-item-list">
-                                <div class="real-item">
-                                    <span class="real-item-name">Siltap &amp; Tunjangan Perangkat</span>
-                                    <span class="real-item-right"><span class="real-item-amount">Rp431.106.241</span><span class="real-pct-tag pct-tag-green">100%</span></span>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>Sarana Prasarana Pemerintahan</span><span>Rp56.728.968 <span class="apb-chip" style="background:#fef3c7;color:#b45309;border:1px solid #fde68a;">34,54%</span></span></div>
                                 </div>
-                                <div class="real-item">
-                                    <span class="real-item-name">Sarana Prasarana Pemerintahan</span>
-                                    <span class="real-item-right"><span class="real-item-amount">Rp56.728.968</span><span class="real-pct-tag pct-tag-amber">34,54%</span></span>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>Administrasi Kependudukan</span><span>Rp7.970.000 <span class="apb-chip" style="background:#fef3c7;color:#b45309;border:1px solid #fde68a;">34,36%</span></span></div>
                                 </div>
-                                <div class="real-item">
-                                    <span class="real-item-name">Administrasi Kependudukan</span>
-                                    <span class="real-item-right"><span class="real-item-amount">Rp7.970.000</span><span class="real-pct-tag pct-tag-amber">34,36%</span></span>
-                                </div>
-                                <div class="real-item">
-                                    <span class="real-item-name">Tata Praja Pemerintahan</span>
-                                    <span class="real-item-right"><span class="real-item-amount">Rp105.254.000</span><span class="real-pct-tag pct-tag-amber">85,37%</span></span>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>Tata Praja Pemerintahan</span><span>Rp105.254.000 <span class="apb-chip" style="background:#fef3c7;color:#b45309;border:1px solid #fde68a;">85,37%</span></span></div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Bidang B -->
-                        <div class="real-bidang-pane" id="rb-b">
-                            <div class="real-bidang-overview">
-                                <div class="rbo-circle">
-                                    <svg viewBox="0 0 36 36" class="rbo-svg">
-                                        <path class="rbo-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                        <path class="rbo-fill" stroke-dasharray="63.46, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" style="stroke:#16a34a;"/>
-                                        <text x="18" y="18" class="rbo-pct-text">63,46</text>
-                                        <text x="18" y="23" class="rbo-pct-sub">%</text>
-                                    </svg>
+                            <div class="apb-tab-pane" id="real-b">
+                                <div class="apb-tab-header">
+                                    <div><h4>B. Pelaksanaan Pembangunan Nagari</h4><div class="apb-subgroup-meta">Anggaran Rp274.603.002 | Sisa Rp100.336.636</div></div>
+                                    <div class="apb-tab-total">Rp174.266.366 <span class="apb-chip chip-up">63,46%</span></div>
                                 </div>
-                                <div class="rbo-info">
-                                    <div class="rbo-title">B. Pelaksanaan Pembangunan Nagari</div>
-                                    <div class="rbo-amounts">
-                                        <span class="rbo-realisasi">Realisasi: <strong>Rp174.266.366</strong></span>
-                                        <span class="rbo-anggaran">Anggaran: Rp274.603.002</span>
-                                        <span class="rbo-sisa">Belum Terealisasi: Rp100.336.636</span>
-                                    </div>
+                                <div class="real-group-progress" style="margin:4px 0 14px;"><div style="width:63.46%;background:#16a34a;"></div></div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>Pendidikan</span><span>Rp0 <span class="apb-chip chip-down">0%</span></span></div>
+                                </div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>Kesehatan (Posyandu, BKB, Rehab)</span><span>Rp170.266.366 <span class="apb-chip chip-up">70,07%</span></span></div>
+                                </div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>Kawasan Permukiman</span><span>Rp0 <span class="apb-chip chip-down">0%</span></span></div>
+                                </div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>Perhubungan &amp; Informatika</span><span>Rp4.000.000 <span class="apb-chip chip-up">100%</span></span></div>
                                 </div>
                             </div>
-                            <div class="real-group-progress" style="margin:14px 0 8px;"><div style="width:63.46%;background:#16a34a;"></div></div>
-                            <div class="real-item-list">
-                                <div class="real-item">
-                                    <span class="real-item-name">Pendidikan</span>
-                                    <span class="real-item-right"><span class="real-item-amount">Rp0</span><span class="real-pct-tag pct-tag-red">0%</span></span>
+                            <div class="apb-tab-pane" id="real-c">
+                                <div class="apb-tab-header">
+                                    <div><h4>C. Pembinaan Kemasyarakatan</h4><div class="apb-subgroup-meta">Anggaran Rp62.466.825 | Sisa Rp47.336.825</div></div>
+                                    <div class="apb-tab-total">Rp15.130.000 <span class="apb-chip" style="background:#dbeafe;color:#1d4ed8;border:1px solid #93c5fd;">24,22%</span></div>
                                 </div>
-                                <div class="real-item">
-                                    <span class="real-item-name">Kesehatan (Posyandu, BKB)</span>
-                                    <span class="real-item-right"><span class="real-item-amount">Rp170.266.366</span><span class="real-pct-tag pct-tag-green">70,07%</span></span>
+                                <div class="real-group-progress" style="margin:4px 0 14px;"><div style="width:24.22%;background:#3b82f6;"></div></div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>Kebudayaan &amp; Adat Istiadat</span><span>Rp0 <span class="apb-chip chip-down">0%</span></span></div>
                                 </div>
-                                <div class="real-item">
-                                    <span class="real-item-name">Kawasan Permukiman</span>
-                                    <span class="real-item-right"><span class="real-item-amount">Rp0</span><span class="real-pct-tag pct-tag-red">0%</span></span>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>Kepemudaan &amp; Olahraga</span><span>Rp5.130.000 <span class="apb-chip" style="background:#fef3c7;color:#b45309;border:1px solid #fde68a;">48,33%</span></span></div>
                                 </div>
-                                <div class="real-item">
-                                    <span class="real-item-name">Perhubungan &amp; Transportasi</span>
-                                    <span class="real-item-right"><span class="real-item-amount">Rp4.000.000</span><span class="real-pct-tag pct-tag-green">100%</span></span>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>Kelembagaan Masyarakat</span><span>Rp10.000.000 <span class="apb-chip" style="background:#fef3c7;color:#b45309;border:1px solid #fde68a;">52,63%</span></span></div>
+                                </div>
+                            </div>
+                            <div class="apb-tab-pane" id="real-d">
+                                <div class="apb-tab-header">
+                                    <div><h4>D. Pemberdayaan Masyarakat</h4><div class="apb-subgroup-meta">Anggaran Rp7.624.800 | Belum ada realisasi</div></div>
+                                    <div class="apb-tab-total">Rp0 <span class="apb-chip chip-down">0%</span></div>
+                                </div>
+                                <div class="real-group-progress" style="margin:4px 0 14px;"><div style="width:0%;background:#ef4444;"></div></div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>Pertanian</span><span>Rp0 <span class="apb-chip chip-down">0%</span></span></div>
+                                </div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>Pemberdayaan Perempuan</span><span>Rp0 <span class="apb-chip chip-down">0%</span></span></div>
+                                </div>
+                                <div class="apb-subgroup-meta" style="padding:10px 14px;background:#fff1f2;border:1px solid #fecaca;border-radius:10px;color:#9f1239;margin-top:8px;">Direncanakan dilaksanakan pada Semester II TA 2026.</div>
+                            </div>
+                            <div class="apb-tab-pane" id="real-e">
+                                <div class="apb-tab-header">
+                                    <div><h4>E. Penanggulangan Bencana, Darurat &amp; Mendesak</h4><div class="apb-subgroup-meta">Anggaran Rp38.800.000 | Sisa Rp10.000.000</div></div>
+                                    <div class="apb-tab-total">Rp28.800.000 <span class="apb-chip chip-up">74,23%</span></div>
+                                </div>
+                                <div class="real-group-progress" style="margin:4px 0 14px;"><div style="width:74.23%;background:#16a34a;"></div></div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>Penanggulangan Bencana</span><span>Rp0 <span class="apb-chip chip-down">0%</span></span></div>
+                                </div>
+                                <div class="apb-subgroup">
+                                    <div class="apb-subgroup-title"><span>Keadaan Darurat &amp; Mendesak</span><span>Rp28.800.000 <span class="apb-chip chip-up">100%</span></span></div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Bidang C -->
-                        <div class="real-bidang-pane" id="rb-c">
-                            <div class="real-bidang-overview">
-                                <div class="rbo-circle">
-                                    <svg viewBox="0 0 36 36" class="rbo-svg">
-                                        <path class="rbo-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                        <path class="rbo-fill" stroke-dasharray="24.22, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" style="stroke:#3b82f6;"/>
-                                        <text x="18" y="18" class="rbo-pct-text">24,22</text>
-                                        <text x="18" y="23" class="rbo-pct-sub">%</text>
-                                    </svg>
-                                </div>
-                                <div class="rbo-info">
-                                    <div class="rbo-title">C. Pembinaan Kemasyarakatan</div>
-                                    <div class="rbo-amounts">
-                                        <span class="rbo-realisasi">Realisasi: <strong>Rp15.130.000</strong></span>
-                                        <span class="rbo-anggaran">Anggaran: Rp62.466.825</span>
-                                        <span class="rbo-sisa">Belum Terealisasi: Rp47.336.825</span>
-                                    </div>
+                        <!-- Surplus Banner -->
+                        <div class="real-surplus-banner" style="margin:20px 0 0 0;">
+                            <div class="rsb-left">
+                                <div class="rsb-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                                <div>
+                                    <div class="rsb-title">Hasil Realisasi Semester I TA 2026</div>
+                                    <div class="rsb-sub">Pendapatan + Pembiayaan melampaui realisasi belanja</div>
                                 </div>
                             </div>
-                            <div class="real-group-progress" style="margin:14px 0 8px;"><div style="width:24.22%;background:#3b82f6;"></div></div>
-                            <div class="real-item-list">
-                                <div class="real-item">
-                                    <span class="real-item-name">Kebudayaan &amp; Adat Istiadat</span>
-                                    <span class="real-item-right"><span class="real-item-amount">Rp0</span><span class="real-pct-tag pct-tag-red">0%</span></span>
-                                </div>
-                                <div class="real-item">
-                                    <span class="real-item-name">Kepemudaan &amp; Olahraga</span>
-                                    <span class="real-item-right"><span class="real-item-amount">Rp5.130.000</span><span class="real-pct-tag pct-tag-amber">48,33%</span></span>
-                                </div>
-                                <div class="real-item">
-                                    <span class="real-item-name">Kelembagaan Masyarakat</span>
-                                    <span class="real-item-right"><span class="real-item-amount">Rp10.000.000</span><span class="real-pct-tag pct-tag-amber">52,63%</span></span>
-                                </div>
+                            <div class="rsb-value">
+                                <div class="rsb-label">SURPLUS</div>
+                                <div class="rsb-amount">Rp7.294.935</div>
                             </div>
                         </div>
 
-                        <!-- Bidang D -->
-                        <div class="real-bidang-pane" id="rb-d">
-                            <div class="real-bidang-overview">
-                                <div class="rbo-circle">
-                                    <svg viewBox="0 0 36 36" class="rbo-svg">
-                                        <path class="rbo-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                        <path class="rbo-fill" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" style="stroke:#ef4444;"/>
-                                        <text x="18" y="18" class="rbo-pct-text">0</text>
-                                        <text x="18" y="23" class="rbo-pct-sub">%</text>
-                                    </svg>
-                                </div>
-                                <div class="rbo-info">
-                                    <div class="rbo-title">D. Pemberdayaan Masyarakat</div>
-                                    <div class="rbo-amounts">
-                                        <span class="rbo-realisasi rbo-zero">Realisasi: <strong>Rp0</strong></span>
-                                        <span class="rbo-anggaran">Anggaran: Rp7.624.800</span>
-                                        <span class="rbo-sisa">Seluruh anggaran belum terealisasi</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="real-group-progress" style="margin:14px 0 8px;"><div style="width:0%;background:#ef4444;"></div></div>
-                            <div class="real-item-list">
-                                <div class="real-item">
-                                    <span class="real-item-name">Pertanian</span>
-                                    <span class="real-item-right"><span class="real-item-amount">Rp0</span><span class="real-pct-tag pct-tag-red">0%</span></span>
-                                </div>
-                                <div class="real-item">
-                                    <span class="real-item-name">Pemberdayaan Perempuan</span>
-                                    <span class="real-item-right"><span class="real-item-amount">Rp0</span><span class="real-pct-tag pct-tag-red">0%</span></span>
-                                </div>
-                            </div>
-                            <div class="real-note-box real-note-red">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                                Belum ada realisasi anggaran sampai Semester I. Direncanakan dilaksanakan pada Semester II.
-                            </div>
-                        </div>
-
-                        <!-- Bidang E -->
-                        <div class="real-bidang-pane" id="rb-e">
-                            <div class="real-bidang-overview">
-                                <div class="rbo-circle">
-                                    <svg viewBox="0 0 36 36" class="rbo-svg">
-                                        <path class="rbo-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                        <path class="rbo-fill" stroke-dasharray="74.23, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" style="stroke:#16a34a;"/>
-                                        <text x="18" y="18" class="rbo-pct-text">74,23</text>
-                                        <text x="18" y="23" class="rbo-pct-sub">%</text>
-                                    </svg>
-                                </div>
-                                <div class="rbo-info">
-                                    <div class="rbo-title">E. Penanggulangan Bencana, Darurat &amp; Mendesak</div>
-                                    <div class="rbo-amounts">
-                                        <span class="rbo-realisasi">Realisasi: <strong>Rp28.800.000</strong></span>
-                                        <span class="rbo-anggaran">Anggaran: Rp38.800.000</span>
-                                        <span class="rbo-sisa">Sisa: Rp10.000.000</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="real-group-progress" style="margin:14px 0 8px;"><div style="width:74.23%;background:#16a34a;"></div></div>
-                            <div class="real-item-list">
-                                <div class="real-item">
-                                    <span class="real-item-name">Penanggulangan Bencana</span>
-                                    <span class="real-item-right"><span class="real-item-amount">Rp0</span><span class="real-pct-tag pct-tag-red">0%</span></span>
-                                </div>
-                                <div class="real-item">
-                                    <span class="real-item-name">Keadaan Darurat &amp; Mendesak</span>
-                                    <span class="real-item-right"><span class="real-item-amount">Rp28.800.000</span><span class="real-pct-tag pct-tag-green">100%</span></span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div><!-- end real-section-card belanja -->
-
-                    <!-- Surplus Banner -->
-                    <div class="real-surplus-banner">
-                        <div class="rsb-left">
-                            <div class="rsb-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            </div>
-                            <div>
-                                <div class="rsb-title">Hasil Realisasi Semester I TA 2026</div>
-                                <div class="rsb-sub">Pendapatan + Pembiayaan melampaui realisasi belanja</div>
-                            </div>
-                        </div>
-                        <div class="rsb-value">
-                            <div class="rsb-label">SURPLUS</div>
-                            <div class="rsb-amount">Rp7.294.935</div>
-                        </div>
                     </div>
-
-                </div><!-- end apb-col-right -->
-
-            </div><!-- end apb-content-grid -->
+                </div>
+            </div>
 
         </div><!-- end view-realisasi -->
 
-        </div><!-- end apb-container -->
-    </section><!-- end #apbnag -->
+    </div><!-- end apb-container -->
+</section><!-- end #apbnag -->
+
 
 <script>
     function switchApbView(viewId) {

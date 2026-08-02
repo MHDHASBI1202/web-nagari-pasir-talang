@@ -5039,3 +5039,22 @@ a.hero-stat:hover { transform:translateY(-2px); }
   border: 1px solid rgba(255,255,255,0.3);
   white-space: nowrap;
 }
+
+/* real-group-progress — used inside apb-card for realisasi progress bars */
+.real-group-progress {
+  height: 6px;
+  background: #f1f5f9;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 6px 0 8px;
+}
+.real-group-progress > div {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 1s ease;
+}
+
+/* Surplus banner inside card - ensure it fits */
+.apb-tabs-card .real-surplus-banner {
+  border-radius: 14px;
+}
