@@ -3630,3 +3630,368 @@ a.hero-stat:hover { transform:translateY(-2px); }
   transform: scale(1.08);
   filter: drop-shadow(0 4px 12px rgba(255,255,255,.2));
 }
+
+/* ================================================================
+   STATISTIK UPDATE — Sarana Pendidikan & Komoditas
+   ================================================================ */
+
+/* Sarana Pendidikan Grid */
+.edu-facility-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+}
+.edu-facility-card {
+  background: var(--gray-50);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 18px 12px;
+  text-align: center;
+  transition: all .25s;
+}
+.edu-facility-card:hover {
+  border-color: var(--green-300);
+  background: var(--green-50);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(22,163,74,.12);
+}
+.edu-num {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--green-700);
+  line-height: 1;
+}
+.edu-label {
+  font-size: .85rem;
+  font-weight: 800;
+  color: var(--gray-800);
+  margin-top: 4px;
+}
+.edu-sub {
+  font-size: .65rem;
+  color: var(--gray-400);
+  margin-top: 2px;
+}
+
+/* Komoditas Pertanian Grid */
+.komoditas-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+.komoditas-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: .8rem;
+  font-weight: 700;
+  border: 1.5px solid;
+  transition: all .25s;
+  cursor: default;
+}
+.komoditas-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+.chip-padi     { background: #f0fdf4; border-color: #86efac; color: #166534; }
+.chip-jagung   { background: #fefce8; border-color: #fde047; color: #854d0e; }
+.chip-cabe     { background: #fef2f2; border-color: #fca5a5; color: #991b1b; }
+.chip-kakao    { background: #fdf4ff; border-color: #d8b4fe; color: #6b21a8; }
+.chip-kopi     { background: #f5f3ff; border-color: #c4b5fd; color: #5b21b6; }
+.chip-pinang   { background: #f0fdfa; border-color: #5eead4; color: #115e59; }
+.chip-karet    { background: #f8fafc; border-color: #94a3b8; color: #334155; }
+/* apbnag_styles.css */
+
+.apb-section {
+    padding: 60px 0;
+    color: var(--gray-50);
+}
+
+.apb-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.apb-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.apb-badge {
+    display: inline-block;
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--green-400, #34d399);
+    padding: 6px 12px;
+    border-radius: var(--radius-lg);
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 16px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.apb-title {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    color: var(--gray-50);
+}
+
+.apb-subtitle {
+    font-family: var(--font-main);
+    color: var(--gray-400);
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Summary Grid */
+.apb-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.apb-summary-card {
+    background-color: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.apb-summary-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.apb-summary-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.apb-card-green .apb-summary-icon {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--green-400, #34d399);
+}
+
+.apb-card-gold .apb-summary-icon {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--gold-400, #fbbf24);
+}
+
+.apb-card-blue .apb-summary-icon {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--blue-400, #60a5fa);
+}
+
+.apb-card-purple .apb-summary-icon {
+    background-color: rgba(139, 92, 246, 0.1);
+    color: var(--purple-400, #a78bfa);
+}
+
+.apb-summary-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.apb-summary-label {
+    font-family: var(--font-main);
+    font-size: 0.875rem;
+    color: var(--gray-400);
+    margin-bottom: 4px;
+}
+
+.apb-summary-value {
+    font-family: var(--font-main);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gray-50);
+}
+
+.apb-card-green .apb-summary-value { color: var(--green-400, #34d399); }
+.apb-card-gold .apb-summary-value { color: var(--gold-400, #fbbf24); }
+
+/* Content Grid */
+.apb-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+}
+
+@media (max-width: 992px) {
+    .apb-content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.apb-card {
+    background-color: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-sm);
+}
+
+.apb-card:last-child {
+    margin-bottom: 0;
+}
+
+.apb-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--dark-border);
+}
+
+.apb-card-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-50);
+    margin: 0;
+}
+
+.apb-card-icon.text-green { color: var(--green-400, #34d399); }
+.apb-card-icon.text-blue { color: var(--blue-400, #60a5fa); }
+.apb-card-icon.text-gold { color: var(--gold-400, #fbbf24); }
+
+/* Detail Groups */
+.apb-detail-group {
+    margin-bottom: 24px;
+}
+.apb-detail-group:last-child {
+    margin-bottom: 0;
+}
+
+.apb-detail-group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-family: var(--font-main);
+    font-weight: 700;
+    color: var(--gray-100);
+}
+
+.apb-detail-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.apb-detail-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--dark-border);
+    font-family: var(--font-main);
+    font-size: 0.9375rem;
+    color: var(--gray-300);
+    gap: 16px;
+}
+
+.apb-detail-list li:last-child {
+    border-bottom: none;
+}
+
+.apb-detail-list li span:last-child {
+    font-weight: 600;
+    color: var(--gray-200);
+    white-space: nowrap;
+}
+
+/* Tabs */
+.apb-tabs-card {
+    height: 100%;
+}
+
+.apb-tabs-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.apb-tab-btn {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--dark-border);
+    color: var(--gray-300);
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-main);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.apb-tab-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--gray-100);
+}
+
+.apb-tab-btn.active {
+    background-color: var(--gold-500, #f59e0b);
+    color: #000;
+    border-color: var(--gold-500, #f59e0b);
+}
+
+.apb-tab-pane {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.apb-tab-pane.active {
+    display: block;
+}
+
+.apb-tab-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 16px;
+    border-radius: var(--radius-md);
+    margin-bottom: 16px;
+}
+
+.apb-tab-header h4 {
+    margin: 0;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    color: var(--gray-100);
+}
+
+.apb-tab-total {
+    font-family: var(--font-main);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--gold-400, #fbbf24);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
