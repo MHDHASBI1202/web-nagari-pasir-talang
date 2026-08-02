@@ -4087,3 +4087,44 @@ a.hero-stat:hover { transform:translateY(-2px); }
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+
+/* Geo Facility Grid in Statistik Card */
+.geo-facility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+.geo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gray-50);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  transition: all .25s ease;
+}
+.geo-item:hover {
+  border-color: var(--green-300);
+  background: var(--green-50);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.1);
+}
+.geo-info {
+  display: flex;
+  flex-direction: column;
+}
+.geo-info .geo-label {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.geo-info .geo-value {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--gray-800);
+  margin-top: 2px;
+}
