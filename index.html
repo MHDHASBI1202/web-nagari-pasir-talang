@@ -757,6 +757,7 @@
       </div>
 
       <div class="layanan-grid">
+        <!-- ✅ Setiap layanan: klik "Ajukan Layanan" ➔ WhatsApp dengan pesan pre-filled -->
         <div class="layanan-card" id="layanan-ktp">
           <div class="layanan-icon-wrap green">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h2M10 15h6"/></svg>
@@ -864,14 +865,14 @@
           <h3>Informasi Publik</h3>
           <p>Akses informasi tentang anggaran nagari, rencana pembangunan, dan laporan kegiatan secara transparan.</p>
           <ul class="layanan-list">
-            <li><a href="#apbnag" style="color:inherit;text-decoration:underline dotted">APBNag Tahunan 2026</a></li>
-            <li><a href="#apbnag" style="color:inherit;text-decoration:underline dotted">Laporan Realisasi Sem. I 2026</a></li>
+            <li><a href="#apbnag" onclick="switchApbView('view-anggaran')" style="color:inherit;text-decoration:underline dotted">APBNag Tahunan 2026</a></li>
+            <li><a href="#apbnag" onclick="switchApbView('view-realisasi')" style="color:inherit;text-decoration:underline dotted">Laporan Realisasi Sem. I 2026</a></li>
             <li>Data Demografi</li>
           </ul>
           <div class="layanan-footer">
             <span class="layanan-time">&#128336; Tersedia di Halaman Ini</span>
-            <a href="#apbnag" class="layanan-btn-wa teal-btn">
-              Lihat Data
+            <a href="#apbnag" onclick="switchApbView('view-realisasi')" class="layanan-btn-wa teal-btn">
+              Lihat Realisasi
             </a>
           </div>
         </div>
@@ -889,7 +890,6 @@
       </div>
     </div>
   </section>
-
 
   <!-- ========== STATISTIK ========== -->
   <section id="statistik" class="section">
