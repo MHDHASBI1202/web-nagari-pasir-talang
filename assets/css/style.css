@@ -5058,3 +5058,60 @@ a.hero-stat:hover { transform:translateY(-2px); }
 .apb-tabs-card .real-surplus-banner {
   border-radius: 14px;
 }
+
+/* Centering Fix for APB Nagari and Realisasi */
+.apb-summary-card {
+  flex-direction: column !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.apb-card-header,
+.real-section-header {
+  flex-direction: column !important;
+  justify-content: center !important;
+  text-align: center !important;
+  align-items: center !important;
+}
+
+.apb-card-title,
+.real-section-title {
+  text-align: center !important;
+}
+
+/* For generic body text to be justify */
+p {
+  text-align: justify !important;
+}
+
+/* Also center the main headers inside apb-content-grid */
+.apb-detail-group-header {
+  text-align: center !important;
+}
+
+.apb-tab-header, .real-bidang-overview {
+  flex-direction: column !important;
+  text-align: center !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* For list items, we keep them space-between but center the overall block if needed */
+.apb-detail-list li, .real-item {
+  /* text-align left/right stays but they are balanced */
+}
+
+/* Surplus Banner center */
+.surplus-banner, .real-surplus-banner {
+  flex-direction: column !important;
+  text-align: center !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.rsb-left {
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.rsb-value {
+  text-align: center !important;
+}
