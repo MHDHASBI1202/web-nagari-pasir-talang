@@ -1,4 +1,4 @@
-﻿/* =============================================
+/* =============================================
    NAGARI PASIR TALANG - Main Stylesheet
    Modern, Premium Village Website
    ============================================= */
@@ -3638,8 +3638,8 @@ a.hero-stat:hover { transform:translateY(-2px); }
 /* Sarana Pendidikan Grid */
 .edu-facility-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
   margin-top: 14px;
 }
 .edu-facility-card {
@@ -3995,3 +3995,56 @@ a.hero-stat:hover { transform:translateY(-2px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+
+/* APB Detail Subgroups & Badges */
+.apb-subgroup {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+.apb-subgroup-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--gold-400, #fbbf24);
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.apb-subgroup-meta {
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+  margin-top: 3px;
+}
+.apb-sub-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 6px 0;
+}
+.apb-sub-list li {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 6px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+}
+.apb-sub-list li:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+.apb-chip {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-left: 6px;
+}
+.chip-up { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.4); }
+.chip-down { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+.chip-del { background: rgba(156, 163, 175, 0.2); color: #9ca3af; border: 1px solid rgba(156, 163, 175, 0.4); }
