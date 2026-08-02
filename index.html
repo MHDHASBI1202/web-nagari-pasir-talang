@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -757,7 +757,6 @@
       </div>
 
       <div class="layanan-grid">
-        <!-- Ã¢Å“â€¦ Setiap layanan: klik "Ajukan Layanan" Ã¢â€ â€™ WhatsApp dengan pesan pre-filled -->
         <div class="layanan-card" id="layanan-ktp">
           <div class="layanan-icon-wrap green">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h2M10 15h6"/></svg>
@@ -866,13 +865,12 @@
           <p>Akses informasi tentang anggaran nagari, rencana pembangunan, dan laporan kegiatan secara transparan.</p>
           <ul class="layanan-list">
             <li><a href="#apbnag" style="color:inherit;text-decoration:underline dotted">APBNag Tahunan 2026</a></li>
-            <li>Laporan Realisasi</li>
+            <li><a href="#apbnag" style="color:inherit;text-decoration:underline dotted">Laporan Realisasi Sem. I 2026</a></li>
             <li>Data Demografi</li>
           </ul>
           <div class="layanan-footer">
             <span class="layanan-time">&#128336; Tersedia di Halaman Ini</span>
-            <!-- Ã¢Å“â€¦ Scroll ke #statistik untuk lihat data -->
-            <a href="#statistik" class="layanan-btn-wa teal-btn">
+            <a href="#apbnag" class="layanan-btn-wa teal-btn">
               Lihat Data
             </a>
           </div>
@@ -891,6 +889,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- ========== STATISTIK ========== -->
   <section id="statistik" class="section">
@@ -1037,15 +1036,29 @@
     </div>
   </section>
 
-    <section id="apbnag" class="section section-dark apb-section">
+      <section id="apbnag" class="section section-dark apb-section">
     <div class="apb-container">
         <div class="apb-header">
             <span class="apb-badge">Transparansi Anggaran</span>
-            <h2 class="apb-title">APB Nagari 2026</h2>
-            <p class="apb-subtitle">Ringkasan Anggaran Pendapatan dan Belanja Nagari Pasir Talang Tahun 2026</p>
+            <h2 class="apb-title">APB Nagari &amp; Realisasi 2026</h2>
+            <p class="apb-subtitle">Laporan Transparansi Anggaran Pendapatan, Belanja, dan Realisasi Semester I TA 2026 Nagari Pasir Talang</p>
         </div>
 
-        <div class="apb-summary-grid">
+        <!-- Mode Switcher -->
+        <div class="apb-main-switcher">
+            <button class="apb-switch-btn active" data-view="view-anggaran">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                Perubahan APBNag 2026 (Anggaran)
+            </button>
+            <button class="apb-switch-btn" data-view="view-realisasi">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Laporan Realisasi Semester I 2026
+            </button>
+        </div>
+
+        <!-- VIEW 1: ANGGARAN (APBNag 2026) -->
+        <div id="view-anggaran" class="apb-view-pane active">
+<div class="apb-summary-grid">
             <div class="apb-summary-card apb-card-green">
                 <div class="apb-summary-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
@@ -1435,6 +1448,228 @@
         </div>
     </div>
 </section>
+
+
+        </div>
+
+        <!-- VIEW 2: REALISASI (Semester I 2026) -->
+        <div id="view-realisasi" class="apb-view-pane">
+            <div class="apb-summary-grid">
+                <div class="apb-summary-card apb-card-green">
+                    <div class="apb-summary-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <div class="apb-summary-content">
+                        <div class="apb-summary-label">Realisasi Pendapatan (62,95%)</div>
+                        <div class="apb-summary-value">Rp826.550.510,00</div>
+                    </div>
+                </div>
+                
+                <div class="apb-summary-card apb-card-gold">
+                    <div class="apb-summary-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+                    </div>
+                    <div class="apb-summary-content">
+                        <div class="apb-summary-label">Realisasi Belanja (52,64%)</div>
+                        <div class="apb-summary-value">Rp819.255.575,00</div>
+                    </div>
+                </div>
+
+                <div class="apb-summary-card apb-card-blue">
+                    <div class="apb-summary-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <div class="apb-summary-content">
+                        <div class="apb-summary-label">Hasil Realisasi Semester I</div>
+                        <div class="apb-summary-value">Surplus Rp7.294.935,00</div>
+                    </div>
+                </div>
+
+                <div class="apb-summary-card apb-card-purple">
+                    <div class="apb-summary-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h0M2 9.5h20"/></svg>
+                    </div>
+                    <div class="apb-summary-content">
+                        <div class="apb-summary-label">SiLPA Tahun Berjalan</div>
+                        <div class="apb-summary-value">Rp0,00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apb-content-grid">
+                <div class="apb-col-left">
+                    <div class="apb-card apb-detailed-card">
+                        <div class="apb-card-header">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="apb-card-icon text-green"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            <h3 class="apb-card-title">Realisasi Pendapatan Semester I</h3>
+                        </div>
+                        
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">Pendapatan Transfer</span>
+                                <span class="apb-detail-group-total">Rp807.783.987,00 <span class="realisasi-badge-pct pct-green">62,11%</span></span>
+                            </div>
+                            <div class="realisasi-progress-bar"><div class="realisasi-progress-fill" style="width: 62.11%; background: #22c55e;"></div></div>
+                            <div class="apb-subgroup-meta" style="margin-bottom: 10px;">Anggaran Rp1.300.448.442,00 | Belum Terealisasi: Rp492.664.455,00</div>
+                            <ul class="apb-detail-list">
+                                <li>
+                                    <span>1. Dana Desa</span>
+                                    <span>Rp330.420.000,00 <span class="realisasi-badge-pct pct-green">100% (Lunas)</span></span>
+                                </li>
+                                <li>
+                                    <span>2. Bagi Hasil Pajak &amp; Retribusi</span>
+                                    <span>Rp0,00 <span class="realisasi-badge-pct pct-red">0% (Belum Terealisasi)</span></span>
+                                </li>
+                                <li>
+                                    <span>3. Alokasi Dana Desa (ADD)</span>
+                                    <span>Rp477.363.987,00 <span class="realisasi-badge-pct pct-gold">49,82%</span></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">Pendapatan Lain-lain</span>
+                                <span class="apb-detail-group-total">Rp18.766.523,00 <span class="realisasi-badge-pct pct-green">150,54%</span></span>
+                            </div>
+                            <div class="realisasi-progress-bar"><div class="realisasi-progress-fill" style="width: 100%; background: #22c55e;"></div></div>
+                            <div class="apb-subgroup-meta">Target Rp12.466.000,00 | <span style="color:#4ade80;font-weight:700;">Kelebihan Penerimaan +Rp6.300.523,00</span></div>
+                        </div>
+                    </div>
+
+                    <div class="apb-card apb-detailed-card">
+                        <div class="apb-card-header">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="apb-card-icon text-blue"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                            <h3 class="apb-card-title">Realisasi Pembiayaan</h3>
+                        </div>
+                        
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">Penerimaan Pembiayaan (SiLPA)</span>
+                                <span class="apb-detail-group-total">Rp493.518.002,49 <span class="realisasi-badge-pct pct-green">100%</span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">Pengeluaran Pembiayaan</span>
+                                <span class="apb-detail-group-total">Rp231.292.000,00 <span class="realisasi-badge-pct pct-gold">92,52%</span></span>
+                            </div>
+                            <div class="apb-subgroup-meta">Anggaran Rp250.000.000,00 | Belum Terealisasi: Rp18.708.000,00</div>
+                        </div>
+
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">Pembiayaan Netto</span>
+                                <span class="apb-detail-group-total">Rp262.226.002,49</span>
+                            </div>
+                            <div class="apb-subgroup-meta">Anggaran Rp243.518.002,49 | Selisih Laporan: +Rp18.708.000,00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="apb-col-right">
+                    <div class="apb-card apb-detailed-card">
+                        <div class="apb-card-header">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="apb-card-icon text-gold"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+                            <h3 class="apb-card-title">Realisasi Belanja per Bidang</h3>
+                        </div>
+
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">A. Penyelenggaraan Pemerintahan</span>
+                                <span class="apb-detail-group-total">Rp601.059.209,00 <span class="realisasi-badge-pct pct-gold">51,24%</span></span>
+                            </div>
+                            <div class="realisasi-progress-bar"><div class="realisasi-progress-fill" style="width: 51.24%; background: #f59e0b;"></div></div>
+                            <div class="apb-subgroup-meta">Anggaran Rp1.172.937.817,49 | Sisa Belanja: Rp571.878.608,49</div>
+                            <div style="font-size:0.78rem;color:rgba(255,255,255,0.6);margin-top:6px;line-height:1.4;">
+                                Bidang terbesar: Operasional kantor nagari, Siltap/gaji perangkat nagari, tunjangan BPD, adminduk, dll.
+                            </div>
+                        </div>
+
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">B. Pelaksanaan Pembangunan Nagari</span>
+                                <span class="apb-detail-group-total">Rp174.266.366,00 <span class="realisasi-badge-pct pct-green">63,46%</span></span>
+                            </div>
+                            <div class="realisasi-progress-bar"><div class="realisasi-progress-fill" style="width: 63.46%; background: #22c55e;"></div></div>
+                            <div class="apb-subgroup-meta">Anggaran Rp274.603.002,00 | Sisa Belanja: Rp100.336.636,00</div>
+                        </div>
+
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">C. Pembinaan Kemasyarakatan</span>
+                                <span class="apb-detail-group-total">Rp15.130.000,00 <span class="realisasi-badge-pct pct-blue">24,22%</span></span>
+                            </div>
+                            <div class="realisasi-progress-bar"><div class="realisasi-progress-fill" style="width: 24.22%; background: #3b82f6;"></div></div>
+                            <div class="apb-subgroup-meta">Anggaran Rp62.466.825,00 | Sisa Belanja: Rp47.336.825,00</div>
+                        </div>
+
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">D. Pemberdayaan Masyarakat</span>
+                                <span class="apb-detail-group-total">Rp0,00 <span class="realisasi-badge-pct pct-red">0,00%</span></span>
+                            </div>
+                            <div class="realisasi-progress-bar"><div class="realisasi-progress-fill" style="width: 0%; background: #ef4444;"></div></div>
+                            <div class="apb-subgroup-meta">Anggaran Rp7.624.800,00 | Belum Ada Realisasi s/d Semester I</div>
+                        </div>
+
+                        <div class="apb-detail-group">
+                            <div class="apb-detail-group-header">
+                                <span class="apb-detail-group-title">E. Penanggulangan Bencana &amp; Mendesak</span>
+                                <span class="apb-detail-group-total">Rp28.800.000,00 <span class="realisasi-badge-pct pct-green">74,23%</span></span>
+                            </div>
+                            <div class="realisasi-progress-bar"><div class="realisasi-progress-fill" style="width: 74.23%; background: #22c55e;"></div></div>
+                            <div class="apb-subgroup-meta">Anggaran Rp38.800.000,00 | Sisa Belanja: Rp10.000.000,00</div>
+                        </div>
+
+                        <div class="surplus-banner">
+                            <div>
+                                <div class="surplus-title">Hasil Realisasi Semester I TA 2026</div>
+                                <div class="apb-subgroup-meta">Target Anggaran Defisit Rp243.518.002,49 ➔ Selisih Positif +Rp250.812.937,49</div>
+                            </div>
+                            <div class="surplus-value">SURPLUS Rp7.294.935,00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Tab system inside Anggaran
+        const tabBtns = document.querySelectorAll('.apb-tab-btn');
+        const tabPanes = document.querySelectorAll('.apb-tab-pane');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabPanes.forEach(p => p.classList.remove('active'));
+                btn.classList.add('active');
+                const targetId = btn.getAttribute('data-target');
+                const targetEl = document.getElementById(targetId);
+                if (targetEl) targetEl.classList.add('active');
+            });
+        });
+
+        // View Switcher (Anggaran vs Realisasi)
+        const switchBtns = document.querySelectorAll('.apb-switch-btn');
+        const viewPanes = document.querySelectorAll('.apb-view-pane');
+
+        switchBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                switchBtns.forEach(b => b.classList.remove('active'));
+                viewPanes.forEach(p => p.classList.remove('active'));
+                btn.classList.add('active');
+                const targetViewId = btn.getAttribute('data-view');
+                const targetViewEl = document.getElementById(targetViewId);
+                if (targetViewEl) targetViewEl.classList.add('active');
+            });
+        });
+    });
+</script>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
