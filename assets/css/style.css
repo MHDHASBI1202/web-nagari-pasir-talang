@@ -5254,3 +5254,117 @@ p {
 .orgv2-level {
   justify-content: center !important;
 }
+
+/* ================================================================
+   STRUKTUR ORGANISASI — DEFINITIVE CENTERING FIX
+   Ensures all grids center incomplete last rows cleanly
+   ================================================================ */
+
+/* 1. JORONG GRID: 7 cards in 4-col — last 3 row must center */
+.orgv2-jorong-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 14px !important;
+}
+.orgv2-jorong-card {
+  flex: 0 0 calc(25% - 11px) !important;
+  min-width: 200px !important;
+  max-width: calc(25% - 11px) !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 1024px) {
+  .orgv2-jorong-card {
+    flex: 0 0 calc(50% - 7px) !important;
+    max-width: calc(50% - 7px) !important;
+    min-width: 180px !important;
+  }
+}
+@media (max-width: 640px) {
+  .orgv2-jorong-card {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* 2. ANGGOTA CHIPS (BAMUS, LPM) — center last row */
+.anggota-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 10px !important;
+}
+.anggota-chip {
+  flex-shrink: 0 !important;
+}
+
+/* 3. LEMBAGA ANGGOTA GRID (KAN etc.) — center last row */
+.lembaga-anggota-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+.lembaga-anggota-chip {
+  flex-shrink: 0 !important;
+}
+
+/* 4. KAN PENASEHAT CHIPS — center last row */
+.kan-penasehat-grid {
+  justify-content: center !important;
+}
+.kan-penasehat-chip {
+  flex-shrink: 0 !important;
+}
+
+/* 5. KAN BIDANG GRID — change to flex so last row centers */
+.kan-bidang-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 16px !important;
+}
+.kan-bidang-card {
+  flex: 0 0 calc(50% - 8px) !important;
+  max-width: calc(50% - 8px) !important;
+  box-sizing: border-box !important;
+  min-width: 260px !important;
+}
+@media (max-width: 768px) {
+  .kan-bidang-card {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* 6. KAN ANGGOTA LIST inside each bidang card */
+.kan-anggota-list {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 6px !important;
+}
+.kan-anggota-list span {
+  flex-shrink: 0 !important;
+}
+
+/* 7. LEMBAGA PIMPINAN GRIDS — center when fewer items than cols */
+.lembaga-pimpinan {
+  justify-content: center !important;
+  justify-items: center !important;
+}
+
+/* 8. BAMUS / LPM support row */
+.orgv2-support-row {
+  justify-content: center !important;
+}
+
+/* 9. ORGS ANGGOTA GRID (older cards) */
+.orgs-anggota-grid {
+  justify-content: center !important;
+}
+
+/* 10. KAN PIMPINAN GRID */
+.kan-pimpinan-grid {
+  justify-content: center !important;
+}
