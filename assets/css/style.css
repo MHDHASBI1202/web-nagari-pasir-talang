@@ -5506,3 +5506,31 @@ p {
     max-width: 100% !important;
   }
 }
+
+/* ================================================================
+   FIX: Pimpinan cards (BAMUS & LPM) — ukuran kartu seragam
+   Kartu dalam satu baris grid WAJIB setinggi kartu tertinggi
+   ================================================================ */
+
+/* Grid container: stretch agar semua cell sama tinggi */
+.lembaga-pimpinan {
+  align-items: stretch !important;
+}
+
+/* Setiap card: height 100% agar mengisi cell grid sepenuhnya */
+.pimpinan-card {
+  height: 100% !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+/* Nama: tidak ada batas tinggi, bisa wrap bebas */
+.pc-name {
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  hyphens: auto !important;
+}
