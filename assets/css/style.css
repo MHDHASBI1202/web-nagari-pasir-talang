@@ -5115,3 +5115,142 @@ p {
 .rsb-value {
   text-align: center !important;
 }
+
+/* ================================================================
+   STRUKTUR ORGANISASI — Layout Centering Fix
+   All grids and flex-wraps center their content properly
+   ================================================================ */
+
+/* JORONG GRID: 7 cards in 4-col grid ? last row of 3 auto-centers */
+.orgv2-jorong-grid {
+  justify-content: center !important;
+}
+
+/* Switch from rigid 4-col grid to auto-fill so last row centers */
+@media (min-width: 1025px) {
+  .orgv2-jorong-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    /* Use flex instead to allow centering of incomplete rows */
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+  .orgv2-jorong-card {
+    flex: 0 0 calc(25% - 11px) !important;
+    max-width: calc(25% - 11px) !important;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 641px) {
+  .orgv2-jorong-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+  .orgv2-jorong-card {
+    flex: 0 0 calc(50% - 7px) !important;
+    max-width: calc(50% - 7px) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .orgv2-jorong-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+  .orgv2-jorong-card {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ANGGOTA CHIPS (BAMUS, LPM, and others) — center last row */
+.anggota-grid {
+  justify-content: center !important;
+}
+
+/* PIMPINAN CARDS — when grid has fewer items than columns, center them */
+.lembaga-pimpinan {
+  justify-content: center !important;
+  justify-items: center !important;
+}
+
+/* When lembaga-pimpinan has 2 cols (LPM style) ensure centered */
+.lembaga-pimpinan[style*="1fr 1fr"] {
+  justify-content: center !important;
+}
+
+/* KAN and other lembaga grids */
+.lembaga-anggota-grid {
+  justify-content: center !important;
+}
+
+/* Org support row (lembaga pendukung) */
+.orgv2-support-row {
+  justify-content: center !important;
+}
+
+/* General: all flex-wrap grids in org section should center */
+#struktur .anggota-grid,
+#struktur .anggota-section,
+#struktur .orgv2-jorong-grid {
+  justify-content: center !important;
+}
+
+/* ================================================================
+   ORG STRUCTURE — Final Centering Polish
+   Ensures all rows/grids center their children properly
+   ================================================================ */
+
+/* Jorong grid: use flex so incomplete last row centers */
+.orgv2-jorong-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 14px !important;
+}
+.orgv2-jorong-card {
+  flex: 0 0 calc(25% - 11px) !important;
+  min-width: 200px !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 1024px) {
+  .orgv2-jorong-card { flex: 0 0 calc(50% - 7px) !important; }
+}
+@media (max-width: 640px) {
+  .orgv2-jorong-card { flex: 0 0 100% !important; }
+}
+
+/* Anggota chips — center all rows including last incomplete one */
+.anggota-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 10px !important;
+}
+
+/* Pimpinan grid — center when fewer items than columns */
+.lembaga-pimpinan {
+  justify-content: center !important;
+}
+
+/* KAN bidang grid — center auto-fit rows */
+.kan-bidang-grid {
+  justify-content: center !important;
+}
+
+/* Lembaga anggota chips */
+.lembaga-anggota-grid {
+  justify-content: center !important;
+}
+
+/* Support row */
+.orgv2-support-row {
+  justify-content: center !important;
+}
+
+/* Orgv2 chart levels */
+.orgv2-level {
+  justify-content: center !important;
+}
