@@ -5565,3 +5565,256 @@ p {
   justify-content: center !important;
   text-align: center !important;
 }
+
+/* ================================================================
+   APBNag & REALISASI — PREMIUM VISUAL REDESIGN
+   Gradient background, colored cards, depth & vibrancy
+   ================================================================ */
+
+/* Section background: deep dark navy gradient dengan noise texture */
+.apb-section {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(16,185,129,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 80% 90%, rgba(37,99,235,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 50% 50%, rgba(124,58,237,0.06) 0%, transparent 70%),
+    linear-gradient(160deg, #0f172a 0%, #1e293b 45%, #0f2027 100%) !important;
+  color: #f8fafc !important;
+  position: relative;
+}
+
+/* Dekoratif orb di background */
+.apb-section::before {
+  content: '';
+  position: absolute;
+  top: -120px; left: -120px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.apb-section::after {
+  content: '';
+  position: absolute;
+  bottom: -100px; right: -100px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Header text jadi terang di dark background */
+.apb-title {
+  color: #f1f5f9 !important;
+}
+.apb-subtitle {
+  color: #94a3b8 !important;
+}
+.apb-badge {
+  background: rgba(16,185,129,0.15) !important;
+  color: #34d399 !important;
+  border-color: rgba(16,185,129,0.3) !important;
+}
+
+/* Mode switcher: glass-morphism style */
+.apb-main-switcher {
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1) !important;
+}
+.apb-switch-btn {
+  color: rgba(255,255,255,0.6) !important;
+}
+.apb-switch-btn:hover {
+  color: #fff !important;
+}
+.apb-switch-btn.active {
+  background: linear-gradient(135deg, #059669, #0d9488) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 18px rgba(5,150,105,0.45) !important;
+}
+
+/* Summary cards: vibrant gradient per warna */
+.apb-summary-card {
+  border: none !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25) !important;
+  backdrop-filter: blur(8px);
+}
+.apb-summary-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35) !important;
+}
+
+.apb-card-green {
+  background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%) !important;
+  border: none !important;
+}
+.apb-card-green .apb-summary-icon {
+  background: rgba(255,255,255,0.2) !important;
+  color: #fff !important;
+}
+.apb-card-green .apb-summary-label,
+.apb-card-green .apb-summary-value {
+  color: #fff !important;
+}
+.apb-card-green .apb-summary-label {
+  color: rgba(255,255,255,0.8) !important;
+}
+
+.apb-card-gold {
+  background: linear-gradient(135deg, #b45309 0%, #d97706 50%, #f59e0b 100%) !important;
+  border: none !important;
+}
+.apb-card-gold .apb-summary-icon {
+  background: rgba(255,255,255,0.2) !important;
+  color: #fff !important;
+}
+.apb-card-gold .apb-summary-label,
+.apb-card-gold .apb-summary-value {
+  color: #fff !important;
+}
+.apb-card-gold .apb-summary-label {
+  color: rgba(255,255,255,0.8) !important;
+}
+
+.apb-card-blue {
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%) !important;
+  border: none !important;
+}
+.apb-card-blue .apb-summary-icon {
+  background: rgba(255,255,255,0.2) !important;
+  color: #fff !important;
+}
+.apb-card-blue .apb-summary-label,
+.apb-card-blue .apb-summary-value {
+  color: #fff !important;
+}
+.apb-card-blue .apb-summary-label {
+  color: rgba(255,255,255,0.8) !important;
+}
+
+.apb-card-purple {
+  background: linear-gradient(135deg, #7e22ce 0%, #9333ea 50%, #a855f7 100%) !important;
+  border: none !important;
+}
+.apb-card-purple .apb-summary-icon {
+  background: rgba(255,255,255,0.2) !important;
+  color: #fff !important;
+}
+.apb-card-purple .apb-summary-label,
+.apb-card-purple .apb-summary-value {
+  color: #fff !important;
+}
+.apb-card-purple .apb-summary-label {
+  color: rgba(255,255,255,0.8) !important;
+}
+
+/* Detail cards (kiri: Rincian Pendapatan, Pembiayaan) */
+.apb-card {
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.08) !important;
+  color: #f1f5f9 !important;
+}
+
+/* Card header */
+.apb-card-header {
+  border-bottom-color: rgba(255,255,255,0.1) !important;
+}
+.apb-card-title {
+  color: #f1f5f9 !important;
+}
+.apb-card-icon.text-green { color: #34d399 !important; }
+.apb-card-icon.text-blue  { color: #60a5fa !important; }
+.apb-card-icon.text-gold  { color: #fbbf24 !important; }
+
+/* Detail group text */
+.apb-detail-group {
+  border-bottom-color: rgba(255,255,255,0.08) !important;
+}
+.apb-detail-group-header {
+  color: #f1f5f9 !important;
+}
+.apb-detail-group-title {
+  color: #cbd5e1 !important;
+}
+.apb-detail-group-total {
+  color: #34d399 !important;
+}
+.apb-detail-list li {
+  color: #94a3b8 !important;
+  border-bottom-color: rgba(255,255,255,0.06) !important;
+}
+.apb-detail-list li span:last-child {
+  color: #f1f5f9 !important;
+  font-weight: 600 !important;
+}
+
+/* Tabs nav */
+.apb-tabs-nav {
+  background: rgba(255,255,255,0.05) !important;
+  border-bottom-color: rgba(255,255,255,0.1) !important;
+}
+.apb-tab-btn {
+  color: #94a3b8 !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+.apb-tab-btn:hover {
+  color: #e2e8f0 !important;
+  background: rgba(255,255,255,0.06) !important;
+  border-color: rgba(255,255,255,0.15) !important;
+}
+.apb-tab-btn.active {
+  background: linear-gradient(135deg, #059669, #0d9488) !important;
+  color: #fff !important;
+  border-color: #059669 !important;
+  box-shadow: 0 4px 14px rgba(5,150,105,0.35) !important;
+}
+
+/* Tab pane content */
+.apb-tab-header {
+  border-bottom-color: rgba(255,255,255,0.1) !important;
+}
+.apb-tab-header h4 {
+  color: #f1f5f9 !important;
+}
+.apb-tab-total {
+  color: #34d399 !important;
+}
+.apb-subgroup-meta {
+  color: #94a3b8 !important;
+}
+.apb-subgroup-title {
+  color: #cbd5e1 !important;
+  border-bottom-color: rgba(255,255,255,0.06) !important;
+}
+.apb-subgroup-title > span:first-child {
+  color: #cbd5e1 !important;
+}
+.apb-subgroup-title > span:last-child {
+  color: #f1f5f9 !important;
+}
+.apb-sub-list li {
+  color: #94a3b8 !important;
+  border-bottom-color: rgba(255,255,255,0.05) !important;
+}
+.apb-sub-list li > span:last-child {
+  color: #e2e8f0 !important;
+}
+
+/* Chips */
+.apb-chip.chip-up   { background: rgba(16,185,129,0.2) !important; color: #34d399 !important; border-color: rgba(16,185,129,0.4) !important; }
+.apb-chip.chip-down { background: rgba(239,68,68,0.2)  !important; color: #f87171 !important; border-color: rgba(239,68,68,0.4) !important; }
+.apb-chip.chip-del  { background: rgba(100,116,139,0.2) !important; color: #94a3b8 !important; border-color: rgba(100,116,139,0.3) !important; }
+
+/* Realisasi: progress bar track */
+.real-group-progress {
+  background: rgba(255,255,255,0.1) !important;
+}
+
+/* Surplus banner sudah hijau, pastikan tidak terpengaruh */
+.real-surplus-banner {
+  box-shadow: 0 12px 40px rgba(5,150,105,0.4) !important;
+}
