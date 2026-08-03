@@ -5368,3 +5368,141 @@ p {
 .kan-pimpinan-grid {
   justify-content: center !important;
 }
+
+/* ================================================================
+   PERBAIKAN KOMPREHENSIF STRUKTUR ORGANISASI
+   1. Kaur/Kasi cards: text center + layout rapi
+   2. BAMUS & LPM pimpinan-card: ukuran sama/konsisten
+   3. KAN bidang IV: posisi center di desktop
+   ================================================================ */
+
+/* ---- 1. KAUR / KASI CARDS: teks di tengah, layout column ---- */
+.orgv2-card.orgv2-kaur,
+.orgv2-card.orgv2-kasi {
+  text-align: center !important;
+  align-items: center !important;
+  flex-direction: column !important;
+  padding: 16px 14px !important;
+}
+
+/* Badge tetap di tengah */
+.orgv2-badge-sm {
+  align-self: center !important;
+  text-align: center !important;
+}
+
+/* Nama dan role di tengah */
+.orgv2-role,
+.orgv2-name {
+  text-align: center !important;
+  width: 100% !important;
+}
+
+/* Staff row (nama staf tambahan) di tengah */
+.orgv2-staff-row {
+  text-align: center !important;
+  width: 100% !important;
+  border-left: none !important;
+  border-top: 1px solid rgba(0,0,0,.08) !important;
+  border-radius: 8px !important;
+  margin-top: 8px !important;
+}
+
+/* Tinggi semua kaur/kasi card sama (align-items stretch di parent) */
+.orgv2-group-cards {
+  align-items: stretch !important;
+}
+
+/* ---- 2. BAMUS & LPM: ukuran pimpinan-card seragam ---- */
+
+/* Paksa lembaga-pimpinan selalu pakai 3 kolom di desktop */
+.lembaga-pimpinan {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 16px !important;
+  align-items: stretch !important;
+}
+
+/* LPM hanya 2 pimpinan → override inline style, tetap 2 kolom tapi centered */
+#panel-lpm .lembaga-pimpinan {
+  grid-template-columns: repeat(2, minmax(0, 280px)) !important;
+  justify-content: center !important;
+}
+
+/* Setiap pimpinan-card: tinggi sama, padding seragam */
+.pimpinan-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-align: center !important;
+  padding: 24px 20px !important;
+  border-radius: 16px !important;
+  min-height: 140px !important;
+  box-sizing: border-box !important;
+}
+
+/* Icon di tengah */
+.pc-icon {
+  margin-bottom: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Role dan nama tetap center */
+.pc-role {
+  text-align: center !important;
+  width: 100% !important;
+  margin-bottom: 6px !important;
+}
+.pc-name {
+  text-align: center !important;
+  width: 100% !important;
+  line-height: 1.35 !important;
+}
+
+/* Responsive: tablet 1 kolom untuk BAMUS, 2 kolom untuk LPM */
+@media (max-width: 768px) {
+  .lembaga-pimpinan {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  #panel-lpm .lembaga-pimpinan {
+    grid-template-columns: repeat(2, 1fr) !important;
+    justify-content: center !important;
+  }
+}
+@media (max-width: 480px) {
+  .lembaga-pimpinan {
+    grid-template-columns: 1fr !important;
+  }
+  #panel-lpm .lembaga-pimpinan {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ---- 3. KAN BIDANG IV: center di desktop (4 item, 2 kolom) ---- */
+
+/* Ubah kan-bidang-grid ke flex agar baris terakhir bisa di-center */
+.kan-bidang-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 16px !important;
+}
+
+/* Setiap kan-bidang-card: setengah lebar dikurangi gap, min 260px */
+.kan-bidang-card {
+  flex: 0 0 calc(50% - 8px) !important;
+  max-width: calc(50% - 8px) !important;
+  min-width: 260px !important;
+  box-sizing: border-box !important;
+}
+
+/* Tablet & mobile: 1 kolom penuh */
+@media (max-width: 768px) {
+  .kan-bidang-card {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
