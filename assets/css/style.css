@@ -5534,3 +5534,22 @@ p {
   overflow-wrap: break-word !important;
   hyphens: auto !important;
 }
+
+/* ================================================================
+   FIX: Pimpinan cards — ukuran tetap (fixed), tidak mengikuti panjang nama
+   ================================================================ */
+
+.pimpinan-card {
+  min-height: 180px !important;
+  width: 100% !important;
+}
+
+/* LPM khusus: 2 card saja, beri lebar minimum yang layak */
+#panel-lpm .lembaga-pimpinan {
+  grid-template-columns: repeat(2, minmax(200px, 280px)) !important;
+}
+
+/* BAMUS: 3 card, beri lebar minimum yang layak */
+#panel-bamus .lembaga-pimpinan {
+  grid-template-columns: repeat(3, minmax(180px, 1fr)) !important;
+}
