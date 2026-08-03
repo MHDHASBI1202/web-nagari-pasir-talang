@@ -5818,3 +5818,110 @@ p {
 .real-surplus-banner {
   box-shadow: 0 12px 40px rgba(5,150,105,0.4) !important;
 }
+
+/* ================================================================
+   APBNag DARK THEME — Fix tab cards (Rincian Belanja & Realisasi)
+   Override putih/abu dari .apb-tabs-card & .apb-tab-header
+   ================================================================ */
+
+/* Card tabs & detailed: sama dengan .apb-card — glassmorphism dark */
+.apb-section .apb-detailed-card,
+.apb-section .apb-tabs-card {
+  background: rgba(255,255,255,0.07) !important;
+  border: 1px solid rgba(255,255,255,0.13) !important;
+  backdrop-filter: blur(14px) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.08) !important;
+  color: #f1f5f9 !important;
+}
+
+/* Tab content area (wrap semua pane) */
+.apb-section .apb-tab-contents {
+  background: transparent !important;
+}
+
+/* Tab pane header (kotak abu-abu di atas tiap bidang) */
+.apb-section .apb-tab-header {
+  background: rgba(255,255,255,0.06) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+.apb-section .apb-tab-header h4 {
+  color: #f1f5f9 !important;
+}
+.apb-section .apb-tab-total {
+  color: #34d399 !important;
+  font-weight: 800 !important;
+}
+
+/* Subgroup rows (1. Siltap..., 2. Sarana..., dst.) */
+.apb-section .apb-subgroup {
+  border-bottom-color: rgba(255,255,255,0.07) !important;
+}
+.apb-section .apb-subgroup-title {
+  background: rgba(255,255,255,0.04) !important;
+  border-radius: 8px;
+  padding: 8px 10px;
+  color: #e2e8f0 !important;
+}
+.apb-section .apb-subgroup-title > span:first-child {
+  color: #cbd5e1 !important;
+}
+.apb-section .apb-subgroup-title > span:last-child {
+  color: #34d399 !important;
+  font-weight: 700 !important;
+}
+.apb-section .apb-subgroup-meta {
+  color: #94a3b8 !important;
+  font-size: 0.8rem !important;
+}
+
+/* Sub-list items */
+.apb-section .apb-sub-list li {
+  border-bottom-color: rgba(255,255,255,0.05) !important;
+}
+.apb-section .apb-sub-list li > span:first-child {
+  color: #94a3b8 !important;
+}
+.apb-section .apb-sub-list li > span:last-child {
+  color: #e2e8f0 !important;
+  font-weight: 600 !important;
+}
+
+/* Detail list (Rincian Pendapatan dll) */
+.apb-section .apb-detail-list li {
+  border-bottom-color: rgba(255,255,255,0.06) !important;
+}
+.apb-section .apb-detail-list li > span:first-child {
+  color: #94a3b8 !important;
+}
+.apb-section .apb-detail-list li > span:last-child {
+  color: #f1f5f9 !important;
+  font-weight: 600 !important;
+}
+.apb-section .apb-detail-group-header {
+  background: rgba(255,255,255,0.05) !important;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+.apb-section .apb-detail-group-title {
+  color: #cbd5e1 !important;
+}
+.apb-section .apb-detail-group-total {
+  color: #34d399 !important;
+  font-weight: 800 !important;
+}
+.apb-section .apb-detail-group {
+  border-bottom-color: rgba(255,255,255,0.07) !important;
+}
+
+/* Realisasi progress bar warna track */
+.apb-section .real-group-progress {
+  background: rgba(255,255,255,0.1) !important;
+}
+
+/* Note box merah (bidang D belum ada realisasi) */
+.apb-section .apb-subgroup-meta[style*="fff1f2"] {
+  background: rgba(239,68,68,0.15) !important;
+  border-color: rgba(239,68,68,0.3) !important;
+  color: #fca5a5 !important;
+}
