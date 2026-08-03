@@ -5553,3 +5553,15 @@ p {
 #panel-bamus .lembaga-pimpinan {
   grid-template-columns: repeat(3, minmax(180px, 1fr)) !important;
 }
+
+/* ================================================================
+   FIX: big-stat-card — konten di tengah vertikal & horizontal
+   (Total Penduduk, Kepala Keluarga, Laki-laki, Perempuan)
+   ================================================================ */
+.big-stat-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
