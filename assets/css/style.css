@@ -6336,3 +6336,28 @@ img, video, svg {
     justify-content: center;
   }
 }
+
+/* ================================================================
+   KONTAK SECTION — Redesign: grid 2x2 + jam operasional full-width
+   ================================================================ */
+.kontak-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+/* Kartu full-width (Jam Operasional) — melebar 2 kolom */
+.kontak-card-full {
+  grid-column: 1 / -1;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .kontak-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .kontak-card-full {
+    grid-column: 1;
+  }
+}
