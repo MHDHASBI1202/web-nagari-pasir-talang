@@ -6361,3 +6361,52 @@ img, video, svg {
     grid-column: 1;
   }
 }
+
+/* ================================================================
+   KONTAK CARDS — Semua teks di tengah (center)
+   ================================================================ */
+.kontak-cards-grid .kontak-card {
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.kontak-cards-grid .kontak-card > div,
+.kontak-cards-grid .kontak-card > a > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.kontak-cards-grid .kontak-icon {
+  margin-bottom: 14px;
+}
+
+.kontak-cards-grid .kontak-card strong {
+  text-align: center;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.kontak-cards-grid .kontak-card p {
+  text-align: center;
+  margin: 0 0 8px 0;
+}
+
+.kontak-cards-grid .kontak-action-hint {
+  text-align: center;
+}
+
+.kontak-cards-grid .sosmed-links {
+  justify-content: center;
+}
+
+/* Jam tabel di dalam kontak-card-full juga center */
+.kontak-card-full .jam-table {
+  width: 100%;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
