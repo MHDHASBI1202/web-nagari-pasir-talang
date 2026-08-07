@@ -5925,3 +5925,368 @@ p {
   border-color: rgba(239,68,68,0.3) !important;
   color: #fca5a5 !important;
 }
+
+/* ================================================================
+   COMPREHENSIVE RESPONSIVE OVERHAUL
+   Breakpoints: 1200px | 1024px | 768px | 640px | 480px | 360px
+   Covers: Navbar, Hero, APBNag, Statistik, Layanan, Org, Footer
+   ================================================================ */
+
+/* ── 1. Global: prevent horizontal scroll on all devices ── */
+html, body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+img, video, svg {
+  max-width: 100%;
+}
+
+/* ─────────────────────────────────────────────
+   LARGE TABLET / SMALL LAPTOP  (≤ 1200px)
+   ───────────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .apb-container { max-width: 100%; padding: 0 20px; }
+  .apb-summary-grid { grid-template-columns: repeat(2, 1fr); }
+  .lembaga-wrap { max-width: 100%; }
+}
+
+/* ─────────────────────────────────────────────
+   TABLET LANDSCAPE / SMALL LAPTOP  (≤ 1024px)
+   ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  /* APB: tabs nav wrap */
+  .apb-tabs-nav {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    padding: 8px !important;
+  }
+  .apb-tab-btn {
+    font-size: 0.78rem !important;
+    padding: 7px 11px !important;
+  }
+
+  /* APB Switcher: stack vertically if tight */
+  .apb-main-switcher {
+    flex-wrap: wrap !important;
+    border-radius: 16px !important;
+    max-width: 95vw !important;
+  }
+
+  /* Stat main grid */
+  .stat-main-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Layanan grid */
+  .layanan-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Org level split */
+  .orgv2-level-split {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* KAN pimpinan */
+  .kan-pimpinan-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   TABLET PORTRAIT  (≤ 768px)
+   ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Container padding */
+  .container, .apb-container { padding: 0 16px !important; }
+
+  /* Section padding */
+  .section, .apb-section { padding: 56px 0 !important; }
+
+  /* Hero */
+  .hero-content { padding: 80px 16px 120px !important; }
+  .hero-title { font-size: 2rem !important; }
+  .hero-subtitle { font-size: 0.95rem !important; }
+  .hero-stats { gap: 12px !important; flex-wrap: wrap !important; justify-content: center !important; }
+
+  /* APB: summary 2 col */
+  .apb-summary-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+  .apb-summary-value { font-size: 1rem !important; }
+  .apb-summary-label { font-size: 0.72rem !important; }
+  .apb-title { font-size: 1.7rem !important; }
+
+  /* APB content grid: full width */
+  .apb-content-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* APB tabs nav: wrap tightly */
+  .apb-tabs-nav {
+    flex-wrap: wrap !important;
+    gap: 5px !important;
+    overflow-x: unset !important;
+    padding: 6px !important;
+  }
+  .apb-tab-btn {
+    font-size: 0.73rem !important;
+    padding: 6px 9px !important;
+    flex: 1 1 auto !important;
+    text-align: center !important;
+    min-width: 80px !important;
+  }
+
+  /* APB switch btn: stack on mobile */
+  .apb-main-switcher {
+    flex-direction: column !important;
+    border-radius: 16px !important;
+    max-width: 95vw !important;
+    padding: 5px !important;
+  }
+  .apb-switch-btn {
+    justify-content: center !important;
+    width: 100% !important;
+    padding: 10px 16px !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* APB sub-list items: stack label + value */
+  .apb-sub-list li,
+  .apb-detail-list li {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 3px !important;
+    font-size: 0.8rem !important;
+  }
+  .apb-sub-list li > span:last-child,
+  .apb-detail-list li > span:last-child {
+    align-self: flex-end !important;
+  }
+
+  /* APB subgroup-title: stack */
+  .apb-subgroup-title {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+  }
+  .apb-tab-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+
+  /* APB card padding */
+  .apb-card,
+  .apb-detailed-card,
+  .apb-tabs-card { padding: 18px 14px !important; }
+
+  /* Statistik */
+  .big-stats { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Layanan */
+  .layanan-grid { grid-template-columns: 1fr !important; }
+
+  /* Org: BAMUS/LPM pimpinan */
+  .lembaga-pimpinan {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  #panel-lpm .lembaga-pimpinan {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* KAN pimpinan */
+  .kan-pimpinan-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* KAN bidang */
+  .kan-bidang-card {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .footer-bottom {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 10px !important;
+  }
+
+  /* Galeri grid */
+  .wisata-grid,
+  .galeri-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Berita grid */
+  .berita-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Section headers */
+  .section-title { font-size: 1.7rem !important; }
+  .section-desc  { font-size: 0.9rem !important; }
+}
+
+/* ─────────────────────────────────────────────
+   MOBILE LARGE  (≤ 640px)
+   ───────────────────────────────────────────── */
+@media (max-width: 640px) {
+  /* APB summary: 1 column */
+  .apb-summary-grid { grid-template-columns: 1fr !important; }
+  .apb-summary-card {
+    flex-direction: row !important;
+    text-align: left !important;
+    padding: 14px 16px !important;
+    gap: 14px !important;
+  }
+  .apb-summary-content { align-items: flex-start !important; text-align: left !important; }
+  .apb-summary-icon { width: 44px !important; height: 44px !important; }
+
+  /* APB tab btn: 2 per row */
+  .apb-tab-btn {
+    flex: 1 1 calc(50% - 5px) !important;
+    min-width: unset !important;
+  }
+
+  /* Big stats: 1 col */
+  .big-stats { grid-template-columns: 1fr !important; }
+  .big-stat-card { padding: 18px !important; }
+
+  /* Pimpinan: 1 col */
+  .lembaga-pimpinan,
+  #panel-bamus .lembaga-pimpinan,
+  #panel-lpm .lembaga-pimpinan {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Galeri: 1 col */
+  .wisata-grid,
+  .galeri-grid { grid-template-columns: 1fr !important; }
+
+  /* Layanan card */
+  .layanan-card { padding: 20px 16px !important; }
+
+  /* Hero */
+  .hero-title { font-size: 1.7rem !important; line-height: 1.25 !important; }
+  .hero-cta { flex-direction: column !important; gap: 10px !important; align-items: center !important; }
+  .hero-cta .btn { width: 100% !important; justify-content: center !important; }
+
+  /* Profil geo grid */
+  .geo-facility-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Edu facility */
+  .edu-facility-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Section padding */
+  .section, .apb-section { padding: 44px 0 !important; }
+  .section-title { font-size: 1.5rem !important; }
+
+  /* APB detail list: simpler */
+  .apb-detail-group-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+  }
+  .apb-detail-group-total { text-align: left !important; }
+}
+
+/* ─────────────────────────────────────────────
+   MOBILE SMALL  (≤ 480px)
+   ───────────────────────────────────────────── */
+@media (max-width: 480px) {
+  /* APB tab btn: full width */
+  .apb-tab-btn {
+    flex: 1 1 100% !important;
+    text-align: center !important;
+  }
+
+  /* APB card: less padding */
+  .apb-card,
+  .apb-detailed-card,
+  .apb-tabs-card { padding: 14px 10px !important; border-radius: 14px !important; }
+
+  /* APB title */
+  .apb-title { font-size: 1.4rem !important; }
+
+  /* Hero stats: 2 per row */
+  .hero-stats { display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+
+  /* Big stats */
+  .big-stat-card { flex-direction: row !important; align-items: center !important; gap: 12px !important; }
+  .bs-num { font-size: 1.6rem !important; }
+  .bs-icon { font-size: 1.4rem !important; margin-bottom: 0 !important; }
+
+  /* Navbar: adjust */
+  .nav-logo-text { font-size: 1rem !important; }
+
+  /* Geo facility: 2 col */
+  .geo-facility-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Section title */
+  .section-title { font-size: 1.35rem !important; }
+
+  /* Pimpinan cards: compact */
+  .pimpinan-card { min-height: 140px !important; padding: 18px 14px !important; }
+  .pc-name { font-size: 0.85rem !important; }
+}
+
+/* ─────────────────────────────────────────────
+   MOBILE XS  (≤ 360px)
+   ───────────────────────────────────────────── */
+@media (max-width: 360px) {
+  .container, .apb-container { padding: 0 12px !important; }
+  .apb-title { font-size: 1.25rem !important; }
+  .hero-title { font-size: 1.4rem !important; }
+  .section-title { font-size: 1.2rem !important; }
+  .apb-switch-btn { font-size: 0.78rem !important; padding: 8px 10px !important; }
+
+  /* APB summary card: compact */
+  .apb-summary-icon { width: 36px !important; height: 36px !important; }
+  .apb-summary-value { font-size: 0.9rem !important; }
+}
+
+
+/* ================================================================
+   OVERFLOW FIX: prevent horizontal scroll on small phones (≤ 480px)
+   ================================================================ */
+@media (max-width: 480px) {
+  /* Remove fixed min-widths that cause overflow on small screens */
+  .orgv2-card.orgv2-top   { min-width: 0 !important; padding: 16px !important; }
+  .org-sekretaris-card     { min-width: 0 !important; width: 100% !important; }
+  .kan-bidang-card         { min-width: 0 !important; }
+  .org-card-top            { min-width: 0 !important; }
+  .orgv2-jorong-card       { min-width: 0 !important; }
+
+  /* Toast: prevent overflow */
+  .toast {
+    white-space: normal !important;
+    max-width: calc(100vw - 32px) !important;
+    text-align: center !important;
+  }
+
+  /* Navbar: shrink logo on tiny screens */
+  .nav-logo { gap: 8px !important; }
+  .nav-logo-text { font-size: 0.9rem !important; }
+
+  /* APB switch btn: even smaller */
+  .apb-switch-btn { font-size: 0.8rem !important; padding: 9px 12px !important; }
+}
+
+@media (max-width: 360px) {
+  /* Ultra-small phones */
+  .orgv2-card.orgv2-top { padding: 12px !important; }
+  .apb-card,
+  .apb-detailed-card,
+  .apb-tabs-card { padding: 12px 8px !important; border-radius: 12px !important; }
+  .apb-card-header { gap: 8px !important; }
+  .apb-card-title  { font-size: 0.95rem !important; }
+  .pimpinan-card   { min-height: 120px !important; padding: 14px 10px !important; }
+}
