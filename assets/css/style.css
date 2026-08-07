@@ -1,4 +1,4 @@
-/* =============================================
+ï»¿/* =============================================
    NAGARI PASIR TALANG - Main Stylesheet
    Modern, Premium Village Website
    ============================================= */
@@ -4039,11 +4039,11 @@ a.hero-stat:hover { transform:translateY(-2px); }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f8fafc;
+  background: rgba(255,255,255,0.06);
   padding: 16px;
   border-radius: 14px;
   margin-bottom: 16px;
-  border: 1.5px solid #e2e8f0;
+  border: 1px solid rgba(255,255,255,0.12);
 }
 
 .apb-tab-header h4 {
@@ -4051,28 +4051,28 @@ a.hero-stat:hover { transform:translateY(-2px); }
   font-family: var(--font-main);
   font-size: 0.98rem;
   font-weight: 700;
-  color: #0f172a;
+  color: #f1f5f9;
 }
 
 .apb-tab-total {
   font-family: var(--font-main);
   font-size: 1.1rem;
   font-weight: 800;
-  color: #d97706;
+  color: #34d399;
 }
 
 /* Subgroups & Badges */
 .apb-subgroup {
   margin-top: 14px;
   padding: 14px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
   border-radius: 12px;
 }
 .apb-subgroup-title {
   font-weight: 700;
   font-size: 0.88rem;
-  color: #0f172a;
+  color: #e2e8f0;
   margin-bottom: 6px;
   display: flex;
   justify-content: space-between;
@@ -4082,7 +4082,7 @@ a.hero-stat:hover { transform:translateY(-2px); }
 }
 .apb-subgroup-meta {
   font-size: 0.78rem;
-  color: #64748b;
+  color: #94a3b8;
   font-weight: 500;
   margin-top: 2px;
 }
@@ -4093,12 +4093,12 @@ a.hero-stat:hover { transform:translateY(-2px); }
 }
 .apb-sub-list li {
   font-size: 0.83rem;
-  color: #334155;
+  color: #cbd5e1;
   padding: 6px 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px dotted #e2e8f0;
+  border-bottom: 1px dotted rgba(255,255,255,0.07);
 }
 .apb-sub-list li:last-child {
   border-bottom: none;
@@ -4219,7 +4219,7 @@ a.hero-stat:hover { transform:translateY(-2px); }
 }
 
 /* ================================================================
-   COMPREHENSIVE FIX — Geo Card, Realisasi Light Theme, Typography
+   COMPREHENSIVE FIX ï¿½ Geo Card, Realisasi Light Theme, Typography
    ================================================================ */
 
 /* -- Global text justification for readability -- */
@@ -4320,12 +4320,12 @@ a.hero-stat:hover { transform:translateY(-2px); }
 /* -- apb-detailed-card alias (same as apb-card) -- */
 .apb-detailed-card,
 .apb-tabs-card {
-  background-color: #ffffff;
-  border: 1.5px solid #e2e8f0;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.14);
   border-radius: 20px;
   padding: 26px;
   margin-bottom: 24px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
 /* -- apb-col-left / apb-col-right layout helpers -- */
@@ -4335,13 +4335,13 @@ a.hero-stat:hover { transform:translateY(-2px); }
   flex-direction: column;
 }
 
-/* -- Realisasi tab buttons — LIGHT THEME (fix dark ghost buttons) -- */
+/* -- Realisasi tab buttons ï¿½ LIGHT THEME (fix dark ghost buttons) -- */
 .apb-real-tab-btn {
   padding: 8px 14px;
   background: transparent;
   border: none;
   border-radius: 8px;
-  color: #64748b;
+  color: #94a3b8;
   font-family: var(--font-main);
   font-size: 0.82rem;
   font-weight: 600;
@@ -4351,26 +4351,26 @@ a.hero-stat:hover { transform:translateY(-2px); }
 }
 
 .apb-real-tab-btn:hover {
-  color: #0f172a;
-  background: rgba(0,0,0,0.04);
+  color: #e2e8f0;
+  background: rgba(255,255,255,0.08);
 }
 
 .apb-real-tab-btn.active {
-  background: #ffffff;
-  color: #d97706;
+  background: linear-gradient(135deg, #059669, #0d9488);
+  color: #fff;
   font-weight: 700;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-/* -- apb-tabs-nav inside view-realisasi — light pill container -- */
+/* -- apb-tabs-nav inside view-realisasi ï¿½ light pill container -- */
 #view-realisasi .apb-tabs-nav {
-  background: #f1f5f9;
+  background: rgba(255,255,255,0.06);
   padding: 4px;
   border-radius: 12px;
   border: none;
 }
 
-/* -- realisasi-desc-box — light version -- */
+/* -- realisasi-desc-box ï¿½ light version -- */
 .realisasi-desc-box {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
@@ -4390,14 +4390,14 @@ a.hero-stat:hover { transform:translateY(-2px); }
 /* -- apb-tab-header for realisasi -- */
 #view-realisasi .apb-tab-header {
   background: #f8fafc;
-  border: 1.5px solid #e2e8f0;
+  border: 1px solid rgba(255,255,255,0.12);
   border-radius: 14px;
   padding: 16px;
   color: #0f172a;
 }
 
 #view-realisasi .apb-tab-header h4 {
-  color: #0f172a;
+  color: #f1f5f9;
   margin: 0 0 4px 0;
   font-family: var(--font-main);
   font-size: 0.95rem;
@@ -4406,7 +4406,7 @@ a.hero-stat:hover { transform:translateY(-2px); }
 
 /* -- apb-subgroup-meta inside light section -- */
 .apb-section .apb-subgroup-meta {
-  color: #64748b;
+  color: #94a3b8;
 }
 
 /* -- surplus-banner overrides for light section -- */
@@ -4478,7 +4478,7 @@ a.hero-stat:hover { transform:translateY(-2px); }
   box-shadow: 0 6px 18px rgba(22,163,74,0.3);
 }
 
-/* -- layanan-card stretch — equal height cards -- */
+/* -- layanan-card stretch ï¿½ equal height cards -- */
 .layanan-grid {
   align-items: stretch;
 }
@@ -4514,7 +4514,7 @@ a.hero-stat:hover { transform:translateY(-2px); }
 }
 
 /* ================================================================
-   LAPORAN REALISASI — Premium Redesign (Professional Light Theme)
+   LAPORAN REALISASI ï¿½ Premium Redesign (Professional Light Theme)
    ================================================================ */
 
 /* Context Bar */
@@ -5040,7 +5040,7 @@ a.hero-stat:hover { transform:translateY(-2px); }
   white-space: nowrap;
 }
 
-/* real-group-progress — used inside apb-card for realisasi progress bars */
+/* real-group-progress ï¿½ used inside apb-card for realisasi progress bars */
 .real-group-progress {
   height: 6px;
   background: #f1f5f9;
@@ -5117,7 +5117,7 @@ p {
 }
 
 /* ================================================================
-   STRUKTUR ORGANISASI — Layout Centering Fix
+   STRUKTUR ORGANISASI ï¿½ Layout Centering Fix
    All grids and flex-wraps center their content properly
    ================================================================ */
 
@@ -5165,12 +5165,12 @@ p {
   }
 }
 
-/* ANGGOTA CHIPS (BAMUS, LPM, and others) — center last row */
+/* ANGGOTA CHIPS (BAMUS, LPM, and others) ï¿½ center last row */
 .anggota-grid {
   justify-content: center !important;
 }
 
-/* PIMPINAN CARDS — when grid has fewer items than columns, center them */
+/* PIMPINAN CARDS ï¿½ when grid has fewer items than columns, center them */
 .lembaga-pimpinan {
   justify-content: center !important;
   justify-items: center !important;
@@ -5199,7 +5199,7 @@ p {
 }
 
 /* ================================================================
-   ORG STRUCTURE — Final Centering Polish
+   ORG STRUCTURE ï¿½ Final Centering Polish
    Ensures all rows/grids center their children properly
    ================================================================ */
 
@@ -5222,7 +5222,7 @@ p {
   .orgv2-jorong-card { flex: 0 0 100% !important; }
 }
 
-/* Anggota chips — center all rows including last incomplete one */
+/* Anggota chips ï¿½ center all rows including last incomplete one */
 .anggota-grid {
   display: flex !important;
   flex-wrap: wrap !important;
@@ -5230,12 +5230,12 @@ p {
   gap: 10px !important;
 }
 
-/* Pimpinan grid — center when fewer items than columns */
+/* Pimpinan grid ï¿½ center when fewer items than columns */
 .lembaga-pimpinan {
   justify-content: center !important;
 }
 
-/* KAN bidang grid — center auto-fit rows */
+/* KAN bidang grid ï¿½ center auto-fit rows */
 .kan-bidang-grid {
   justify-content: center !important;
 }
