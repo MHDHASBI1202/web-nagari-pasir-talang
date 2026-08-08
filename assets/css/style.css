@@ -6647,3 +6647,30 @@ img, video, svg {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
 }
+
+/* ================================================================
+   PETA FIX v2: batasi ke resolusi asli gambar (1024px)
+   Upscaling di atas 1024px adalah penyebab blur legenda
+   ================================================================ */
+.peta-card {
+  max-width: 1024px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow: visible !important;  /* hapus overflow:hidden agar tidak ada compositing layer */
+  border-radius: 16px !important;
+}
+
+.peta-img {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 1024px !important;
+  display: block !important;
+  border-radius: 16px !important;
+  image-rendering: auto !important;  /* biarkan browser pakai algo terbaik */
+  /* hapus crisp-edges — tidak cocok untuk foto */
+}
+
+/* Hilangkan transform scale saat hover supaya tidak ada sub-pixel blur */
+.peta-card:hover .peta-img {
+  transform: none !important;
+}
