@@ -6687,3 +6687,13 @@ img, video, svg {
   height: auto !important;
   image-rendering: auto !important;
 }
+
+/* ================================================================
+   FIX: teks section-header di dalam section-dark agar terlihat jelas
+   ================================================================ */
+.section-dark .section-title {
+  color: #f1f5f9 !important;
+}
+.section-dark .section-desc {
+  color: #94a3b8 !important;
+}
