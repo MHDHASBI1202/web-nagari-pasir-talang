@@ -6674,3 +6674,16 @@ img, video, svg {
 .peta-card:hover .peta-img {
   transform: none !important;
 }
+
+/* ================================================================
+   PETA FIX v3: gambar resolusi tinggi (9933x7015) - downscale tajam
+   ================================================================ */
+.peta-card {
+  max-width: 100% !important;
+}
+.peta-img {
+  max-width: 100% !important;
+  width: 100% !important;
+  height: auto !important;
+  image-rendering: auto !important;
+}
