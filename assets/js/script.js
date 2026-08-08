@@ -606,3 +606,23 @@ function bukaTabJorong(e) {
 
   document.querySelectorAll('.reveal-up').forEach(el => io.observe(el));
 })();
+
+// ===== Lightbox Peta Administrasi Jorong =====
+function openPetaModal() {
+  const modal = document.getElementById('petaModal');
+  if (modal) {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+function closePetaModal() {
+  const modal = document.getElementById('petaModal');
+  if (modal) {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+// Tutup dengan tombol Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closePetaModal();
+});

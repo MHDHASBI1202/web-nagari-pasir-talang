@@ -6410,3 +6410,221 @@ img, video, svg {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* ================================================================
+   PETA ADMINISTRASI JORONG
+   ================================================================ */
+.peta-section {
+  margin-top: 56px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.peta-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.peta-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(52,211,153,0.15), rgba(96,165,250,0.15));
+  color: var(--green-400, #34d399);
+  border: 1px solid rgba(52,211,153,0.3);
+  padding: 5px 16px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.peta-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--gray-900, #0f172a);
+  margin: 0 0 10px 0;
+}
+
+.section-dark .peta-title { color: #f1f5f9; }
+
+.peta-desc {
+  color: var(--gray-500, #64748b);
+  font-size: 0.92rem;
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.section-dark .peta-desc { color: #94a3b8; }
+
+/* Kartu gambar peta */
+.peta-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: zoom-in;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-height: 520px;
+}
+
+.peta-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.28);
+}
+
+.peta-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.peta-card:hover .peta-img {
+  transform: scale(1.02);
+}
+
+/* Overlay zoom hint */
+.peta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15,23,42,0.0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.peta-card:hover .peta-overlay {
+  opacity: 1;
+  background: rgba(15,23,42,0.45);
+}
+
+.peta-overlay svg {
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+}
+
+/* Legend */
+.peta-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.peta-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--gray-600, #475569);
+  font-weight: 500;
+}
+
+.section-dark .peta-legend-item { color: #94a3b8; }
+
+.peta-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+/* ---- Lightbox Modal ---- */
+.peta-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(7,12,22,0.92);
+  backdrop-filter: blur(12px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: petaFadeIn 0.25s ease;
+}
+
+.peta-modal.open {
+  display: flex;
+}
+
+@keyframes petaFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.peta-modal-inner {
+  position: relative;
+  max-width: 95vw;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.peta-modal-img {
+  max-width: 100%;
+  max-height: 82vh;
+  border-radius: 16px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+  object-fit: contain;
+  animation: petaZoomIn 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+
+@keyframes petaZoomIn {
+  from { transform: scale(0.88); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.peta-modal-close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.peta-modal-close:hover {
+  background: rgba(239,68,68,0.7);
+  border-color: #ef4444;
+  transform: rotate(90deg);
+}
+
+.peta-modal-caption {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.55);
+  text-align: center;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .peta-title { font-size: 1.4rem; }
+  .peta-card  { max-height: 280px; }
+  .peta-legend { gap: 8px 14px; }
+  .peta-legend-item { font-size: 0.72rem; }
+}
