@@ -6628,3 +6628,22 @@ img, video, svg {
   .peta-legend { gap: 8px 14px; }
   .peta-legend-item { font-size: 0.72rem; }
 }
+
+/* ================================================================
+   PETA FIX: tampilkan gambar penuh tanpa crop/blur
+   Override max-height dan object-fit yang menyebabkan blur
+   ================================================================ */
+.peta-card {
+  max-height: none !important;
+  background: #0f172a;
+}
+
+.peta-img {
+  object-fit: contain !important;
+  object-position: center !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
