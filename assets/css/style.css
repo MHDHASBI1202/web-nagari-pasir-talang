@@ -7063,3 +7063,14 @@ section#layanan    { background-color: #f8fafc !important; }
 section#umkm       { background-color: #ffffff !important; }
 section#berita     { background-color: #f8fafc !important; }
 section#kontak     { background-color: #ffffff !important; }
+
+/* ================================================================
+   FINAL OVERRIDE v3 — Putih, Hijau Lembut, Gelap
+   ================================================================ */
+section#profil     { background-color: #ffffff !important; }
+section#statistik  { background-color: #f0fdf4 !important; }
+section#struktur   { background-color: #ffffff !important; }
+section#layanan    { background-color: #f0fdf4 !important; }
+section#umkm       { background-color: #ffffff !important; }
+section#berita     { background-color: #f0fdf4 !important; }
+section#kontak     { background-color: #ffffff !important; }
