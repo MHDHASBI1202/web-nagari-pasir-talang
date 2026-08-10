@@ -7016,3 +7016,39 @@ img, video, svg {
 .apb-section .section-title {
   color: #f1f5f9 !important;
 }
+
+/* ================================================================
+   FINAL OVERRIDE — Section backgrounds DEFINITIF
+   Semua !important + specificity tinggi, dark section di BAWAH
+   supaya menang atas semua rule sebelumnya
+   ================================================================ */
+
+/* === LIGHT SECTIONS: 2 tone hijau selang-seling === */
+section#profil     { background-color: #f0fdf4 !important; }
+section#statistik  { background-color: #dcfce7 !important; }
+section#struktur   { background-color: #f0fdf4 !important; }
+section#layanan    { background-color: #dcfce7 !important; }
+section#umkm       { background-color: #f0fdf4 !important; }
+section#berita     { background-color: #dcfce7 !important; }
+section#kontak     { background-color: #f0fdf4 !important; }
+
+/* === DARK SECTIONS: gelap — HARUS di bawah agar menang === */
+section#apbnag     { background-color: #0f172a !important; }
+section#galeri     { background-color: #0f172a !important; }
+
+/* Pastikan teks di dark section tetap terang */
+section#apbnag *:not(button):not(a):not(.apb-tab):not(input),
+section#galeri .section-title,
+section#galeri .section-desc,
+section#galeri .section-badge {
+  color: inherit;
+}
+section#galeri .section-title { color: #f1f5f9 !important; }
+section#galeri .section-desc  { color: #94a3b8 !important; }
+
+/* === LOGO FOOTER — selalu terlihat tanpa hover === */
+.footer-logo-img {
+  filter: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
