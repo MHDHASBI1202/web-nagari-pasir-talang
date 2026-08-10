@@ -6907,3 +6907,60 @@ img, video, svg {
   margin-top: auto !important;
   align-self: flex-start !important;
 }
+
+/* ================================================================
+   SECTION BACKGROUNDS — Pola teratur & harmonis
+   Urutan: profil(putih) → statistik(abu muda) → struktur(putih) →
+           layanan(hijau sangat muda) → apbnag(gelap) → galeri(gelap) →
+           umkm(putih) → berita(abu muda) → kontak(putih)
+   ================================================================ */
+
+/* Reset dulu semua section ke putih bersih */
+.section {
+  background-color: #ffffff !important;
+}
+
+/* Abu-abu sangat muda (#f8fafc) — statistik dan berita */
+#statistik,
+#berita {
+  background-color: #f8fafc !important;
+}
+
+/* Hijau sangat muda & lembut (#f0fdf4) — layanan */
+#layanan {
+  background-color: #f0fdf4 !important;
+}
+
+/* Override section-alt yang mungkin override di atas */
+#struktur.section-alt,
+#umkm.section-alt {
+  background-color: #ffffff !important;
+}
+
+#layanan.section-alt {
+  background-color: #f0fdf4 !important;
+}
+
+/* ================================================================
+   KONTAK GRID — 3 kolom (Alamat, Email, Sosmed) + 1 full-width bawah
+   ================================================================ */
+.kontak-cards-grid {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+/* Jam Operasional tetap full width */
+.kontak-card-full {
+  grid-column: 1 / -1 !important;
+}
+
+@media (max-width: 768px) {
+  .kontak-cards-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .kontak-cards-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
