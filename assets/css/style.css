@@ -7127,3 +7127,10 @@ section#kontak     { background-color: #ffffff !important; }
   background: rgba(139,92,246,0.1) !important;
   color: #4c1d95 !important;
 }
+
+/* Placeholder staff — ukuran sama tapi tidak terlihat */
+.orgv2-staff-placeholder {
+  visibility: hidden !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
