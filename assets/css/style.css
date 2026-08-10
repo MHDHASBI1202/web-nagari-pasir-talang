@@ -7134,3 +7134,35 @@ section#kontak     { background-color: #ffffff !important; }
   pointer-events: none !important;
   user-select: none !important;
 }
+
+/* ================================================================
+   FIX: Kaur/Kasi card — tinggi seragam, tanpa staff = center
+   ================================================================ */
+
+/* Semua card tinggi sama */
+.orgv2-card.orgv2-kaur,
+.orgv2-card.orgv2-kasi {
+  min-height: 100px !important;
+  justify-content: flex-start !important;
+}
+
+/* Card TANPA staff row → konten di tengah secara vertikal */
+.orgv2-card.orgv2-kaur:not(:has(.orgv2-staff-row)),
+.orgv2-card.orgv2-kasi:not(:has(.orgv2-staff-row)) {
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.orgv2-card.orgv2-kaur:not(:has(.orgv2-staff-row)) .orgv2-card-front,
+.orgv2-card.orgv2-kasi:not(:has(.orgv2-staff-row)) .orgv2-card-front {
+  align-items: center !important;
+}
+
+/* Card DENGAN staff row → konten atas, staff row bawah */
+.orgv2-card.orgv2-kaur:has(.orgv2-staff-row),
+.orgv2-card.orgv2-kasi:has(.orgv2-staff-row) {
+  justify-content: space-between !important;
+}
+
+/* Hapus CSS placeholder lama */
+.orgv2-staff-placeholder { display: none !important; }
