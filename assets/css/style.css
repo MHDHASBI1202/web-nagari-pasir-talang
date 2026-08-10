@@ -7052,3 +7052,14 @@ section#galeri .section-desc  { color: #94a3b8 !important; }
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+/* ================================================================
+   FINAL OVERRIDE v2 — Putih & abu-abu terang (bukan hijau)
+   ================================================================ */
+section#profil     { background-color: #ffffff !important; }
+section#statistik  { background-color: #f8fafc !important; }
+section#struktur   { background-color: #ffffff !important; }
+section#layanan    { background-color: #f8fafc !important; }
+section#umkm       { background-color: #ffffff !important; }
+section#berita     { background-color: #f8fafc !important; }
+section#kontak     { background-color: #ffffff !important; }
