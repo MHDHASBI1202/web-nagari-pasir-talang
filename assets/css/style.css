@@ -7074,3 +7074,56 @@ section#layanan    { background-color: #f0fdf4 !important; }
 section#umkm       { background-color: #ffffff !important; }
 section#berita     { background-color: #f0fdf4 !important; }
 section#kontak     { background-color: #ffffff !important; }
+
+/* ================================================================
+   FIX: Kaur & Kasi card — ukuran seragam + staff row lebih jelas
+   ================================================================ */
+
+/* Semua card dalam group harus tingginya sama */
+.orgv2-group-cards {
+  align-items: stretch !important;
+}
+
+.orgv2-card.orgv2-kaur,
+.orgv2-card.orgv2-kasi {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100px !important;
+}
+
+/* Card-front (badge + role + name) mengisi ruang, dorong staff-row ke bawah */
+.orgv2-card-front {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+
+/* Staff row: lebih jelas, tidak abu-abu pucat */
+.orgv2-staff-row {
+  font-size: .72rem !important;
+  font-weight: 600 !important;
+  color: #374151 !important;           /* abu-abu gelap, mudah dibaca */
+  padding: 7px 10px !important;
+  margin-top: 8px !important;
+  background: rgba(0,0,0,0.07) !important;
+  border-radius: 8px !important;
+  border-left: 3px solid #6b7280 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  flex-shrink: 0 !important;           /* tidak menyusut */
+}
+
+/* Warna border-left sesuai jenis card */
+.orgv2-card.orgv2-kaur .orgv2-staff-row {
+  border-left-color: #f59e0b !important;
+  background: rgba(245,158,11,0.1) !important;
+  color: #92400e !important;
+}
+
+.orgv2-card.orgv2-kasi .orgv2-staff-row {
+  border-left-color: #8b5cf6 !important;
+  background: rgba(139,92,246,0.1) !important;
+  color: #4c1d95 !important;
+}
