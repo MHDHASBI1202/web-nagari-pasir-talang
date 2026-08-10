@@ -6830,3 +6830,25 @@ img, video, svg {
 @media (min-width: 1025px) {
   .umkm-grid { grid-template-columns: repeat(4, 1fr); }
 }
+
+/* UMKM card — foto sebagai header */
+.umkm-img-wrap {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #f1f5f9;
+}
+
+.umkm-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.umkm-card:hover .umkm-img-wrap img {
+  transform: scale(1.06);
+}
