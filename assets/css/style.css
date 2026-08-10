@@ -6852,3 +6852,58 @@ img, video, svg {
 .umkm-card:hover .umkm-img-wrap img {
   transform: scale(1.06);
 }
+
+/* ================================================================
+   UMKM CARD — Seragamkan ukuran semua card & gambar
+   ================================================================ */
+
+/* Grid: semua row sama tinggi */
+.umkm-grid {
+  align-items: stretch !important;
+}
+
+/* Kartu: flex column penuh, tinggi sama satu row */
+.umkm-card {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Gambar: WAJIB tinggi tetap 180px, tidak bisa lebih-kurang */
+.umkm-img-wrap {
+  width: 100% !important;
+  height: 180px !important;
+  min-height: 180px !important;
+  max-height: 180px !important;
+  overflow: hidden !important;
+  flex-shrink: 0 !important;
+}
+
+.umkm-img-wrap img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* Body: flex grow agar semua card sama tinggi */
+.umkm-body {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Deskripsi: batas 3 baris agar tidak ada yang lebih panjang */
+.umkm-desc {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  flex: 1 !important;
+}
+
+/* Tombol Maps selalu di bawah */
+.umkm-maps-btn {
+  margin-top: auto !important;
+  align-self: flex-start !important;
+}
