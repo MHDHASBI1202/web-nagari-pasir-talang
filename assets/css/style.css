@@ -7230,3 +7230,71 @@ section#kontak     { background-color: #ffffff !important; }
   .berita-filter::-webkit-scrollbar { display: none; }
   .filter-btn { flex-shrink: 0; }
 }
+
+/* ================================================================
+   BERITA FILTER — Centered, berwarna, modern pill tabs
+   ================================================================ */
+.berita-filter {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  justify-content: center !important;
+  margin: 0 auto 32px auto !important;
+  max-width: 820px !important;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font-size: .82rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all .22s;
+  background: #f1f5f9;
+  color: #64748b;
+  letter-spacing: .2px;
+}
+
+/* Warna tiap kategori (normal state) */
+.filter-btn[data-kat=""]           { background:#f0fdf4; color:#16a34a; border-color:#bbf7d0; }
+.filter-btn[data-kat="Pembangunan"]{ background:#fff7ed; color:#ea580c; border-color:#fed7aa; }
+.filter-btn[data-kat="Pemerintahan"]{ background:#eff6ff; color:#2563eb; border-color:#bfdbfe; }
+.filter-btn[data-kat="Sosial"]     { background:#fdf4ff; color:#9333ea; border-color:#e9d5ff; }
+.filter-btn[data-kat="Ekonomi"]    { background:#fefce8; color:#ca8a04; border-color:#fef08a; }
+.filter-btn[data-kat="Kesehatan"]  { background:#fff1f2; color:#e11d48; border-color:#fecdd3; }
+.filter-btn[data-kat="Budaya"]     { background:#f0fdfa; color:#0d9488; border-color:#99f6e4; }
+.filter-btn[data-kat="Pengumuman"] { background:#fff7ed; color:#d97706; border-color:#fde68a; }
+.filter-btn[data-kat="Informasi"]  { background:#f0f9ff; color:#0284c7; border-color:#bae6fd; }
+
+/* Active/hover state — lebih gelap dan solid */
+.filter-btn.active,
+.filter-btn:hover {
+  color: #fff !important;
+  border-color: transparent !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+
+.filter-btn[data-kat=""].active,          .filter-btn[data-kat=""]:hover           { background:#16a34a !important; }
+.filter-btn[data-kat="Pembangunan"].active,.filter-btn[data-kat="Pembangunan"]:hover { background:#ea580c !important; }
+.filter-btn[data-kat="Pemerintahan"].active,.filter-btn[data-kat="Pemerintahan"]:hover{ background:#2563eb !important; }
+.filter-btn[data-kat="Sosial"].active,    .filter-btn[data-kat="Sosial"]:hover     { background:#9333ea !important; }
+.filter-btn[data-kat="Ekonomi"].active,   .filter-btn[data-kat="Ekonomi"]:hover    { background:#ca8a04 !important; }
+.filter-btn[data-kat="Kesehatan"].active, .filter-btn[data-kat="Kesehatan"]:hover  { background:#e11d48 !important; }
+.filter-btn[data-kat="Budaya"].active,    .filter-btn[data-kat="Budaya"]:hover     { background:#0d9488 !important; }
+.filter-btn[data-kat="Pengumuman"].active,.filter-btn[data-kat="Pengumuman"]:hover  { background:#d97706 !important; }
+.filter-btn[data-kat="Informasi"].active, .filter-btn[data-kat="Informasi"]:hover  { background:#0284c7 !important; }
+
+@media (max-width: 640px) {
+  .berita-filter {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    justify-content: flex-start !important;
+    padding-bottom: 8px !important;
+    scrollbar-width: none !important;
+  }
+  .berita-filter::-webkit-scrollbar { display: none; }
+  .filter-btn { flex-shrink: 0; }
+}

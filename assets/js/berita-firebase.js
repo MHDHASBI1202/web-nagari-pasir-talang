@@ -93,7 +93,15 @@
 
     if (!docs || docs.length === 0) {
       if (contentEl) contentEl.style.display = 'none';
-      if (emptyEl)   emptyEl.style.display   = '';
+      if (emptyEl) {
+        emptyEl.style.display = '';
+        var h3 = emptyEl.querySelector('h3');
+        var p  = emptyEl.querySelector('p');
+        if (h3) h3.textContent = 'Belum ada berita yang diunggah';
+        if (p)  p.textContent  = activeKat
+          ? 'Belum ada berita dalam kategori "' + activeKat + '". Coba pilih kategori lain atau pantau terus!'
+          : 'Berita dan pengumuman dari Nagari Pasir Talang akan segera hadir di sini. Pantau terus!';
+      }
       return;
     }
 
