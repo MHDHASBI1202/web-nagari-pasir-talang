@@ -968,7 +968,7 @@ auth.onAuthStateChanged(function(user) {
   if (user) {
     currentUser = user;
     document.getElementById('login-screen').style.display = 'none';
-    document.getElementById('app').style.display = 'flex';
+    document.getElementById('app').style.display = 'block';
     var name = user.email.split('@')[0];
     document.getElementById('user-name').textContent = user.email;
     document.getElementById('user-avatar').textContent = name[0].toUpperCase();
