@@ -6220,8 +6220,9 @@ img, video, svg {
   /* APB title */
   .apb-title { font-size: 1.4rem !important; }
 
-  /* Hero stats: 2 per row */
+  /* Hero stats: 2 per row, last item spans full width */
   .hero-stats { display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+  .hero-stat:last-child { grid-column: span 2; }
 
   /* Big stats */
   .big-stat-card { flex-direction: row !important; align-items: center !important; gap: 12px !important; }
