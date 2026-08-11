@@ -84,10 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Reveal observers
-  document.querySelectorAll(
-    '.layanan-card, .info-card, .jorong-card, .berita-item, .potensi-card, .galeri-item, .big-stat-card, .stat-chart-card, .apbnag-card, .kontak-card, .footer-col, .wali-card'
-  ).forEach(el => { el.classList.add('reveal'); revealObserver.observe(el); });
+  
 
   document.querySelectorAll('[data-target], .counter').forEach(el => counterObserver.observe(el));
 
