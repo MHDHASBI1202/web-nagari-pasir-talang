@@ -7166,3 +7166,26 @@ section#kontak     { background-color: #ffffff !important; }
 
 /* Hapus CSS placeholder lama */
 .orgv2-staff-placeholder { display: none !important; }
+
+
+/* ============================================================
+   BERITA -- Card styles (berita-firebase.js)
+   ============================================================ */
+.berita-featured { display:flex; flex-direction:column; background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 4px 24px rgba(0,0,0,.07); cursor:pointer; transition:transform .3s,box-shadow .3s; }
+.berita-featured:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,.12); }
+.berita-featured-img img { width:100%; height:220px; object-fit:cover; display:block; }
+.berita-featured-body { padding:24px; display:flex; flex-direction:column; gap:10px; }
+.berita-kat { display:inline-block; background:#dcfce7; color:#15803d; padding:3px 10px; border-radius:999px; font-size:.72rem; font-weight:700; width:fit-content; }
+.berita-judul { font-size:1.1rem; font-weight:800; color:#0f172a; line-height:1.35; margin:0; }
+.berita-ringkasan { font-size:.88rem; color:#64748b; line-height:1.65; margin:0; }
+.berita-ringkasan-sm { font-size:.82rem; color:#64748b; line-height:1.6; margin:0; }
+.berita-meta { display:flex; gap:12px; font-size:.78rem; color:#94a3b8; }
+.berita-readmore { background:none; border:none; color:#16a34a; font-weight:700; font-size:.82rem; cursor:pointer; padding:0; font-family:inherit; text-align:left; }
+.berita-item { display:flex; gap:14px; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,.06); cursor:pointer; transition:transform .25s; padding:14px; }
+.berita-item:hover { transform:translateX(4px); }
+.berita-item-img img { width:80px; height:80px; object-fit:cover; border-radius:8px; flex-shrink:0; }
+.berita-item-body { display:flex; flex-direction:column; gap:6px; }
+.berita-item-body .berita-judul { font-size:.9rem; }
+.berita-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:28px; }
+.berita-list { display:flex; flex-direction:column; gap:12px; }
+@media(max-width:768px) { .berita-grid { grid-template-columns:1fr; } }
