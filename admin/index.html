@@ -534,6 +534,10 @@
         <span class="nav-icon">📢</span> Pengumuman
         <span class="nav-badge" id="badge-pengumuman">0</span>
       </div>
+      <div class="nav-label">Pengaturan</div>
+      <div class="nav-item" id="nav-pengaturan" onclick="showPage('pengaturan')">
+        <span class="nav-icon">⚙️</span> Pengaturan Nagari
+      </div>
       <div class="nav-label">Akun</div>
       <div class="nav-item" id="nav-password" onclick="showPage('password')">
         <span class="nav-icon">🔑</span> Ganti Password
@@ -672,6 +676,114 @@
             </table>
           </div>
         </div>
+      </div>
+
+      <!-- ── PENGATURAN NAGARI PAGE ── -->
+      <div class="page" id="page-pengaturan">
+
+        <!-- Card 1: Wali Nagari -->
+        <div class="card" style="margin-bottom:24px">
+          <div class="card-header">
+            <div>
+              <h3>👤 Wali Nagari</h3>
+              <p>Informasi pimpinan nagari yang ditampilkan di halaman publik</p>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="field-row">
+              <div class="field">
+                <label for="setWaliNama">Nama Wali Nagari</label>
+                <input type="text" id="setWaliNama" placeholder="contoh: Afri Yendri" />
+              </div>
+              <div class="field">
+                <label for="setWaliLabel">Label / Jabatan</label>
+                <input type="text" id="setWaliLabel" placeholder="Pj. Wali Nagari" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="setWaliPeriode">Periode</label>
+                <input type="text" id="setWaliPeriode" placeholder="Periode 2026" />
+              </div>
+              <div class="field">
+                <label for="setWaliWa">Nomor WhatsApp</label>
+                <input type="text" id="setWaliWa" placeholder="628xxxxxxxxxx" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="setWaliFoto">URL Foto Wali</label>
+              <input type="text" id="setWaliFoto" placeholder="https://... (paste URL gambar)" />
+            </div>
+            <div class="field">
+              <label for="setWaliQuote">Kutipan / Quote</label>
+              <textarea id="setWaliQuote" rows="3" placeholder="Kutipan atau pesan dari wali nagari..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Kontak & Lokasi -->
+        <div class="card" style="margin-bottom:24px">
+          <div class="card-header">
+            <div>
+              <h3>📍 Kontak &amp; Lokasi</h3>
+              <p>Informasi kontak dan jam operasional kantor nagari</p>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="field-row">
+              <div class="field">
+                <label for="setKontakEmail">Email Nagari</label>
+                <input type="email" id="setKontakEmail" placeholder="nagari@example.com" />
+              </div>
+              <div class="field">
+                <label for="setKontakMaps">URL Google Maps</label>
+                <input type="text" id="setKontakMaps" placeholder="https://maps.google.com/..." />
+              </div>
+            </div>
+            <div class="field">
+              <label for="setKontakAlamat">Alamat Kantor</label>
+              <textarea id="setKontakAlamat" rows="3" placeholder="Tulis alamat lengkap kantor nagari..."></textarea>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="setJamSenKam">Jam Operasional Senin–Kamis</label>
+                <input type="text" id="setJamSenKam" placeholder="08.00 - 16.00" />
+              </div>
+              <div class="field">
+                <label for="setJamJumat">Jam Operasional Jumat</label>
+                <input type="text" id="setJamJumat" placeholder="08.00 - 11.30" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Media Sosial -->
+        <div class="card" style="margin-bottom:24px">
+          <div class="card-header">
+            <div>
+              <h3>📱 Media Sosial</h3>
+              <p>Tautan media sosial resmi nagari</p>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="field-row">
+              <div class="field">
+                <label for="setInstagram">URL Instagram</label>
+                <input type="text" id="setInstagram" placeholder="https://instagram.com/..." />
+              </div>
+              <div class="field">
+                <label for="setTiktok">URL TikTok</label>
+                <input type="text" id="setTiktok" placeholder="https://tiktok.com/..." />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tombol Simpan -->
+        <div style="text-align:right">
+          <button class="btn btn-primary" onclick="simpanPengaturan()" style="padding:12px 32px;font-size:14px">💾 Simpan Pengaturan</button>
+        </div>
+
       </div>
 
       <!-- ── GANTI PASSWORD PAGE ── -->
@@ -861,6 +973,7 @@ auth.onAuthStateChanged(function(user) {
     document.getElementById('user-name').textContent = user.email;
     document.getElementById('user-avatar').textContent = name[0].toUpperCase();
     loadAllData();
+    loadPengaturan();
   } else {
     currentUser = null;
     document.getElementById('login-screen').style.display = 'flex';
@@ -908,10 +1021,11 @@ function doLogout() {
 
 // ── NAVIGATION ────────────────────────────────────────────────────────────
 var pageConfig = {
-  dashboard:  { title: 'Dashboard',          sub: 'Ringkasan konten nagari' },
-  berita:     { title: 'Manajemen Berita',    sub: 'Tambah, edit, dan hapus berita' },
-  pengumuman: { title: 'Pengumuman',          sub: 'Kelola pengumuman untuk warga' },
-  password:   { title: 'Ganti Password',      sub: 'Perbarui keamanan akun Anda' }
+  dashboard:   { title: 'Dashboard',             sub: 'Ringkasan konten nagari' },
+  berita:      { title: 'Manajemen Berita',       sub: 'Tambah, edit, dan hapus berita' },
+  pengumuman:  { title: 'Pengumuman',             sub: 'Kelola pengumuman untuk warga' },
+  pengaturan:  { title: 'Pengaturan Nagari',      sub: 'Kelola informasi wali nagari, kontak, dan media sosial' },
+  password:    { title: 'Ganti Password',         sub: 'Perbarui keamanan akun Anda' }
 };
 
 function showPage(name) {
@@ -925,9 +1039,10 @@ function showPage(name) {
   document.getElementById('topbar-title').textContent = cfg.title;
   document.getElementById('topbar-sub').textContent   = cfg.sub;
   closeSidebar();
-  if (name === 'dashboard')  renderDashboard();
-  if (name === 'berita')     renderBeritaTable(allBerita);
-  if (name === 'pengumuman') renderPengumumanTable(allPengumuman);
+  if (name === 'dashboard')   renderDashboard();
+  if (name === 'berita')      renderBeritaTable(allBerita);
+  if (name === 'pengumuman')  renderPengumumanTable(allPengumuman);
+  if (name === 'pengaturan')  loadPengaturan();
 }
 
 // ── SIDEBAR MOBILE ────────────────────────────────────────────────────────
@@ -951,6 +1066,53 @@ document.addEventListener('keydown', function(e) {
 
 // ── LOAD DATA ─────────────────────────────────────────────────────────────
 function loadAllData() { loadBerita(); loadPengumuman(); }
+
+// ═══════════════════════════════════════════
+// PENGATURAN NAGARI
+// ═══════════════════════════════════════════
+function loadPengaturan() {
+  db.collection('settings').doc('nagari').get().then(function(doc) {
+    if (!doc.exists) return;
+    var d = doc.data();
+    document.getElementById('setWaliNama').value      = d.waliNama      || '';
+    document.getElementById('setWaliLabel').value     = d.waliLabel     || '';
+    document.getElementById('setWaliPeriode').value   = d.waliPeriode   || '';
+    document.getElementById('setWaliWa').value        = d.waliWa        || '';
+    document.getElementById('setWaliFoto').value      = d.waliFoto      || '';
+    document.getElementById('setWaliQuote').value     = d.waliQuote     || '';
+    document.getElementById('setKontakEmail').value   = d.kontakEmail   || '';
+    document.getElementById('setKontakMaps').value    = d.kontakMaps    || '';
+    document.getElementById('setKontakAlamat').value  = d.kontakAlamat  || '';
+    document.getElementById('setJamSenKam').value     = d.jamSenKam     || '';
+    document.getElementById('setJamJumat').value      = d.jamJumat      || '';
+    document.getElementById('setInstagram').value     = d.instagram     || '';
+    document.getElementById('setTiktok').value        = d.tiktok        || '';
+  }).catch(function(err) {
+    showToast('Gagal memuat pengaturan: ' + err.message, 'error');
+  });
+}
+
+function simpanPengaturan() {
+  var data = {
+    waliNama:      document.getElementById('setWaliNama').value.trim(),
+    waliLabel:     document.getElementById('setWaliLabel').value.trim(),
+    waliPeriode:   document.getElementById('setWaliPeriode').value.trim(),
+    waliWa:        document.getElementById('setWaliWa').value.trim(),
+    waliFoto:      document.getElementById('setWaliFoto').value.trim(),
+    waliQuote:     document.getElementById('setWaliQuote').value.trim(),
+    kontakEmail:   document.getElementById('setKontakEmail').value.trim(),
+    kontakMaps:    document.getElementById('setKontakMaps').value.trim(),
+    kontakAlamat:  document.getElementById('setKontakAlamat').value.trim(),
+    jamSenKam:     document.getElementById('setJamSenKam').value.trim(),
+    jamJumat:      document.getElementById('setJamJumat').value.trim(),
+    instagram:     document.getElementById('setInstagram').value.trim(),
+    tiktok:        document.getElementById('setTiktok').value.trim(),
+    updatedAt:     firebase.firestore.FieldValue.serverTimestamp()
+  };
+  db.collection('settings').doc('nagari').set(data, { merge: true })
+    .then(function() { showToast('Pengaturan berhasil disimpan! ✅', 'success'); })
+    .catch(function(err) { showToast('Error: ' + err.message, 'error'); });
+}
 
 // ═══════════════════════════════════════════
 // BERITA

@@ -186,14 +186,14 @@
         <div class="profil-wali">
           <div class="wali-card">
             <div class="wali-img-wrap">
-              <img src="assets/images/wali_web.jpg" alt="Wali Nagari Pasir Talang" class="wali-img" />
+              <img src="assets/images/wali_web.jpg" alt="Wali Nagari Pasir Talang" class="wali-img" id="waliImg"/>
               <div class="wali-badge-ring"></div>
             </div>
             <div class="wali-info">
-              <span class="wali-label">Pj. Wali Nagari</span>
-              <h3 class="wali-name">Afri Yendri</h3>
-              <p class="wali-period">Periode 2026</p>
-              <blockquote class="wali-quote">
+              <span class="wali-label" id="waliLabel">Pj. Wali Nagari</span>
+              <h3 class="wali-name" id="waliName">Afri Yendri</h3>
+              <p class="wali-period" id="waliPeriode">Periode 2026</p>
+              <blockquote class="wali-quote" id="waliQuote">
                 "Bersama membangun nagari yang bersih, menyatu dengan masyarakat, adat dan lembaga Nagari."
               </blockquote>
               <!-- Ã¢Å“â€¦ Klik Ã¢â€ â€™ WhatsApp ke nomor kantor -->
@@ -1867,7 +1867,7 @@
           </div>
           <div>
             <strong>Email <span class="link-hint">&#9993;</span></strong>
-            <p>npasirtalang@gmail.com</p>
+            <p id="kontakEmailText">npasirtalang@gmail.com</p>
             <span class="kontak-action-hint">Klik untuk kirim email</span>
           </div>
         </a>
@@ -2004,6 +2004,7 @@
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
   <script src="assets/js/firebase-config.js"></script>
   <script src="assets/js/berita-firebase.js"></script>
+  <script src="assets/js/settings-loader.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
 </html>
