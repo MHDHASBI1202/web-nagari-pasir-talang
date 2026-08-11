@@ -7298,3 +7298,21 @@ section#kontak     { background-color: #ffffff !important; }
   .berita-filter::-webkit-scrollbar { display: none; }
   .filter-btn { flex-shrink: 0; }
 }
+
+/* ================================================================
+   Admin Secret Link — ikon kecil di footer, samar tapi bisa diklik
+   ================================================================ */
+.admin-secret-link {
+  color: rgba(255,255,255,.15);
+  font-size: .9rem;
+  text-decoration: none;
+  transition: color .3s, transform .3s;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+}
+.admin-secret-link:hover {
+  color: rgba(255,255,255,.7);
+  transform: rotate(60deg);
+  text-decoration: none;
+}
