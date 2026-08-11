@@ -6220,9 +6220,11 @@ img, video, svg {
   /* APB title */
   .apb-title { font-size: 1.4rem !important; }
 
-  /* Hero stats: 2 per row, last item spans full width */
-  .hero-stats { display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
-  .hero-stat:last-child { grid-column: span 2; }
+  /* Hero stats: 3 per row */
+  .hero-stats { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 4px !important; padding: 12px 6px !important; }
+  .hero-stat { padding: 10px 4px !important; }
+  .stat-num { font-size: 1.2rem !important; }
+  .stat-label { font-size: 0.6rem !important; text-align: center; line-height: 1.2; }
 
   /* Big stats */
   .big-stat-card { flex-direction: row !important; align-items: center !important; gap: 12px !important; }
