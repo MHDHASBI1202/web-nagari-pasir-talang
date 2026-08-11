@@ -7189,3 +7189,44 @@ section#kontak     { background-color: #ffffff !important; }
 .berita-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:28px; }
 .berita-list { display:flex; flex-direction:column; gap:12px; }
 @media(max-width:768px) { .berita-grid { grid-template-columns:1fr; } }
+
+/* ================================================================
+   BERITA — Empty State & Filter Update
+   ================================================================ */
+.berita-empty-state {
+  text-align: center;
+  padding: 64px 24px;
+  color: #94a3b8;
+}
+.berita-empty-state h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+.berita-empty-state p {
+  font-size: .88rem;
+  color: #94a3b8;
+  max-width: 360px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Filter wrap — scroll horizontal di mobile */
+.berita-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+}
+@media (max-width: 640px) {
+  .berita-filter {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 8px;
+  }
+  .berita-filter::-webkit-scrollbar { display: none; }
+  .filter-btn { flex-shrink: 0; }
+}

@@ -7,7 +7,7 @@
 
   // ── State ────────────────────────────────────────────────────────────
   var allDocs  = [];
-  var activeKat = 'semua';
+  var activeKat = '';
 
   // ── Helpers ──────────────────────────────────────────────────────────
   function fmtTanggal(ts) {
@@ -124,7 +124,8 @@
     var btns = document.querySelectorAll('.filter-btn');
     for (var i = 0; i < btns.length; i++) {
       var btn = btns[i];
-      if (btn.dataset.kat === activeKat) {
+      var katVal = btn.dataset.kat || '';
+      if (katVal === activeKat) {
         btn.classList.add('active');
       } else {
         btn.classList.remove('active');
@@ -132,7 +133,7 @@
     }
 
     var filtered;
-    if (activeKat === 'semua') {
+    if (!activeKat || activeKat === 'semua') {
       filtered = allDocs;
     } else {
       filtered = allDocs.filter(function (doc) {
@@ -163,28 +164,58 @@
   function loadBerita() {
     var loadingEl = document.getElementById('beritaLoading');
     var gridEl    = document.getElementById('beritaGrid');
-
-    if (!gridEl) return; // Elemen tidak ada di halaman ini
-
+    if (!gridEl) return;
     if (loadingEl) loadingEl.style.display = '';
 
-    db.collection('berita')
-      .where('status', '==', 'published')
-      .orderBy('createdAt', 'desc')
-      .limit(10)
-      .onSnapshot(
-        function (snapshot) {
-          allDocs = snapshot.docs;
+    // Timeout fallback: jika 8 detik tidak ada respons, tampilkan empty state
+    var timeoutId = setTimeout(function() {
+      if (loadingEl) loadingEl.style.display = 'none';
+      var emptyEl = document.getElementById('beritaEmpty');
+      if (emptyEl && (!allDocs || allDocs.length === 0)) {
+        emptyEl.style.display = '';
+      }
+    }, 8000);
+
+    function onSuccess(snapshot) {
+      clearTimeout(timeoutId);
+      allDocs = snapshot.docs;
+      applyFilter(activeKat);
+    }
+
+    function onError(err) {
+      clearTimeout(timeoutId);
+      console.warn('[berita-firebase] Query error, trying fallback:', err.message);
+      // Fallback: query tanpa orderBy (tidak butuh composite index)
+      db.collection('berita')
+        .where('status', '==', 'published')
+        .get()
+        .then(function(snap) {
+          // Sort client-side by createdAt desc
+          var docs = snap.docs.sort(function(a, b) {
+            var ta = a.data().createdAt ? a.data().createdAt.toMillis() : 0;
+            var tb = b.data().createdAt ? b.data().createdAt.toMillis() : 0;
+            return tb - ta;
+          });
+          allDocs = docs.slice(0, 10);
           applyFilter(activeKat);
-        },
-        function (err) {
-          console.error('[berita-firebase] Firestore error:', err);
-          var loadEl = document.getElementById('beritaLoading');
-          if (loadEl) {
-            loadEl.innerHTML = '<p style="color:#ef4444;text-align:center;padding:20px">Gagal memuat berita. Silakan refresh halaman.</p>';
-          }
-        }
-      );
+        })
+        .catch(function(e2) {
+          console.error('[berita-firebase] Fallback error:', e2);
+          if (loadingEl) loadingEl.style.display = 'none';
+          var emptyEl = document.getElementById('beritaEmpty');
+          if (emptyEl) emptyEl.style.display = '';
+        });
+    }
+
+    try {
+      db.collection('berita')
+        .where('status', '==', 'published')
+        .orderBy('createdAt', 'desc')
+        .limit(10)
+        .onSnapshot(onSuccess, onError);
+    } catch(e) {
+      onError(e);
+    }
   }
 
   // ── Modal Baca Berita Lengkap ────────────────────────────────────────
