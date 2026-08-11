@@ -705,10 +705,7 @@
                 <label for="setWaliPeriode">Periode</label>
                 <input type="text" id="setWaliPeriode" placeholder="Periode 2026" />
               </div>
-              <div class="field">
-                <label for="setWaliWa">Nomor WhatsApp</label>
-                <input type="text" id="setWaliWa" placeholder="628xxxxxxxxxx" />
-              </div>
+              
             </div>
             <div class="field">
               <label for="setWaliFoto">URL Foto Wali</label>
@@ -1077,8 +1074,7 @@ function loadPengaturan() {
     document.getElementById('setWaliNama').value      = d.waliNama      || '';
     document.getElementById('setWaliLabel').value     = d.waliLabel     || '';
     document.getElementById('setWaliPeriode').value   = d.waliPeriode   || '';
-    document.getElementById('setWaliWa').value        = d.waliWa        || '';
-    document.getElementById('setWaliFoto').value      = d.waliFoto      || '';
+        document.getElementById('setWaliFoto').value      = d.waliFoto      || '';
     document.getElementById('setWaliQuote').value     = d.waliQuote     || '';
     document.getElementById('setKontakEmail').value   = d.kontakEmail   || '';
     document.getElementById('setKontakMaps').value    = d.kontakMaps    || '';
@@ -1097,8 +1093,7 @@ function simpanPengaturan() {
     waliNama:      document.getElementById('setWaliNama').value.trim(),
     waliLabel:     document.getElementById('setWaliLabel').value.trim(),
     waliPeriode:   document.getElementById('setWaliPeriode').value.trim(),
-    waliWa:        document.getElementById('setWaliWa').value.trim(),
-    waliFoto:      document.getElementById('setWaliFoto').value.trim(),
+        waliFoto:      document.getElementById('setWaliFoto').value.trim(),
     waliQuote:     document.getElementById('setWaliQuote').value.trim(),
     kontakEmail:   document.getElementById('setKontakEmail').value.trim(),
     kontakMaps:    document.getElementById('setKontakMaps').value.trim(),

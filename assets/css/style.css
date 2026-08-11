@@ -7316,3 +7316,44 @@ section#kontak     { background-color: #ffffff !important; }
   transform: rotate(60deg);
   text-decoration: none;
 }
+
+/* ================================================================
+   DYNAMIC HOVER EFFECTS ENHANCEMENT
+   ================================================================ */
+/* Wali Card Hover */
+.wali-card {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.wali-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+}
+.wali-card:hover .wali-img {
+  transform: scale(1.05) rotate(1deg);
+}
+.wali-img {
+  transition: transform 0.4s ease;
+}
+
+/* Make generic cards feel more alive */
+.card, .peta-card, .umkm-card, .wisata-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Scale up badges gently */
+.section-badge {
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.section-badge:hover {
+  transform: scale(1.05);
+  background: var(--green-100);
+}
+
+/* Footer links animation */
+.footer-links li a {
+  transition: all 0.25s ease;
+}
+.footer-links li a:hover {
+  color: #fff;
+  padding-left: 8px;
+}
