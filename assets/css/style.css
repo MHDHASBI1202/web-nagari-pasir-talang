@@ -306,6 +306,9 @@ input, textarea, select { font-family: inherit; }
   color: rgba(255,255,255,.8);
   margin-bottom: 40px;
   line-height: 1.8;
+  text-align: center !important;
+  width: 100%;
+  display: block;
 }
 .hero-subtitle em { color: var(--gold-400); font-style: italic; }
 
