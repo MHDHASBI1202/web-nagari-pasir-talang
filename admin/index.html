@@ -933,6 +933,8 @@
 var allBerita = [];
 var allPengumuman = [];
 var currentUser = null;
+  var unsubBerita = null;
+  var unsubPengumuman = null;
 var pendingDelete = null;
 
 // ── DATE ────────────────────────────────────────────────────────────────────
@@ -1113,7 +1115,8 @@ function simpanPengaturan() {
 // BERITA
 // ═══════════════════════════════════════════
 function loadBerita() {
-  db.collection('berita').orderBy('createdAt', 'desc').onSnapshot(function(snap) {
+  if (unsubBerita) unsubBerita();
+    unsubBerita = db.collection('berita').orderBy('createdAt', 'desc').onSnapshot(function(snap) {
     allBerita = snap.docs.map(function(d) { return Object.assign({ id: d.id }, d.data()); });
     document.getElementById('badge-berita').textContent = allBerita.length;
     var active = document.querySelector('.page.active');
@@ -1219,7 +1222,8 @@ function toggleBeritaStatus(id, currentStatus) {
 // PENGUMUMAN
 // ═══════════════════════════════════════════
 function loadPengumuman() {
-  db.collection('pengumuman').orderBy('createdAt', 'desc').onSnapshot(function(snap) {
+  if (unsubPengumuman) unsubPengumuman();
+    unsubPengumuman = db.collection('pengumuman').orderBy('createdAt', 'desc').onSnapshot(function(snap) {
     allPengumuman = snap.docs.map(function(d) { return Object.assign({ id: d.id }, d.data()); });
     document.getElementById('badge-pengumuman').textContent = allPengumuman.length;
     var active = document.querySelector('.page.active');
